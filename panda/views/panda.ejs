@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html ng-app="panda">
+  <head>
+    <title><%= title %></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- Web Fonts -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin">
+
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- CSS Header and Footer -->
+    <link rel="stylesheet" href="assets/css/headers/header-default.css">
+    <link rel="stylesheet" href="assets/css/footers/footer-v1.css">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="assets/plugins/animate.css">
+    <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+
+    <!-- CSS Theme -->
+    <link rel="stylesheet" href="assets/css/theme-colors/default.css" id="style_color">
+    <link rel="stylesheet" href="assets/css/theme-skins/dark.css">
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+  </head>
+  <body ng-controller="pandaCtrl">
+  <div class="wrapper">
+    <% if (!isAu) {%>
+    <a href="/auth/kakao">
+      <img src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"/>
+    </a>
+    <%}else {%>
+    Hello, <%= user.name.username %>
+    <%}%>
+    <ul class="nav nav-tabs">
+      ...
+      <li role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          Dropdown <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          ...
+        </ul>
+      </li>
+      ...
+    </ul>
+    <!--Basic Table Option (Spacing)-->
+    <div class="panel panel-red margin-bottom-40">
+      <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-user"></i> Basic Table Option (with space)</h3>
+      </div>
+      <div class="panel-body">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Username</th>
+            <th>btn</th>
+          </tr>
+          </thead>
+          <tbody ng-repeat="data in datas">
+          <tr>
+            <td>{{data.name}}</td>
+            <td><button ng-click="deleteData(data._id)">Remove</button></td>
+            <td><button ng-click="edit(data._id)">edit</button></td>
+
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!--End Basic Table-->
+  <form>
+    <input ng-model="new.name">
+    <button ng-click="addData()">Add</button>
+    <button ng-click="update()">Update</button>
+    <button ng-click="clear()">clear</button>
+  </form>
+</div>
+  </body>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="javascripts/angular.js"></script>
+  <!-- JS Global Compulsory -->
+  <script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/plugins/jquery/jquery-migrate.min.js"></script>
+  <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+  <!-- JS Implementing Plugins -->
+  <script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
+  <script type="text/javascript" src="assets/plugins/smoothScroll.js"></script>
+  <!-- JS Customization -->
+  <script type="text/javascript" src="assets/js/custom.js"></script>
+  <!-- JS Page Level -->
+  <script type="text/javascript" src="assets/js/app.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/style-switcher.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function() {
+      App.init();
+      StyleSwitcher.initStyleSwitcher();
+    });
+  </script>
+  <!--[if lt IE 9]>
+  <script src="assets/plugins/respond.js"></script>
+  <script src="assets/plugins/html5shiv.js"></script>
+  <script src="assets/plugins/placeholder-IE-fixes.js"></script>
+  <![endif]-->
+
+</html>

@@ -1,0 +1,19 @@
+
+<!--Basic Table-->
+<table class="table">
+    <thead>
+    <tr>
+        <th>Username</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="doc in docs">
+        <td>{{doc.title}}</td>
+        <td>{{doc.writer}}</td>
+    </tr>
+    </tbody>
+    <input>
+    <button ng-click="addData"></button>
+</table>
+<!--End Basic Table-->

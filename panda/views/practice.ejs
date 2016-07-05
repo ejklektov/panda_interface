@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="practice">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+  </head>
+  <body ng-controller="practiceCtrl">
+  <div class="wrapper">
+    <% if (!isAu) {%>
+    <a href="/auth/kakao">
+      <img src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"/>
+    </a>
+    <%}else {%>
+    Hello, <%= user.name.username %>
+    Hello, <%= user.token %>
+    Hello, <%= token %>
+    <%}%>
+
+
+    <% if (isAu) {%>
+    <form>
+    <input ng-model="newDoc.title">
+    <input ng-model="newDoc.writer" ng-value="<%user.name.username %>" hidden>
+    <button ng-click="addData()">Add</button>
+    <button ng-click="me()">token</button>
+  </form>
+    at = {{at}}
+    respon = {{respon.result_code}}
+    <%}%>
+
+
+</div>
+  <div ng-repeat="doc in docs">
+    {{doc.title}}
+    {{doc.writer}}
+    {{doc.date}}
+  </div>
+
+<p>
+  <article>
+    <h2>인큐브 소개</h2>
+    <h4>{{info.content}}</h4>
+    <!--<input value="{{info.content}}">-->
+  </article>
+</p>
+  </body>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="javascripts/practice.js"></script>
+</html>

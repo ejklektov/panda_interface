@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="practice">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+</head>
+<body ng-controller="practiceCtrl">
+<div class="wrapper">
+
+
+
+<p>
+    <article>
+        <h2>인큐브 소개</h2>
+        <input value="{{info.content}}" ng-model="info.content">
+        <button ng-click="modify(info._id)">수정</button>
+    </article>
+</p>
+    </div>
+</body>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="javascripts/practice.js"></script>
+</html>
