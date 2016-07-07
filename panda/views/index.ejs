@@ -407,7 +407,7 @@
                         <div class="cbp-caption margin-bottom-20">
                             <!--<div class="sorting-block">-->
                             <div style=" display: inline-block; opacity: 1;">
-                                <a href="/product_detail">
+                                <a href="#product_detail">
                                     <img class="img-responsive" src="assets/img/main/img26.jpg" alt="">
                                     <span>Happy New Year</span>
                                     <p>Anim pariatur cliche reprehenderit</p>
@@ -550,7 +550,6 @@
                 </div>
                 <!--/end Grid Container-->
             </div>
->>>>>>> 79c24f25376e7ca58bfd99ff0bcfba4a051f18d1
             <!--=== End Cube-Portfdlio ===-->
         </div>
 
@@ -592,8 +591,16 @@
                         </div>
                         <div class="col-md-3 sm-margin-bottom-40">
                             <ul class="list-unstyled footer-link-list">
-                                <li><a href="#">건의하기</a></li>
-                                <li><a href="#">신고하기</a></li>
+                                <li><a href ng-click="proposal = !proposal">건의하기</a></li>
+                                <div ng-show="proposal">
+                                <input type="text">
+                                <input type="submit" value="보내기" ng-click="proposal = !proposal">
+                                </div>
+                                <li><a href ng-click="report = !report">신고하기</a></li>
+                                <div ng-show="report">
+                                    <input type="text">
+                                    <input type="submit" value="보내기" ng-click="report = !report">
+                                </div>
                             </ul>
                         </div>
                         <!-- End Contacts -->

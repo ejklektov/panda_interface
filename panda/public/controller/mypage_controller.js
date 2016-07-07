@@ -15,6 +15,9 @@ var mypage = angular.module('mypage',['ngRoute'])
             .when('/buy_product_list',{
                 templateUrl: '/buy_product_list', controller: 'buyProductListCtrl'
             })
+            .when('/product_detail', {
+                templateUrl: '/product_detail', controller: 'productCtrl'
+            })
 
     })
 
@@ -27,5 +30,9 @@ mypage.controller('sellProductListCtrl',['$scope','$http',function($scope, $http
 }]);
 
 mypage.controller('buyProductListCtrl',['$scope','$http',function($scope, $http){
+
+}]);
+
+mypage.controller('productCtrl',['$scope','$http',function($scope, $http){
 
 }]);

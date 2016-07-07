@@ -15,6 +15,10 @@ var home = angular.module('home',['ngRoute'])
                  templateUrl: '/mypage', controller: 'mypageCtrl'
              })
 
+             .when('/product_detail', {
+                 templateUrl: '/product_detail', controller: 'productCtrl'
+             })
+
              .when('/add_product',{
                  templateUrl:'/add_product',controller:'addProductCtrl'
              })
@@ -117,5 +121,8 @@ home.controller('addProductCtrl',['$scope','$http',function ($scope, $http) {
 
 
 home.controller('mypageCtrl',['$scope','$http',function ($scope, $http) {
+
+}]);
+home.controller('productCtrl',['$scope','$http',function ($scope, $http) {
 
 }]);
