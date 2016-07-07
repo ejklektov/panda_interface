@@ -8,8 +8,8 @@ var mypage = angular.module('practice',['ngRoute'])
                 templateUrl: '/mypage', controller: 'mypageCtrl'
             })
 
-            .when('/profile_editing',{
-                templateUrl: '/profile_editing', controller: 'profileEditingCtrl'
+            .when('/edit_profile',{
+                templateUrl: '/edit_profile', controller: 'editProfileCtrl'
             })
 
             .when('/sell_product_list',{
@@ -25,14 +25,14 @@ mypage.controller('mypageCtrl',['$scope','$http',function ($scope, $http) {
 
 }]);
 
-mypage.controller('profileEditingCtrl',['$scope','$http',function($scope, $http)
+mypage.controller('editProfileCtrl',['$scope','$http',function($scope, $http){
 
-]);
+}]);
 
-mypage.controller('sellProductListCtrl',['$scope','$http',function($scope, $http)
+mypage.controller('sellProductListCtrl',['$scope','$http',function($scope, $http){
 
-]);
+}]);
 
-mypage.controller('buyProductListCtrl',['$scope','$http',function($scope, $http)
+mypage.controller('buyProductListCtrl',['$scope','$http',function($scope, $http){
 
-]);
+}]);
