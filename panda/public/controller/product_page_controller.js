@@ -18,7 +18,7 @@ var controller = angular.module('controller',['ngRoute'])
 controller.controller('productCtrl',['$scope','$http',function ($scope, $http) {
     $scope.choose = true;
     var productInfo = function () {
-        $http.get('/product').success(function (res) {
+        $http.get('/product_detail').success(function (res) {
             console.log(res)
             $scope.info = res;
         })

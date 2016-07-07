@@ -1,10 +1,3 @@
-Master Slider 2.16.3, 2015-12-1
--------------------------------
-- [Added] Box transition view.
-- [Fixed] An issue of getting touch JS error in some Android devices.
-- [Improved] Swipe sensitivity while scrolling page on touch devices.
-- [Improved] Slider stability in some pages which contained JS errors from third-party scripts.
-
 Master Slider 2.15.1, 2015-7-6
 -------------------------------
 - [Updated] Updated Prettyphoto script version to 3.1.6.

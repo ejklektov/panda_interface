@@ -189,6 +189,15 @@ router.get('/buy_product_list',function(req,res){
   });
 })
 
+router.get('/product_detail', function(req,res){
+    res.render('product_detail', {
+        title: 'incube',
+        isAu:req.isAuthenticated(),
+        user:req.user,
+        token:req.token
+    });
+})
+
 
 router.get('/home',function(req,res){
   res.render('home');
