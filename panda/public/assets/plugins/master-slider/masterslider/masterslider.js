@@ -1088,7 +1088,7 @@ window.averta = {};
 	
 })();
 
-/* ================== bin-debug/js/pro/controls/controller.js =================== */
+/* ================== bin-debug/js/pro/controls/home_controller.js =================== */
 /**
  *  Touch List Control
  * 	version 1.1.2

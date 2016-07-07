@@ -1,7 +1,7 @@
 /**
  * Created by genesis on 2016. 6. 28..
  */
-var controller = angular.module('controller',['ngRoute'])
+var home = angular.module('home',['ngRoute'])
      .config(function ($routeProvider) {
          $routeProvider
          //     .when('/list',{
@@ -10,16 +10,22 @@ var controller = angular.module('controller',['ngRoute'])
          //     .when('/home',{
          //         templateUrl:'/ho',controller:'practiceCtrl'
          //     })
+
+             .when('/mypage', {
+                 templateUrl: '/mypage', controller: 'mypageCtrl'
+             })
+
              .when('/add_product',{
                  templateUrl:'/add_product',controller:'addProductCtrl'
              })
+
              .otherwise({
-                 templateUrl: '/', controller: 'homeCtrl'
+                 templateUrl: '/home', controller: 'homeCtrl'
              })
          })
 
 
-controller.controller('homeCtrl',['$scope','$http',function ($scope, $http) {
+home.controller('homeCtrl',['$scope','$http',function ($scope, $http) {
     $scope.choose = true;
     var incubeInfo = function () {
         $http.get('/incubeInfo').success(function (res) {
@@ -57,7 +63,7 @@ controller.controller('homeCtrl',['$scope','$http',function ($scope, $http) {
     }
 }]);
 
-controller.controller('listCtrl',['$scope','$http',function ($scope, $http) {
+home.controller('listCtrl',['$scope','$http',function ($scope, $http) {
     var incubeInfo = function () {
         $http.get('/incubeInfo').success(function (res) {
             console.log(res)
@@ -83,7 +89,7 @@ controller.controller('listCtrl',['$scope','$http',function ($scope, $http) {
 
 }]);
 
-controller.controller('addProductCtrl',['$scope','$http',function ($scope, $http) {
+home.controller('addProductCtrl',['$scope','$http',function ($scope, $http) {
     var incubeInfo = function () {
         $http.get('/incubeInfo').success(function (res) {
             console.log(res)
@@ -106,5 +112,10 @@ controller.controller('addProductCtrl',['$scope','$http',function ($scope, $http
         })
     };
 
+
+}]);
+
+
+home.controller('mypageCtrl',['$scope','$http',function ($scope, $http) {
 
 }]);

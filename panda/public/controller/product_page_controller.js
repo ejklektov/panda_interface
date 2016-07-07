@@ -1,7 +1,7 @@
 /**
  * Created by genesis on 2016. 6. 28..
  */
-var controller = angular.module('controller',['ngRoute'])
+var product_page = angular.module('product_page',['ngRoute'])
      .config(function ($routeProvider) {
          $routeProvider
          //         .when('/list',{
@@ -15,7 +15,7 @@ var controller = angular.module('controller',['ngRoute'])
          })
 
 
-controller.controller('productCtrl',['$scope','$http',function ($scope, $http) {
+product_page.controller('productCtrl',['$scope','$http',function ($scope, $http) {
     $scope.choose = true;
     var productInfo = function () {
         $http.get('/product_detail').success(function (res) {
@@ -53,7 +53,7 @@ controller.controller('productCtrl',['$scope','$http',function ($scope, $http) {
     }
 }]);
 
-controller.controller('listCtrl',['$scope','$http',function ($scope, $http) {
+product_page.controller('listCtrl',['$scope','$http',function ($scope, $http) {
     var productInfo = function () {
         $http.get('/productInfo').success(function (res) {
             console.log(res)

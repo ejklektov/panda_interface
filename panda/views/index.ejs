@@ -2,6 +2,7 @@
 <html>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -52,7 +53,7 @@
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wrapper" ng-app="home">
         <% if (!isAu) {%>
 
         <!--=== Content Part ===-->
@@ -158,7 +159,7 @@
                         <img src="assets/img/pandadd.jpg" alt="Logo" style="max-width:50px;"><span>P</span>anda
                     </a>
                     <ul class="topbar-buttons pull-right">
-                        <a href="/mypage" class="btn btn-link"><%= user.name.username%></a>님 안녕하세요
+                        <a href="#mypage" class="btn btn-link"><%= user.name.username%></a>님 안녕하세요
                     </ul>
                 </div><!--/end container-->
             </div><!--/navbar-collapse-->
@@ -181,213 +182,215 @@
         </div><!--/container-->
         <!--=== End Search Block ===-->
 
-        <div class="container" ng-app="controller" ng-controller="homeCtrl">
-            <!-- Reg-Form -->
-            <div class="cube-portfolio container">
-                <div class="row margin-bottom-30 margin-top-20">
-                    <div class="col-md-8">
-                        <form action="#" id="sky-form4" class="sky-form" >
-                            <header>Your words</header>
-                            <fieldset>
-                                <section>
-                                    <label class="input">
-                                        <!--click 시 실행되어야 할 것 추가되어야 함.-->
-                                        <i class="icon-append fa fa-plus" style = "
-                                        padding-left: 0px;
-                                        padding-right: 0px;
-                                        "
-                                           ng-click = "addWord()"
-                                        ></i>
+        <div class="container">
 
-                                        <input type="text" name="word" placeholder="Word">
-                                        <!--<b class="tooltip tooltip-bottom-right">Needed to enter the website</b>-->
-                                    </label>
-                                </section>
-                            </fieldset>
-                        </form>
-                    </div>
+            <ng-view></ng-view>
 
-                    <div class="cbp-item etc" style = "width: 300px; height : 150px">
-                        <div class="cbp-item-wrapper">
-                            <div class="cbp-caption margin-bottom-20" style = "max-height : 100%; max-width : 100%">
-                                <div class="cbp-caption-defaultWrap">
-                                    <img src="" alt="App download">
-                                </div>
-                                <div class="cbp-caption-activeWrap">
-                                    <div class="cbp-l-caption-alignCenter">
-                                        <div class="cbp-l-caption-body">
-                                            <ul class="link-captions no-bottom-space">
-                                                <li><a href="/"><i class="rounded-x fa fa-link"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Reg-Form -->
+             <!--Reg-Form-->
+            <!--<div class="cube-portfolio container">-->
+                <!--<div class="row margin-bottom-30 margin-top-20">-->
+                    <!--<div class="col-md-8">-->
+                        <!--<form action="#" id="sky-form4" class="sky-form" >-->
+                            <!--<header>Your words</header>-->
+                            <!--<fieldset>-->
+                                <!--<section>-->
+                                    <!--<label class="input">-->
+                                        <!--&lt;!&ndash;click 시 실행되어야 할 것 추가되어야 함.&ndash;&gt;-->
+                                        <!--<i class="icon-append fa fa-plus" style = "-->
+                                        <!--padding-left: 0px;-->
+                                        <!--padding-right: 0px;-->
+                                        <!--"-->
+                                           <!--ng-click = "addWord()"-->
+                                        <!--&gt;</i>-->
 
+                                        <!--<input type="text" name="word" placeholder="Word">-->
+                                        <!--&lt;!&ndash;<b class="tooltip tooltip-bottom-right">Needed to enter the website</b>&ndash;&gt;-->
+                                    <!--</label>-->
+                                <!--</section>-->
+                            <!--</fieldset>-->
+                        <!--</form>-->
+                    <!--</div>-->
+
+                    <!--<div class="cbp-item etc" style = "width: 300px; height : 150px">-->
+                        <!--<div class="cbp-item-wrapper">-->
+                            <!--<div class="cbp-caption margin-bottom-20" style = "max-height : 100%; max-width : 100%">-->
+                                <!--<div class="cbp-caption-defaultWrap">-->
+                                    <!--<img src="" alt="App download">-->
+                                <!--</div>-->
+                                <!--<div class="cbp-caption-activeWrap">-->
+                                    <!--<div class="cbp-l-caption-alignCenter">-->
+                                        <!--<div class="cbp-l-caption-body">-->
+                                            <!--<ul class="link-captions no-bottom-space">-->
+                                                <!--<li><a href="/"><i class="rounded-x fa fa-link"></i></a></li>-->
+                                            <!--</ul>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+             <!--End Reg-Form-->
 
             <!--=== Cube-Portfdlio ===-->
-            <div class="cube-portfolio container margin-bottom-60">
-                <div class="content-xs">
-                    <div id="filters-container" class="cbp-l-filters-text content-xs">
-                        <div data-filter="*" class="cbp-filter-item-active cbp-filter-item"> All </div> |
-                        <div data-filter=".book" class="cbp-filter-item"> 책 </div> |
-                        <div data-filter=".etc" class="cbp-filter-item"> 그 외 </div> |
-                    </div><!--/end Filters Container-->
-                </div>
+            <!--<div class="cube-portfolio container margin-bottom-60">-->
+                <!--<div class="content-xs">-->
+                    <!--<div id="filters-container" class="cbp-l-filters-text content-xs">-->
+                        <!--<div data-filter="*" class="cbp-filter-item-active cbp-filter-item"> All </div> |-->
+                        <!--<div data-filter=".book" class="cbp-filter-item"> 책 </div> |-->
+                        <!--<div data-filter=".etc" class="cbp-filter-item"> 그 외 </div> |-->
+                    <!--</div>&lt;!&ndash;/end Filters Container&ndash;&gt;-->
+                <!--</div>-->
 
-                <div id="grid-container" class="cbp-l-grid-agency">
-                    <div class="cbp-item book">
-                        <div class="cbp-caption margin-bottom-20">
-                            <!--<div class="sorting-block">-->
-                            <div style=" display: inline-block; opacity: 1;">
-                                <a href="#">
-                                    <img class="img-responsive" src="assets/img/main/img26.jpg" alt="">
-                                    <span>Happy New Year</span>
-                                    <p>Anim pariatur cliche reprehenderit</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cbp-item etc">
-                        <div class="cbp-caption margin-bottom-20">
-                            <!--<div class="sorting-block">-->
-                            <div style=" display: inline-block; opacity: 1;">
-                                <a href="#">
-                                    <img class="img-responsive" src="assets/img/main/img26.jpg" alt="">
-                                    <span>Happy New Year</span>
-                                    <p>Anim pariatur cliche reprehenderit</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cbp-item book">
-                        <div class="cbp-caption margin-bottom-20">
-                            <!--<div class="sorting-block">-->
-                            <div style=" display: inline-block; opacity: 1;">
-                                <a href="#">
-                                    <img class="img-responsive" src="assets/img/main/img26.jpg" alt="">
-                                    <span>Happy New Year</span>
-                                    <p>Anim pariatur cliche reprehenderit</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cbp-item etc">
-                        <div class="cbp-caption margin-bottom-20">
-                            <!--<div class="sorting-block">-->
-                            <div style=" display: inline-block; opacity: 1;">
-                                <a href="#">
-                                    <img class="img-responsive" src="assets/img/main/img26.jpg" alt="">
-                                    <span>Happy New Year</span>
-                                    <p>Anim pariatur cliche reprehenderit</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cbp-item book">
-                        <div class="cbp-caption margin-bottom-20">
-                            <!--<div class="sorting-block">-->
-                            <div style=" display: inline-block; opacity: 1;">
-                                <a href="#">
-                                    <img class="img-responsive" src="assets/img/main/img26.jpg" alt="">
-                                    <span>Happy New Year</span>
-                                    <p>Anim pariatur cliche reprehenderit</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cbp-item etc">
-                        <div class="cbp-caption margin-bottom-20">
-                            <!--<div class="sorting-block">-->
-                            <div style=" display: inline-block; opacity: 1;">
-                                <a href="#">
-                                    <img class="img-responsive" src="assets/img/main/img26.jpg" alt="">
-                                    <span>Happy New Year</span>
-                                    <p>Anim pariatur cliche reprehenderit</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cbp-item etc">
-                        <div class="cbp-caption margin-bottom-20">
-                            <!--<div class="sorting-block">-->
-                            <div style=" display: inline-block; opacity: 1;">
-                                <a href="#">
-                                    <img class="img-responsive" src="assets/img/main/img26.jpg" alt="">
-                                    <span>Happy New Year</span>
-                                    <p>Anim pariatur cliche reprehenderit</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cbp-item book logo">
-                        <div class="cbp-caption margin-bottom-20">
-                            <!--<div class="sorting-block">-->
-                            <div style=" display: inline-block; opacity: 1;">
-                                <a href="#">
-                                    <img class="img-responsive" src="assets/img/main/img26.jpg" alt="">
-                                    <span>Happy New Year</span>
-                                    <p>Anim pariatur cliche reprehenderit</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cbp-item etc">
-                        <div class="cbp-caption margin-bottom-20">
-                            <!--<div class="sorting-block">-->
-                            <div style=" display: inline-block; opacity: 1;">
-                                <a href="#">
-                                    <img class="img-responsive" src="assets/img/main/img26.jpg" alt="">
-                                    <span>Happy New Year</span>
-                                    <p>Anim pariatur cliche reprehenderit</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cbp-item etc">
-                        <div class="cbp-caption margin-bottom-20">
-                            <!--<div class="sorting-block">-->
-                            <div style=" display: inline-block; opacity: 1;">
-                                <a href="#">
-                                    <img class="img-responsive" src="assets/img/main/img26.jpg" alt="">
-                                    <span>Happy New Year</span>
-                                    <p>Anim pariatur cliche reprehenderit</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cbp-item book">
-                        <div class="cbp-caption margin-bottom-20">
-                            <!--<div class="sorting-block">-->
-                            <div style=" display: inline-block; opacity: 1;">
-                                <a href="#">
-                                    <img class="img-responsive" src="assets/img/main/img26.jpg" alt="">
-                                    <span>Happy New Year</span>
-                                    <p>Anim pariatur cliche reprehenderit</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cbp-item etc">
-                        <div class="cbp-caption margin-bottom-20">
-                            <!--<div class="sorting-block">-->
-                            <div style=" display: inline-block; opacity: 1;">
-                                <a href="#">
-                                    <img class="img-responsive" src="assets/img/main/img26.jpg" alt="">
-                                    <span>Happy New Year</span>
-                                    <p>Anim pariatur cliche reprehenderit</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--/end Grid Container-->
-            </div>
+                <!--<div id="grid-container" class="cbp-l-grid-agency">-->
+                    <!--<div class="cbp-item book">-->
+                        <!--<div class="cbp-caption margin-bottom-20">-->
+                            <!--&lt;!&ndash;<div class="sorting-block">&ndash;&gt;-->
+                            <!--<div style=" display: inline-block; opacity: 1;">-->
+                                <!--<a href="#">-->
+                                    <!--<img class="img-responsive" src="assets/img/main/img26.jpg" alt="">-->
+                                    <!--<span>Happy New Year</span>-->
+                                    <!--<p>Anim pariatur cliche reprehenderit</p>-->
+                                <!--</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="cbp-item etc">-->
+                        <!--<div class="cbp-caption margin-bottom-20">-->
+                            <!--&lt;!&ndash;<div class="sorting-block">&ndash;&gt;-->
+                            <!--<div style=" display: inline-block; opacity: 1;">-->
+                                <!--<a href="#">-->
+                                    <!--<img class="img-responsive" src="assets/img/main/img26.jpg" alt="">-->
+                                    <!--<span>Happy New Year</span>-->
+                                    <!--<p>Anim pariatur cliche reprehenderit</p>-->
+                                <!--</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="cbp-item book">-->
+                        <!--<div class="cbp-caption margin-bottom-20">-->
+                            <!--&lt;!&ndash;<div class="sorting-block">&ndash;&gt;-->
+                            <!--<div style=" display: inline-block; opacity: 1;">-->
+                                <!--<a href="#">-->
+                                    <!--<img class="img-responsive" src="assets/img/main/img26.jpg" alt="">-->
+                                    <!--<span>Happy New Year</span>-->
+                                    <!--<p>Anim pariatur cliche reprehenderit</p>-->
+                                <!--</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="cbp-item etc">-->
+                        <!--<div class="cbp-caption margin-bottom-20">-->
+                            <!--&lt;!&ndash;<div class="sorting-block">&ndash;&gt;-->
+                            <!--<div style=" display: inline-block; opacity: 1;">-->
+                                <!--<a href="#">-->
+                                    <!--<img class="img-responsive" src="assets/img/main/img26.jpg" alt="">-->
+                                    <!--<span>Happy New Year</span>-->
+                                    <!--<p>Anim pariatur cliche reprehenderit</p>-->
+                                <!--</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="cbp-item book">-->
+                        <!--<div class="cbp-caption margin-bottom-20">-->
+                            <!--&lt;!&ndash;<div class="sorting-block">&ndash;&gt;-->
+                            <!--<div style=" display: inline-block; opacity: 1;">-->
+                                <!--<a href="#">-->
+                                    <!--<img class="img-responsive" src="assets/img/main/img26.jpg" alt="">-->
+                                    <!--<span>Happy New Year</span>-->
+                                    <!--<p>Anim pariatur cliche reprehenderit</p>-->
+                                <!--</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="cbp-item etc">-->
+                        <!--<div class="cbp-caption margin-bottom-20">-->
+                            <!--&lt;!&ndash;<div class="sorting-block">&ndash;&gt;-->
+                            <!--<div style=" display: inline-block; opacity: 1;">-->
+                                <!--<a href="#">-->
+                                    <!--<img class="img-responsive" src="assets/img/main/img26.jpg" alt="">-->
+                                    <!--<span>Happy New Year</span>-->
+                                    <!--<p>Anim pariatur cliche reprehenderit</p>-->
+                                <!--</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="cbp-item etc">-->
+                        <!--<div class="cbp-caption margin-bottom-20">-->
+                            <!--&lt;!&ndash;<div class="sorting-block">&ndash;&gt;-->
+                            <!--<div style=" display: inline-block; opacity: 1;">-->
+                                <!--<a href="#">-->
+                                    <!--<img class="img-responsive" src="assets/img/main/img26.jpg" alt="">-->
+                                    <!--<span>Happy New Year</span>-->
+                                    <!--<p>Anim pariatur cliche reprehenderit</p>-->
+                                <!--</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="cbp-item book logo">-->
+                        <!--<div class="cbp-caption margin-bottom-20">-->
+                            <!--&lt;!&ndash;<div class="sorting-block">&ndash;&gt;-->
+                            <!--<div style=" display: inline-block; opacity: 1;">-->
+                                <!--<a href="#">-->
+                                    <!--<img class="img-responsive" src="assets/img/main/img26.jpg" alt="">-->
+                                    <!--<span>Happy New Year</span>-->
+                                    <!--<p>Anim pariatur cliche reprehenderit</p>-->
+                                <!--</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="cbp-item etc">-->
+                        <!--<div class="cbp-caption margin-bottom-20">-->
+                            <!--&lt;!&ndash;<div class="sorting-block">&ndash;&gt;-->
+                            <!--<div style=" display: inline-block; opacity: 1;">-->
+                                <!--<a href="#">-->
+                                    <!--<img class="img-responsive" src="assets/img/main/img26.jpg" alt="">-->
+                                    <!--<span>Happy New Year</span>-->
+                                    <!--<p>Anim pariatur cliche reprehenderit</p>-->
+                                <!--</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="cbp-item etc">-->
+                        <!--<div class="cbp-caption margin-bottom-20">-->
+                            <!--&lt;!&ndash;<div class="sorting-block">&ndash;&gt;-->
+                            <!--<div style=" display: inline-block; opacity: 1;">-->
+                                <!--<a href="#">-->
+                                    <!--<img class="img-responsive" src="assets/img/main/img26.jpg" alt="">-->
+                                    <!--<span>Happy New Year</span>-->
+                                    <!--<p>Anim pariatur cliche reprehenderit</p>-->
+                                <!--</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="cbp-item book">-->
+                        <!--<div class="cbp-caption margin-bottom-20">-->
+                            <!--&lt;!&ndash;<div class="sorting-block">&ndash;&gt;-->
+                            <!--<div style=" display: inline-block; opacity: 1;">-->
+                                <!--<a href="#">-->
+                                    <!--<img class="img-responsive" src="assets/img/main/img26.jpg" alt="">-->
+                                    <!--<span>Happy New Year</span>-->
+                                    <!--<p>Anim pariatur cliche reprehenderit</p>-->
+                                <!--</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="cbp-item etc">-->
+                        <!--<div class="cbp-caption margin-bottom-20">-->
+                            <!--&lt;!&ndash;<div class="sorting-block">&ndash;&gt;-->
+                            <!--<div style=" display: inline-block; opacity: 1;">-->
+                                <!--<a href="#">-->
+                                    <!--<img class="img-responsive" src="assets/img/main/img26.jpg" alt="">-->
+                                    <!--<span>Happy New Year</span>-->
+                                    <!--<p>Anim pariatur cliche reprehenderit</p>-->
+                                <!--</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--&lt;!&ndash;/end Grid Container&ndash;&gt;-->
+            <!--</div>-->
             <!--=== End Cube-Portfdlio ===-->
         </div>
 
@@ -561,7 +564,6 @@
 <script src="assets/plugins/sky-forms-pro/skyforms/js/jquery-ui.min.js"></script>
 <script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.form.min.js"></script>
 
-
 <script type="text/javascript">
     jQuery(document).ready(function() {
         App.init();
@@ -580,5 +582,6 @@
 <![endif]-->
 
 
-<script src="controller/controller.js"></script>
+<script src="controller/home_controller.js"></script>
+
 </html>

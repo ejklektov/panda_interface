@@ -1,12 +1,9 @@
 /**
  * Created by genesis on 2016. 6. 28..
  */
-var mypage = angular.module('practice',['ngRoute'])
+var mypage = angular.module('mypage',['ngRoute'])
     .config(function ($routeProvider) {
         $routeProvider
-            .when('/mypage', {
-                templateUrl: '/mypage', controller: 'mypageCtrl'
-            })
 
             .when('/edit_profile',{
                 templateUrl: '/edit_profile', controller: 'editProfileCtrl'
@@ -21,30 +18,14 @@ var mypage = angular.module('practice',['ngRoute'])
 
     })
 
-mypage.controller('mypageCtrl',['$scope','$http',function ($scope, $http) {
-
-}]);
 
 mypage.controller('editProfileCtrl',['$scope','$http',function($scope, $http){
-
-<<<<<<< HEAD
-{}]);
-=======
 }]);
->>>>>>> f323e77d2df9bab5fbb628d8ba54f83a1be439b6
 
 mypage.controller('sellProductListCtrl',['$scope','$http',function($scope, $http){
 
-<<<<<<< HEAD
-{}]);
-=======
 }]);
->>>>>>> f323e77d2df9bab5fbb628d8ba54f83a1be439b6
 
 mypage.controller('buyProductListCtrl',['$scope','$http',function($scope, $http){
 
-<<<<<<< HEAD
-{}]);
-=======
 }]);
->>>>>>> f323e77d2df9bab5fbb628d8ba54f83a1be439b6

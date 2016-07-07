@@ -15,7 +15,6 @@ router.use(expressSession({
   saveUninitialized: false
 }));
 
-
 var passportHttp = require('passport-http');
 
 var allowCORS = function(req, res, next) {
@@ -160,6 +159,7 @@ router.get('/mypage',function(req,res){
     user:req.user,
     token:req.token
   });
+  // res.render('mypage');
 })
 
 router.get('/edit_profile',function(req,res){
@@ -191,7 +191,7 @@ router.get('/buy_product_list',function(req,res){
 
 
 router.get('/home',function(req,res){
-  res.render('index');
+  res.render('home');
 })
 
 
