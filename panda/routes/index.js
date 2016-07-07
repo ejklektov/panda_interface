@@ -232,5 +232,9 @@ router.get('/product_detail', function(req,res){
   });
 })
 
+router.get('/introduce_us', function(req,res){
+  res.render('introduce_us')
+})
+
 
 module.exports = router;
