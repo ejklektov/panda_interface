@@ -34,6 +34,7 @@
     <!-- CSS Page Style -->
     <link rel="stylesheet" href="assets/css/pages/page_log_reg_v1.css">
     <link rel="stylesheet" href="assets/css/pages/page_search.css">
+    <link rel="stylesheet" href="assets/css/pages/page_job.css">
 
     <link rel="stylesheet" href="assets/plugins/ladda-buttons/css/custom-lada-btn.css">
     <link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
@@ -181,7 +182,37 @@
         </div><!--/container-->
         <!--=== End Search Block ===-->
 
-        <div class="container" ng-app="controller" ng-controller="homeCtrl">
+        <div class="container" ng-app="controller" ng-controller="feedbackCtrl">
+
+            <!--Feed-From-->
+            <div class="job-img-inputs" style="margin-top:30px; margin-bottom:30px;">
+                <div class="container" style="text-align:center">
+                    <div class="cbp-caption">
+                        <a href="#"><img src="assets/img/main/img26.jpg" alt="최근에 구매한 Product" width="500px" height="auto"></a>
+                    </div>
+
+                    <div class="cbp-title-dark">
+                        <div class="cbp-l-grid-agency-title">Product 01</div>
+                        <div class="cbp-l-grid-agency-desc">판매자 : </div>
+                        <div class="cbp-l-grid-agency-desc">날짜 : </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <button type="button" class="btn-u btn-block btn-u" ng-click="">Bad</button>
+                        </div>
+                        <div class="col-sm-4">
+                            <button type="button" class="btn-u btn-block btn-u" ng-click="">Soso</button>
+                        </div>
+                        <div class="col-sm-4">
+                            <button type="button" class="btn-u btn-block btn-u" ng-click="">Good</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--End Feed-From-->
+
             <!-- Reg-Form -->
             <div class="cube-portfolio container">
                 <div class="row margin-bottom-30 margin-top-20">

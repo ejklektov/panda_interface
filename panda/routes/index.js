@@ -162,8 +162,8 @@ router.get('/mypage',function(req,res){
   });
 })
 
-router.get('/profile_editing',function(req,res){
-  res.render('profile_editing', {
+router.get('/edit_profile',function(req,res){
+  res.render('edit_profile', {
     title: 'incube',
     isAu:req.isAuthenticated(),
     user:req.user,
@@ -189,20 +189,48 @@ router.get('/buy_product_list',function(req,res){
   });
 })
 
-router.get('/product_detail', function(req,res){
-    res.render('product_detail', {
-        title: 'incube',
-        isAu:req.isAuthenticated(),
-        user:req.user,
-        token:req.token
-    });
-})
-
 
 router.get('/home',function(req,res){
-  res.render('home');
+  res.render('index');
 })
 
+
+router.get('/index_feedback',function(req,res){
+  res.render('index_feedback', {
+    title: 'incube',
+    isAu:req.isAuthenticated(),
+    user:req.user,
+    token:req.token
+  });
+})
+
+router.get('/add_product',function(req,res){
+  res.render('add_product', {
+    title: 'incube',
+    isAu:req.isAuthenticated(),
+    user:req.user,
+    token:req.token
+  });
+})
+
+router.get('/search',function(req,res){
+  res.render('search', {
+    title: 'incube',
+    isAu:req.isAuthenticated(),
+    user:req.user,
+    token:req.token
+  });
+})
+
+
+router.get('/product_detail', function(req,res){
+  res.render('product_detail', {
+    title: 'incube',
+    isAu:req.isAuthenticated(),
+    user:req.user,
+    token:req.token
+  });
+})
 
 
 module.exports = router;
