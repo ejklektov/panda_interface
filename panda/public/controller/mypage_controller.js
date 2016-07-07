@@ -27,12 +27,12 @@ mypage.controller('mypageCtrl',['$scope','$http',function ($scope, $http) {
 
 mypage.controller('profileEditingCtrl',['$scope','$http',function($scope, $http)
 
-]);
+{}]);
 
 mypage.controller('sellProductListCtrl',['$scope','$http',function($scope, $http)
 
-]);
+{}]);
 
 mypage.controller('buyProductListCtrl',['$scope','$http',function($scope, $http)
 
-]);
+{}]);
