@@ -18,6 +18,9 @@ var mypage = angular.module('mypage',['ngRoute'])
             .when('/product_detail', {
                 templateUrl: '/product_detail', controller: 'productCtrl'
             })
+            .when('/mypage_profile',{
+                templateUrl: '/mypage_profile', controller: 'productCtrl'
+            })
 
     })
 

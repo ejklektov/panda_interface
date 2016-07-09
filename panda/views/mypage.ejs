@@ -12,16 +12,16 @@
                 <!--<li><a data-toggle="tab" href="/profile_editing"><i class="fa fa-history"></i> 판매한 물품</a></li>-->
 
                 <li class="list-group-item active">
-                    <a href="/mypage"><i class="fa fa-user"></i> Profile</a>
+                    <a href="#mypage"><i class="fa fa-user"></i> Profile</a>
                 </li>
                 <li class="list-group-item">
-                    <a href="/buy_product_list"><i class="fa fa-history"></i> 구매한 물품</a>
+                    <a href="#buy_product_list"><i class="fa fa-history"></i> 구매한 물품</a>
                 </li>
                 <li class="list-group-item">
-                    <a href="/sell_product_list"><i class="fa fa-history"></i> 판매한 물품</a>
+                    <a href="#sell_product_list"><i class="fa fa-history"></i> 판매한 물품</a>
                 </li>
                 <li class="list-group-item">
-                    <a href="/edit_profile"><i class="fa fa-cog"></i>프로필 변경</a>
+                    <a href="#edit_profile"><i class="fa fa-cog"></i>프로필 변경</a>
                 </li>
 
 
@@ -72,53 +72,40 @@
                             <br>
                             <br>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget massa nec turpis congue bibendum. Integer nulla felis, porta suscipit nulla et, dignissim commodo nunc. Morbi a semper nulla.</p>
-
                         </div>
-                    </div>
-                </div><!--/end row-->
-
-                <hr>
-
-                <div class="row">
+                    </div><!--/end row-->
+                </div>
+                <div class="social-contacts">
                     <!--Social Contacts v2-->
-                    <div class="col-sm-6">
-                        <div class="panel panel-profile">
-                            <div class="panel-body">
-                                <ul class="list-unstyled social-contacts-v3">
-                                    <li><i class="rounded-x gm icon-envelope"></i> <a href="#"><%= user.name%></a></li>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End Social Contacts v2-->
-
-                    <!--Design Skills-->
-                    <div class="col-sm-6">
-                        <div class="panel panel-profile">
-                            <div class="panel-body" style="
+                    <div class="panel panel-profile">
+                        <div class="panel-body" style="
                                     padding-top: 0px;
                                     ">
-                                <div class="row">
-                                    <div class="p-chart col-sm-6 col-xs-6 sm-margin-bottom-10">
-                                        <div class="circle margin-bottom-20" id="circle-4"></div>
-                                        <h3 class="heading-xs">Engagement Score</h3>
-                                        <p>Celery coriander bitterleaf epazote radicchio shallot.</p>
-                                    </div>
-                                    <div class="p-chart col-sm-6 col-xs-6">
-                                        <div class="circle margin-bottom-20" id="circle-5"></div>
-                                        <h3 class="heading-xs">Progfile Completness</h3>
-                                        <p>Celery coriander bitterleaf epazote radicchio shallot.</p>
-                                    </div>
+                            <div class="row">
+                                <div class="p-chart col-md-4 col-sm-6 col-xs-6 sm-margin-bottom-10">
+                                    <div class="circle margin-bottom-20" id="circle-4"></div>
+                                    <i class="rounded-x gm icon-envelope"></i> <a href="#"><%= user.name%></a>
+                                </div>
+
+                                <div class="p-chart col-md-4 col-sm-6 col-xs-6 sm-margin-bottom-10">
+                                    <div class="circle margin-bottom-20" id="circle-3"></div>
+                                    <h3 class="heading-xs">Engagement Score</h3>
+                                    <p>Celery coriander bitterleaf epazote radicchio shallot.</p>
+                                </div>
+
+                                <div class="p-chart col-md-4 col-sm-6 col-xs-6">
+                                    <div class="circle margin-bottom-20" id="circle-5"></div>
+                                    <h3 class="heading-xs">Progfile Completness</h3>
+                                    <p>Celery coriander bitterleaf epazote radicchio shallot.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!--End Design Skills-->
-                </div><!--/end row-->
+                    <!--End Social Contacts v2-->
+                </div>
             </div>
-        </div>
         <!-- End Profile Content -->
+        </div>
     </div>
 </div>
 <!--=== End Profile ===-->
