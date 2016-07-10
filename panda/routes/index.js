@@ -90,7 +90,7 @@ passport.use(new KakaoStrategy({
       }, function (err, user) {
         return done(err, user);
       });
-    }
+    } 
 ));
 router.get('/auth/kakao', passport.authenticate('kakao',{
   failureRedirect: '/login'
@@ -235,6 +235,11 @@ router.get('/product_detail', function(req,res){
 router.get('/introduce_us', function(req,res){
   res.render('introduce_us')
 })
-
+router.get('/datas',function (req, res) {
+  db.user.find(function (err, docs) {
+    console.log(docs);
+    res.json(docs);
+  });
+});
 
 module.exports = router;

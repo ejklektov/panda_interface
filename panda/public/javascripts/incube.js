@@ -1,7 +1,7 @@
 /**
  * Created by genesis on 2016. 6. 28..
  */
-var incube = angular.module('incube',[]);
+angular.module('incube',[]);
 
 incube.controller('incubeCtrl',['$scope','$http',function ($scope, $http) {
     var refresh = function () {

@@ -32,7 +32,7 @@ var home = angular.module('home',['ngRoute'])
 home.controller('homeCtrl',['$scope','$http',function ($scope, $http) {
     $scope.choose = true;
     var incubeInfo = function () {
-        $http.get('/incubeInfo').success(function (res) {
+        $http.get('/datas').success(function (res) {
             console.log(res)
             $scope.info = res;
         })
@@ -124,5 +124,5 @@ home.controller('mypageCtrl',['$scope','$http',function ($scope, $http) {
 
 }]);
 home.controller('productCtrl',['$scope','$http',function ($scope, $http) {
-
+    
 }]);
