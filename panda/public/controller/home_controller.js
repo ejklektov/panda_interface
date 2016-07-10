@@ -15,12 +15,36 @@ var home = angular.module('home',['ngRoute'])
                  templateUrl: '/mypage', controller: 'mypageCtrl'
              })
 
+             .when('/sell_product_list', {
+                 templateUrl: '/sell_product_list', controller: 'mypageCtrl'
+             })
+
+             .when('/buy_product_list', {
+                 templateUrl: '/buy_product_list', controller: 'mypageCtrl'
+             })
+
+             .when('/edit_profile', {
+                 templateUrl: '/edit_profile', controller: 'mypageCtrl'
+             })
+
+             .when('/edit_password', {
+                 templateUrl: '/edit_password', controller: 'mypageCtrl'
+             })
+
+             .when('/edit_payment', {
+                 templateUrl: '/edit_payment', controller: 'mypageCtrl'
+             })
+
              .when('/product_detail', {
                  templateUrl: '/product_detail', controller: 'productCtrl'
              })
 
              .when('/add_product',{
                  templateUrl:'/add_product',controller:'addProductCtrl'
+             })
+
+             .when('/search',{
+                 templateUrl:'/search', controller:'searchCtrl'
              })
 
              .otherwise({
@@ -119,10 +143,17 @@ home.controller('addProductCtrl',['$scope','$http',function ($scope, $http) {
 
 }]);
 
-
 home.controller('mypageCtrl',['$scope','$http',function ($scope, $http) {
 
 }]);
+
 home.controller('productCtrl',['$scope','$http',function ($scope, $http) {
+<<<<<<< HEAD
     
+=======
+
+}]);
+
+home.controller('searchCtrl',['$scope','$http',function ($scope, $http) {
+>>>>>>> 6289e386ac696df8b39d5742c4771c1ee962c947
 }]);

@@ -1,0 +1,128 @@
+<!--=== Profile ===-->
+<div class="container content profile" ng-app="home">
+
+    <div class="row">
+        <!--Left Sidebar-->
+        <div class="col-md-3 md-margin-bottom-40">
+
+            <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
+                <li class="list-group-item">
+                    <a href="#mypage"><i class="fa fa-user"></i> Profile</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#buy_product_list"><i class="fa fa-history"></i> 구매한 물품</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#sell_product_list"><i class="fa fa-history"></i> 판매한 물품</a>
+                </li>
+                <li class="list-group-item active">
+                    <a href="#edit_profile"><i class="fa fa-cog"></i>프로필 변경</a>
+                </li>
+                <!--<li class="list-group-item active">-->
+                <!--<a href="/mypage"><i class="fa fa-user"></i> Profile</a>-->
+                <!--</li>-->
+                <!--<li class="list-group-item">-->
+                <!--<a href="#buy_product_list"><i class="fa fa-history"></i> 구매한 물품</a>-->
+                <!--</li>-->
+                <!--<li class="list-group-item">-->
+                <!--<a href="#sell_product_list"><i class="fa fa-history"></i> 판매한 물품</a>-->
+                <!--</li>-->
+                <!--<li class="list-group-item">-->
+                <!--<a href="#profile_setting"><i class="fa fa-cog"></i>프로필 변경</a>-->
+                <!--</li>-->
+            </ul>
+
+            <img class="img-responsive profile-img margin-bottom-20" src="assets/img/team/img32-md.jpg" alt="">
+
+            <!--Datepicker-->
+            <!--<form action="#" id="sky-form2" class="sky-form">-->
+                <!--<div id="inline-start"></div>-->
+            <!--</form>-->
+            <!--End Datepicker-->
+        </div>
+        <!--End Left Sidebar-->
+
+        <!-- Profile setting -->
+        <div class="col-md-9">
+            <div class="profile-body margin-bottom-20">
+                <div class="tab-v1">
+                    <ul class="nav nav-justified nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#edit_profile">Edit Profile</a></li>
+                        <li><a data-toggle="tab" href="#passwordTab">Change Password</a></li>
+                        <li><a data-toggle="tab" href="#payment">Payment Options</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="edit_payment" class="profile-edit tab-pane fade in active">
+                            <h2 class="heading-md">Manage your Payment Settings</h2>
+                            <p>Below are the payment options for your account.</p>
+                            <br>
+                            <form class="sky-form" id="sky-form" action="#">
+                                <!--Checkout-Form-->
+                                <section>
+                                    <div class="inline-group">
+                                        <label class="radio"><input type="radio" checked="" name="radio-inline"><i class="rounded-x"></i>Visa</label>
+                                        <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>MasterCard</label>
+                                        <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>PayPal</label>
+                                    </div>
+                                </section>
+
+                                <section>
+                                    <label class="input">
+                                        <input type="text" name="name" placeholder="Name on card">
+                                    </label>
+                                </section>
+
+                                <div class="row">
+                                    <section class="col col-10">
+                                        <label class="input">
+                                            <input type="text" name="card" id="card" placeholder="Card number">
+                                        </label>
+                                    </section>
+                                    <section class="col col-2">
+                                        <label class="input">
+                                            <input type="text" name="cvv" id="cvv" placeholder="CVV2">
+                                        </label>
+                                    </section>
+                                </div>
+
+                                <div class="row">
+                                    <label class="label col col-4">Expiration date</label>
+                                    <section class="col col-5">
+                                        <label class="select">
+                                            <select name="month">
+                                                <option disabled="" selected="" value="0">Month</option>
+                                                <option value="1">January</option>
+                                                <option value="1">February</option>
+                                                <option value="3">March</option>
+                                                <option value="4">April</option>
+                                                <option value="5">May</option>
+                                                <option value="6">June</option>
+                                                <option value="7">July</option>
+                                                <option value="8">August</option>
+                                                <option value="9">September</option>
+                                                <option value="10">October</option>
+                                                <option value="11">November</option>
+                                                <option value="12">December</option>
+                                            </select>
+                                            <i></i>
+                                        </label>
+                                    </section>
+                                    <section class="col col-3">
+                                        <label class="input">
+                                            <input type="text" placeholder="Year" id="year" name="year">
+                                        </label>
+                                    </section>
+                                </div>
+                                <button type="button" class="btn-u btn-u-default" style="float: right;">Cancel</button>
+                                <button type="button" class="btn-u" style="float: right; margin-right : 5px;" ng-click="">Save Changes</button>
+                                <!--End Checkout-Form-->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Profile Content -->
+    </div>
+</div>
+<!--=== End Profile ===-->
