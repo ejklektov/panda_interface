@@ -24,6 +24,18 @@ var allowCORS = function(req, res, next) {
 app.use(allowCORS);
 var CORS = require('cors')();
 
+// noode.js data 통신 라우터
+var product = require('./routes/api/product');
+routes.get('/api/products', product.getAll);
+routes.post('/api/product', product.create);
+
+routes.route('/api/product/:id')
+    .get(product.read)
+    .put(product.update)
+    .delete(product.delete);
+
+
+
 // 마찬가지로 app.use(router)전에 삽입한다
 app.use(CORS);
 
