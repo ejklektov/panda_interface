@@ -153,8 +153,12 @@ router.get('/at',function (req, res) {
 });
 
 router.get('/mypage',function(req,res){
-<<<<<<< HEAD
-  res.render('mypage');
+  res.render('mypage', {
+    title: 'incube',
+    isAu: req.isAuthenticated(),
+    user: req.user,
+    token: req.token
+  })
 })
 
 router.get('/edit_profile',function(req,res){
@@ -175,13 +179,12 @@ router.get('/sell_product_list',function(req,res){
 
 router.get('/buy_product_list',function(req,res){
   res.render('buy_product_list');
-=======
-  res.render('mypage', {
-    title: 'incube',
-    isAu:req.isAuthenticated(),
-    user:req.user,
-    token:req.token
-  })
+  // res.render('mypage', {
+  //   title: 'incube',
+  //   isAu:req.isAuthenticated(),
+  //   user:req.user,
+  //   token:req.token
+  // })
 });
 
 router.get('/edit_profile',function(req,res){
@@ -227,7 +230,6 @@ router.get('/buy_product_list',function(req,res){
     user:req.user,
     token:req.token
   })
->>>>>>> fc6b03543d9f68efeea52f27a4124e5dac55edee
 })
 
 
