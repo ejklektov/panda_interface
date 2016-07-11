@@ -47,6 +47,10 @@ var home = angular.module('home',['ngRoute'])
                  templateUrl:'/search', controller:'searchCtrl'
              })
 
+             .when('/product_detail',{
+                 templateUrl:'/product_detail', controller:'productDetailCtrl'
+             })
+
              .otherwise({
                  templateUrl: '/home', controller: 'homeCtrl'
              })
