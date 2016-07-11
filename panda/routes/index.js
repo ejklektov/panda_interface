@@ -150,9 +150,10 @@ router.get('/kakao',function (req, res) {
 router.get('/at',function (req, res) {
   console.log('???'+at)
   res.json(at)
-})
+});
 
 router.get('/mypage',function(req,res){
+<<<<<<< HEAD
   res.render('mypage');
 })
 
@@ -174,6 +175,59 @@ router.get('/sell_product_list',function(req,res){
 
 router.get('/buy_product_list',function(req,res){
   res.render('buy_product_list');
+=======
+  res.render('mypage', {
+    title: 'incube',
+    isAu:req.isAuthenticated(),
+    user:req.user,
+    token:req.token
+  })
+});
+
+router.get('/edit_profile',function(req,res){
+  res.render('edit_profile', {
+    title: 'incube',
+        isAu:req.isAuthenticated(),
+        user:req.user,
+        token:req.token
+  })
+});
+
+router.get('/edit_password',function(req,res){
+  res.render('edit_password', {
+    title: 'incube',
+    isAu:req.isAuthenticated(),
+    user:req.user,
+    token:req.token
+  })
+})
+
+router.get('/edit_payment',function(req,res){
+  res.render('edit_payment', {
+    title: 'incube',
+    isAu:req.isAuthenticated(),
+    user:req.user,
+    token:req.token
+  })
+})
+
+router.get('/sell_product_list',function(req,res){
+  res.render('sell_product_list', {
+    title: 'incube',
+    isAu:req.isAuthenticated(),
+    user:req.user,
+    token:req.token
+  })
+})
+
+router.get('/buy_product_list',function(req,res){
+  res.render('buy_product_list', {
+    title: 'incube',
+    isAu:req.isAuthenticated(),
+    user:req.user,
+    token:req.token
+  })
+>>>>>>> fc6b03543d9f68efeea52f27a4124e5dac55edee
 })
 
 
