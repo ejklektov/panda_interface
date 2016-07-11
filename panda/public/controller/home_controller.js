@@ -143,17 +143,17 @@ home.controller('addProductCtrl',['$scope','$http',function ($scope, $http) {
 
 }]);
 
-home.controller('mypageCtrl',['$scope','$http',function ($scope, $http) {
-
-}]);
-
-home.controller('productCtrl',['$scope','$http',function ($scope, $http) {
-<<<<<<< HEAD
-    
-=======
-
-}]);
-
-home.controller('searchCtrl',['$scope','$http',function ($scope, $http) {
->>>>>>> 6289e386ac696df8b39d5742c4771c1ee962c947
-}]);
+// home.controller('mypageCtrl',['$scope','$http',function ($scope, $http) {
+//
+// }]);
+//
+// home.controller('productCtrl',['$scope','$http',function ($scope, $http) {
+// <<<<<<< HEAD
+//    
+// =======
+//
+// }]);
+//
+// home.controller('searchCtrl',['$scope','$http',function ($scope, $http) {
+// >>>>>>> 6289e386ac696df8b39d5742c4771c1ee962c947
+// }]);
