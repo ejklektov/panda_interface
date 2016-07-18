@@ -1,10 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var multiparty = require('multiparty');
-
-
 var mongojs = require('mongojs');
-var db = mongojs('panda',['user','incube']);
+var db    = mongojs('panda', ['User','Docu', 'Item', 'State', 'Feedback', 'Sell', 'Buy']);
+
+// 블록
+db = mongojs('panda',['user','incube']);
 
 var fs = require('fs');
 
@@ -40,24 +41,23 @@ router.get('/nav',function (req, res) {
 /* GET upload. */
 router.post('/', function(req, res, next) {
   var form = new multiparty.Form();
-
   // get field name & value
-  form.on('field',function(name,value){
-    console.log('normal field / name = '+name+' , value = '+value);
+  form.on('field',function(name,type){
+    console.log('normal field / name = '+name+' , value = '+type);
   });
 
-  console.log('ok');
-
+  // console.log('id is '+id);
+  var filename;
   // file upload handling
   form.on('part',function(part){
-    var filename;
+
     var size;
     if (part.filename) {
+      console.log(part);
       filename = part.filename;
       size = part.byteCount;
     }else{
       part.resume();
-
     }
 
     // console.log("Write Streaming file :"+filename);
@@ -77,7 +77,8 @@ router.post('/', function(req, res, next) {
 
   // all uploads are completed
   form.on('close',function(){
-    res.status(200).send('Upload complete');
+    res.json({'filename':filename});
+    // res.status(200).send('Upload complete');
   });
 
   // track progress
@@ -89,4 +90,16 @@ router.post('/', function(req, res, next) {
 
 });
 
+router.post('/upload_product', function(req,res){
+  db.Item.insert({
+    title : req.body.title,
+    price : req.body.price,
+    sell_type : req.body.type,
+    state : req.body.state,
+    context : req.body.context
+  }, function (err, doc) {
+    if(err) console.log(err);
+    res.json(doc);
+  })
+})
 module.exports = router;

@@ -21,7 +21,7 @@ item.directive('fileModel', ['$parse', function ($parse) {
 }]);
 
 item.service('fileUpload', ['$http', function ($http) {
-    this.uploadFileToUrl = function(file, uploadUrl){
+    this.uploadFileToUrl = function(file, uploadUrl,id ){
         var fd = new FormData();
         fd.append('file', file);
 
@@ -30,8 +30,8 @@ item.service('fileUpload', ['$http', function ($http) {
             headers: {'Content-Type': undefined}
         })
 
-            .success(function(){
-                console.log('ok');
+            .success(function(res){
+                console.log(res)
             })
 
             .error(function(){
@@ -40,17 +40,29 @@ item.service('fileUpload', ['$http', function ($http) {
     }
 }]);
 
-item.controller('itemCtrl', ['$scope', 'fileUpload', function($scope, fileUpload){
-    $scope.uploadFile = function(){
+item.controller('itemCtrl', ['$scope', 'fileUpload','$http', function($scope, fileUpload,$http){
+    $scope.uploadFile = function(id){
         var file = $scope.myFile;
         var file2 = $scope.myFile2;
 
-        console.log('file is ' );
+        console.log('file is ');
         console.dir(file);
         console.dir(file2);
 
         var uploadUrl = "http://127.0.0.1:3000/admin/";
-        fileUpload.uploadFileToUrl(file, uploadUrl);
-        fileUpload.uploadFileToUrl(file2, uploadUrl);
+        fileUpload.uploadFileToUrl(file, uploadUrl, id);
+        fileUpload.uploadFileToUrl(file2, uploadUrl, id);
     };
+
+    $scope.upload_product = function(){
+        var id
+        $http.post('/admin/upload_product',$scope.Item).success(function(res){
+            id = res._id
+        });
+
+        $scope.uploadFile(id);
+    }
+
+
+
 }]);
