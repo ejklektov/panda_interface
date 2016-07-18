@@ -1,6 +1,7 @@
 /**
  * Created by genesis on 2016. 6. 28..
  */
+    'use strict';
 var home = angular.module('home',['ngRoute'])
      .config(function ($routeProvider) {
          $routeProvider
@@ -36,7 +37,7 @@ var home = angular.module('home',['ngRoute'])
              })
 
              .when('/product_detail', {
-                 templateUrl: '/product_detail', controller: 'productCtrl'
+                 templateUrl: '/product_show', controller: 'productCtrl'
              })
 
              .when('/add_product',{
@@ -47,17 +48,16 @@ var home = angular.module('home',['ngRoute'])
                  templateUrl:'/search', controller:'searchCtrl'
              })
 
-             .when('/product_detail',{
-                 templateUrl:'/product_detail', controller:'productDetailCtrl'
-             })
 
              .otherwise({
                  templateUrl: '/home', controller: 'homeCtrl'
              })
          })
 
-
-home.controller('homeCtrl',['$scope','$http',function ($scope, $http) {
+home.controller('main',['$scope','$http',function ($scope, $http,$location) {
+    $scope.view=true;
+}]);
+home.controller('homeCtrl',['$scope','$http',function ($scope, $http,$location) {
     $scope.choose = true;
     var incubeInfo = function () {
         $http.get('/datas').success(function (res) {
@@ -77,9 +77,9 @@ home.controller('homeCtrl',['$scope','$http',function ($scope, $http) {
         })
     };
     token();
-    
+
     refresh();
-    
+
     $scope.addData = function () {
         $http.post('/document',$scope.newDoc).success(function (res) {
             console.log(res);
@@ -93,6 +93,8 @@ home.controller('homeCtrl',['$scope','$http',function ($scope, $http) {
             refresh();
         })
     }
+
+
 }]);
 
 home.controller('listCtrl',['$scope','$http',function ($scope, $http) {
@@ -128,6 +130,7 @@ home.controller('addProductCtrl',['$scope','$http',function ($scope, $http) {
             $scope.info = res;
         })
     };
+
     incubeInfo();
     var refresh = function () {
         $http.get('/document').success(function (res) {

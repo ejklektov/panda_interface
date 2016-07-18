@@ -4,18 +4,18 @@
 i.style-switcher-btn {
    right: 0;
    top: 40px;
-   color: #fff;
-   font-size: 18px;
+   color: #000;
+   font-size: 24px;
    cursor: pointer;
    z-index: 555555;
    position: fixed;
    padding: 9px 10px;
-   background: #222;
+   background: #ffea00;
    border-radius: 3px 0 0 3px !important;
 }
 
 i.style-switcher-btn:hover {
-   background:#000;
+   background:#ffea00;
 }
 
 i.style-switcher-btn-option {
@@ -31,7 +31,8 @@ i.style-switcher-btn-option:hover {
    right: 0;
    top: 40px;
    color: #fff;
-   width: 235px;
+   /*width: 235px;*/
+   width: 350px;
    display: none;
    z-index: 555555;
    position: fixed;
@@ -122,6 +123,7 @@ i.style-switcher-btn-option:hover {
 
 /*Theme Colors*/
 .style-switcher li {
+   width: 26px;
    width: 26px;
    height: 26px;
    cursor: pointer;

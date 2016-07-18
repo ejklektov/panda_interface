@@ -1,0 +1,126 @@
+<!--=== Profile ===-->
+<div class="container content profile" ng-app="home">
+
+    <div class="row">
+        <!--Left Sidebar-->
+        <div class="col-md-3 md-margin-bottom-40">
+
+            <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
+                <li class="list-group-item">
+                    <a href="#mypage"><i class="fa fa-user"></i> Profile</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#buy_product_list"><i class="fa fa-history"></i> 구매한 물품</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#sell_product_list"><i class="fa fa-history"></i> 판매한 물품</a>
+                </li>
+                <li class="list-group-item active">
+                    <a href="#edit_profile"><i class="fa fa-cog"></i>프로필 변경</a>
+                </li>
+                <!--<li class="list-group-item active">-->
+                <!--<a href="/mypage"><i class="fa fa-user"></i> Profile</a>-->
+                <!--</li>-->
+                <!--<li class="list-group-item">-->
+                <!--<a href="#buy_product_list"><i class="fa fa-history"></i> 구매한 물품</a>-->
+                <!--</li>-->
+                <!--<li class="list-group-item">-->
+                <!--<a href="#sell_product_list"><i class="fa fa-history"></i> 판매한 물품</a>-->
+                <!--</li>-->
+                <!--<li class="list-group-item">-->
+                <!--<a href="#profile_setting"><i class="fa fa-cog"></i>프로필 변경</a>-->
+                <!--</li>-->
+            </ul>
+
+
+            <!--Datepicker-->
+            <!--<form action="#" id="sky-form2" class="sky-form">-->
+                <!--<div id="inline-start"></div>-->
+            <!--</form>-->
+            <!--End Datepicker-->
+        </div>
+        <!--End Left Sidebar-->
+
+        <!-- Profile setting -->
+        <div class="col-md-9">
+            <div class="profile-body margin-bottom-20">
+                <div class="tab-v1">
+                    <ul class="nav nav-justified nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#edit_profile">Edit Profile</a></li>
+                        <li><a data-toggle="tab" href="#edit_password">Change Password</a></li>
+                        <li><a data-toggle="tab" href="#edit_payment">Payment Options</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="edit_profile" class="profile-edit tab-pane fade in active">
+                            <h2 class="heading-md">Manage your Name, ID and Email Addresses.</h2>
+                            <p>Below are the name and email addresses on file for your account.</p>
+                            <br>
+                            <dl class="dl-horizontal">
+                                <dt><strong>이름</strong></dt>
+                                <dd>
+                                    <%= user.name.username%>
+                                </dd>
+                                <hr>
+                                <dt><strong>Your nickname </strong></dt>
+                                <dd>
+                                    <%= user.name%>
+                                <span>
+                                    <a class="pull-right" href="#">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                </span>
+                                </dd>
+                                <hr>
+                                <dt><strong>Primary Email Address </strong></dt>
+                                <dd>
+                                    edward-rooster@gmail.com
+                                <span>
+                                    <a class="pull-right" href="#">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                </span>
+                                </dd>
+                                <hr>
+                                <dt><strong>Phone Number </strong></dt>
+                                <dd>
+                                    <input placeholder="(304) 33-2867-499">
+                                    <span>
+                                    <a class="pull-right" href="#">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                </span>
+                                </dd>
+                                <hr>
+                                <dt><strong>Office Number </strong></dt>
+                                <dd>
+                                    (304) 44-9810-296
+                                <span>
+                                    <a class="pull-right" href="#">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                </span>
+                                </dd>
+                                <hr>
+                                <dt><strong>Address </strong></dt>
+                                <dd>
+                                    California, US
+                                <span>
+                                    <a class="pull-right" href="#">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                </span>
+                                </dd>
+                                <hr>
+                            </dl>
+                            <button type="button" class="btn-u btn-u-default" style="float: right;">Cancel</button>
+                            <button type="button" class="btn-u btn-u-default" style="float: right;"><a href="#mypage"><h style="color:white">Cancel</h></a></button>
+                            <button type="button" class="btn-u" style="float: right; margin-right : 5px;" ng-click="">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Profile Content -->
+    </div>
+</div>
+<!--=== End Profile ===-->

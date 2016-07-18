@@ -1,0 +1,42 @@
+
+<!-- Profile setting -->
+<div class="col-md-9">
+    <div class="profile-body margin-bottom-20">
+        <div class="tab-v1">
+            <ul class="nav nav-justified nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#edit_profile"> Profile</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="edit_profile" class="profile-edit tab-pane fade in active">
+                    <br>
+                    <dl class="dl-horizontal">
+                        <dt><strong>이름</strong></dt>
+                        <dd>
+                            <%= user.name.username%>
+                        </dd>
+                        <hr>
+                        <dt><strong>피드백 </strong></dt>
+                        <dd>
+                            Score
+                        </dd>
+                        <hr>
+                        <dt><strong>이메일</strong></dt>
+                        <dd>
+                            <input placeholder="edward-rooster"> @ <input placeholder="gmail.com">
+                        </dd>
+                        <hr>
+                        <dt><strong>연락처</strong></dt>
+                        <dd>
+                            <input placeholder="010"> - <input placeholder="xxxx"> - <input placeholder="aaaa">
+                        </dd>
+                        <hr>
+
+                    </dl>
+                    <button type="button" class="btn-u btn-u-default" style="float: right;"><a href="/"><h style="color:white">취소</h></a></button>
+                    <button type="button" class="btn-u" style="float: right; margin-right : 5px;" ng-click="">저장</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Profile Content -->

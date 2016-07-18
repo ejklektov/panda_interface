@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.min.js"></script>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- Web Fonts -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin">
+
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- CSS Header and Footer -->
+    <link rel="stylesheet" href="assets/css/headers/header-default.css">
+    <link rel="stylesheet" href="assets/css/footers/footer-v6.css">
+
+    <link rel="stylesheet" href="assets/css/footers/footer-v7.css">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="assets/plugins/animate.css">
+    <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css">
+    <link rel="stylesheet" href="assets/plugins/cube-portfolio/cubeportfolio/custom/custom-cubeportfolio.css">
+    <link rel="stylesheet" href="assets/plugins/ladda-buttons/css/custom-lada-btn.css">
+    <link rel="stylesheet" href="assets/plugins/hover-effects/css/custom-hover-effects.css">
+
+    <link rel="stylesheet" href="assets/plugins/owl-carousel/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="assets/plugins/revolution-slider/rs-plugin/css/settings.css" type="text/css" media="screen">
+    <!--[if lt IE 9]><link rel="stylesheet" href="assets/plugins/revolution-slider/rs-plugin/css/settings-ie8.css" type="text/css" media="screen"><![endif]-->
+
+    <!-- CSS Page Style -->
+    <link rel="stylesheet" href="assets/css/pages/page_log_reg_v1.css">
+    <link rel="stylesheet" href="assets/css/pages/page_search.css">
+    <link rel="stylesheet" href="assets/plugins/animate.css">
+    <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/pages/page_search_inner_tables.css">
+
+    <link rel="stylesheet" href="assets/css/pages/shortcode_timeline2.css">
+
+
+    <link rel="stylesheet" href="assets/plugins/ladda-buttons/css/custom-lada-btn.css">
+    <link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
+    <link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
+    <!--[if lt IE 9]><link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/css/sky-forms-ie8.css"><![endif]-->
+
+    <!-- CSS Theme -->
+    <link rel="stylesheet" href="assets/css/theme-colors/purple.css" id="style_color">
+    <link rel="stylesheet" href="assets/css/theme-skins/dark.css">
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <!-- CSS Theme -->
+    <link rel="stylesheet" href="assets/css/app.style.css">
+
+
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="assets/plugins/pace/pace-flash.css">
+    <link rel="stylesheet" href="assets/plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css">
+    <link rel="stylesheet" href="assets/plugins/cube-portfolio/cubeportfolio/custom/custom-cubeportfolio.css">
+    <link rel="stylesheet" href="assets/plugins/shhos/shhos.css">
+
+
+</head>
+
+<body>
+
+<div class="wrapper" ng-app="help">
+    <i class="style-switcher-btn fa fa-cogs "></i>
+    <div class="style-switcher animated fadeInRight">
+        <div class="style-swticher-header">
+            <div class="style-switcher-heading">Key Word <br>Alarm System</div>
+            <div class="theme-close"><i class="icon-close"></i></div>
+        </div>
+        <div>설명</div>
+
+        <form action="#" id="sky-form4" class="sky-form" >
+            <fieldset>
+                <section>
+                    <label class="input">
+                        <!--click 시 실행되어야 할 것 추가되어야 함.-->
+                        <i class="icon-append fa fa-plus" style = "padding-left: 0px;padding-right: 0px;" ng-click = "addWord()"></i>
+                        <input type="text" name="word" placeholder="Word">
+                        <!--<b class="tooltip tooltip-bottom-right">Needed to enter the website</b>-->
+                    </label>
+                </section>
+                <labe>추가된 단어 1 <button>삭제</button></labe><br>
+                <labe>추가된 단어 2</labe>
+            </fieldset>
+        </form>
+    </div><!--/style-switcher-->
+    <!--=== End Style Switcher ===-->
+
+    <div ng-include="'nav'"></div>
+    <!--=== Profile ===-->
+    <div class="container content profile">
+
+        <div class="row">
+            <!--Left Sidebar-->
+            <div class="col-md-3 md-margin-bottom-40">
+
+                <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
+
+                    <li class="list-group-item">
+                        <a href="#notice"><i class="fa fa-history"></i>공지 사항</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#FAQ"><i class="fa fa-history"></i> 자주묻는 질문</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#question"><i class="fa fa-history"></i> 1:1 문의/신고</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#request"><i class="fa fa-history"></i> 건의 사항</a>
+                    </li>
+                    <li class="list-group-item ng-fi=">
+                        <a href="#app"><i class="fa fa-user"></i> 어플 다운로드</a>
+                    </li>
+                </ul>
+            </div>
+            <!--End Left Sidebar-->
+            <ng-view></ng-view>
+        </div>
+    </div>
+    <!--=== End Profile ===-->
+
+
+    <div ng-include="'footer'"></div>
+</div>
+</div>
+
+
+</body>
+
+<!-- JS Global Compulsory -->
+<script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="assets/plugins/jquery/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<!-- JS Implementing Plugins -->
+<script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
+<script type="text/javascript" src="assets/plugins/smoothScroll.js"></script>
+<script type="text/javascript" src="assets/plugins/cube-portfolio/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+
+<!-- JS Customization -->
+<script type="text/javascript" src="assets/js/custom.js"></script>
+<!-- JS Page Level -->
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script type="text/javascript" src="assets/js/plugins/style-switcher.js"></script>
+<script type="text/javascript" src="assets/js/plugins/ladda-buttons.js"></script>
+<script src="assets/plugins/ladda-buttons/js/spin.min.js"></script>
+<script src="assets/plugins/ladda-buttons/js/ladda.min.js"></script>
+<script type="text/javascript" src="assets/js/plugins/cube-portfolio/cube-portfolio-4.js"></script>
+<script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js"></script>
+<script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.maskedinput.min.js"></script>
+<script src="assets/plugins/sky-forms-pro/skyforms/js/jquery-ui.min.js"></script>
+<script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.form.min.js"></script>
+
+<script type="text/javascript" src="assets/plugins/owl-carousel/owl-carousel/owl.carousel.js"></script>
+<script type="text/javascript" src="assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+<script type="text/javascript" src="assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script type="text/javascript" src="assets/js/plugins/fancy-box.js"></script>
+<script type="text/javascript" src="assets/js/plugins/owl-carousel.js"></script>
+<script type="text/javascript" src="assets/js/plugins/revolution-slider.js"></script>
+<script type="text/javascript" src="assets/js/plugins/style-switcher.js"></script>
+
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        App.init();
+        StyleSwitcher.initStyleSwitcher();
+        OwlCarousel.initOwlCarousel();
+        RevolutionSlider.initRSfullWidth();
+        ContactForm.initContactForm();
+    });
+</script>
+<!--[if lt IE 9]>
+<script src="assets/plugins/respond.js"></script>
+<script src="assets/plugins/html5shiv.js"></script>
+<script src="assets/plugins/placeholder-IE-fixes.js"></script>
+<script src="assets/plugins/sky-forms-pro/skyforms/js/sky-forms-ie8.js"></script>
+<![endif]-->
+
+<!--[if lt IE 10]>
+<script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.placeholder.min.js"></script>
+<![endif]-->
+<!--</script>-->
+
+<script src="assets/js/plugins/pace-loader.js"></script>
+<script src="assets/js/plugins/owl-carousel2.js"></script>
+<script src="assets/js/plugins/cube-portfolio.js"></script>
+<script src="assets/js/forms/contact.js"></script>
+<script src="controller/help_controller.js"></script>
+
+<script src="assets/plugins/pace/pace.min.js"></script>
+<script src="assets/plugins/owl-carousel2/owl.carousel.min.js"></script>
+<script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.form.min.js"></script>
+<script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js"></script>
+<script src="assets/plugins/cube-portfolio/cubeportfolio/js/jquery.cubeportfolio-2.0.1.min.js"></script>
+<script src="assets/plugins/modernizr.js"></script>
+<script src="assets/plugins/shhos/shhos.js"></script>
+<script src="assets/plugins/wow/wow-ini-themes.js"></script>
+</html>

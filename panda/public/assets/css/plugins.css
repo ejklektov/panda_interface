@@ -431,22 +431,22 @@
 #topcontrol {
   color: #fff;
   z-index: 99;
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   font-size: 20px;
   background: #222;
   position: relative;
-  right: 14px !important;
-  bottom: 11px !important;
+  right: 60px !important;
+  bottom: 111px !important;
   border-radius: 3px !important;
 }
 
 #topcontrol:after {
-  top: -2px;
-  left: 8.5px;
+  top: 5px;
+  left: 18.5px;
   content: "\f106";
   position: absolute;
-  text-align: center;
+  text-align: right;
   font-family: FontAwesome;
 }
 

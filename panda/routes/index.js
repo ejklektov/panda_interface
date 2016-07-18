@@ -116,7 +116,7 @@ router.get('/li',function (req, res) {
 })
 
 router.get('/',function (req, res) {
-  res.render('index', {
+  res.render('main/index', {
     title: 'incube',
     isAu:req.isAuthenticated(),
     user:req.user,
@@ -153,17 +153,21 @@ router.get('/at',function (req, res) {
 });
 
 router.get('/mypage',function(req,res){
-  res.render('mypage', {
+  res.render('mypage/mypage', {
     title: 'incube',
     isAu: req.isAuthenticated(),
     user: req.user,
     token: req.token
   })
-})
-
-router.get('/edit_profile',function(req,res){
-  res.render('edit_profile');
-})
+});
+router.get('/mypage_profile',function (req, res) {
+  res.render('mypage/profile', {
+    title: 'incube',
+    isAu: req.isAuthenticated(),
+    user: req.user,
+    token: req.token
+  });
+});
 
 router.get('/edit_password',function(req,res){
   res.render('edit_password');
@@ -174,11 +178,11 @@ router.get('/edit_payment',function(req,res){
 })
 
 router.get('/sell_product_list',function(req,res){
-  res.render('sell_product_list');
+  res.render('mypage/sell_product_list');
 })
 
 router.get('/buy_product_list',function(req,res){
-  res.render('buy_product_list');
+  res.render('mypage/buy_product_list');
   // res.render('mypage', {
   //   title: 'incube',
   //   isAu:req.isAuthenticated(),
@@ -214,24 +218,6 @@ router.get('/edit_payment',function(req,res){
   })
 })
 
-router.get('/sell_product_list',function(req,res){
-  res.render('sell_product_list', {
-    title: 'incube',
-    isAu:req.isAuthenticated(),
-    user:req.user,
-    token:req.token
-  })
-})
-
-router.get('/buy_product_list',function(req,res){
-  res.render('buy_product_list', {
-    title: 'incube',
-    isAu:req.isAuthenticated(),
-    user:req.user,
-    token:req.token
-  })
-})
-
 
 router.get('/home',function(req,res){
   res.render('home');
@@ -248,7 +234,7 @@ router.get('/index_feedback',function(req,res){
 })
 
 router.get('/add_product',function(req,res){
-  res.render('add_product');
+  res.render('product/add_product');
 })
 
 router.get('/search',function(req,res){
@@ -257,7 +243,7 @@ router.get('/search',function(req,res){
 
 
 router.get('/product_detail', function(req,res){
-  res.render('product_detail', {
+  res.render('product/product_detail', {
     title: 'incube',
     isAu:req.isAuthenticated(),
     user:req.user,
@@ -266,8 +252,11 @@ router.get('/product_detail', function(req,res){
 })
 
 router.get('/introduce_us', function(req,res){
-  res.render('introduce_us')
-})
+  res.render('system/introduce_us')
+});
+router.get('/product_show', function(req,res){
+  res.render('product/product_show')
+});
 router.get('/datas',function (req, res) {
   db.user.find(function (err, docs) {
     console.log(docs);
@@ -275,4 +264,59 @@ router.get('/datas',function (req, res) {
   });
 });
 
+router.get('/logout',function (req, res) {
+  req.logout();
+  res.redirect('/');
+});
+
+router.get('/product_item',function (req, res) {
+  res.render('product/product_item',{
+    title: 'incube',
+    isAu:req.isAuthenticated(),
+    user:req.user,
+    token:req.token
+  });
+})
+
+//help class
+router.get('/help',function (req, res) {
+  res.render('help/help',{
+    title: 'incube',
+    isAu:req.isAuthenticated(),
+    user:req.user,
+    token:req.token
+  });
+});
+router.get('/FAQ',function (req, res) {
+  res.render('help/FAQ');
+});
+
+router.get('/question',function (req,res) {
+  res.render('help/question');
+});
+router.get('/request',function (req,res) {
+  res.render('help/request');
+});
+
+router.get('/nav',function (req, res) {
+  res.render('include/nav',{
+    title: 'incube',
+    isAu:req.isAuthenticated(),
+    user:req.user,
+    token:req.token
+  })
+});
+router.get('/footer',function (req, res) {
+  res.render('include/footer');
+});
+
+router.get('/app',function (req, res) {
+  res.render('help/app');
+});
+router.get('/item_list',function (req, res) {
+  res.render('list/item_list');
+});
+router.get('/notice',function (req, res) {
+  res.render('help/notice');
+});
 module.exports = router;
