@@ -33,6 +33,10 @@ router.get('/template',function (req, res) {
   res.render('admin/template');
 });
 
+router.get('/nav',function (req, res) {
+  res.render('admin/nav');
+});
+
 /* GET upload. */
 router.post('/', function(req, res, next) {
   var form = new multiparty.Form();
