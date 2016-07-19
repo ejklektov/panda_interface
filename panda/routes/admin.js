@@ -4,7 +4,7 @@ var multiparty = require('multiparty');
 var mongojs = require('mongojs');
 var db    = mongojs('panda', ['User','Docu', 'Item', 'State', 'Feedback', 'Sell', 'Buy']);
 
-// 블록
+//블록
 db = mongojs('panda',['user','incube']);
 
 var fs = require('fs');
@@ -46,7 +46,7 @@ router.post('/', function(req, res, next) {
     console.log('normal field / name = '+name+' , value = '+type);
   });
 
-  // console.log('id is '+id);
+  console.log('OK_ post /');
   var filename;
   // file upload handling
   form.on('part',function(part){
@@ -54,10 +54,11 @@ router.post('/', function(req, res, next) {
     var size;
     if (part.filename) {
       console.log(part);
-      filename = part.filename;
+      filename = Date.now()+part.filename;
       size = part.byteCount;
     }else{
       part.resume();
+
     }
 
     // console.log("Write Streaming file :"+filename);
@@ -77,8 +78,8 @@ router.post('/', function(req, res, next) {
 
   // all uploads are completed
   form.on('close',function(){
-    res.json({'filename':filename});
     // res.status(200).send('Upload complete');
+    res.json(filename);
   });
 
   // track progress
@@ -96,10 +97,16 @@ router.post('/upload_product', function(req,res){
     price : req.body.price,
     sell_type : req.body.type,
     state : req.body.state,
-    context : req.body.context
+    context : req.body.context,
+    id : req.body.doc_id
   }, function (err, doc) {
     if(err) console.log(err);
+    console.log('OK_ json route.post./upload_product ?json : ' + doc)
+    console.log( doc)
     res.json(doc);
-  })
-})
+
+
+  });
+});
+
 module.exports = router;

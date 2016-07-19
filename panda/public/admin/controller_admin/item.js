@@ -21,7 +21,7 @@ item.directive('fileModel', ['$parse', function ($parse) {
 }]);
 
 item.service('fileUpload', ['$http', function ($http) {
-    this.uploadFileToUrl = function(file, uploadUrl,id ){
+    this.uploadFileToUrl = function(file, uploadUrl){
         var fd = new FormData();
         fd.append('file', file);
 
@@ -29,11 +29,7 @@ item.service('fileUpload', ['$http', function ($http) {
             transformRequest: angular.identity,
             headers: {'Content-Type': undefined}
         })
-
-            .success(function(res){
-                console.log(res)
-            })
-
+            .success(function(res){})
             .error(function(){
                 console.log('no');
             });
@@ -55,14 +51,13 @@ item.controller('itemCtrl', ['$scope', 'fileUpload','$http', function($scope, fi
     };
 
     $scope.upload_product = function(){
-        var id
+        var id;
         $http.post('/admin/upload_product',$scope.Item).success(function(res){
-            id = res._id
+            id = res._id;
+            console.log('OK_ ?id : '+id)
+            $scope.uploadFile(id);
         });
-
-        $scope.uploadFile(id);
     }
-
 
 
 }]);
