@@ -100,8 +100,6 @@ router.post('/upload_product', function(req,res){
     context : req.body.context
   }, function (err, doc) {
     if(err) console.log(err);
-    console.log('OK_ json route.post./upload_product ?json : ' + doc)
-    console.log(doc)
     res.json(doc);
 
 

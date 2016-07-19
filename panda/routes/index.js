@@ -314,9 +314,15 @@ router.get('/app',function (req, res) {
   res.render('help/app');
 });
 router.get('/item_list',function (req, res) {
-  res.render('list/item_list');
+  res.render('item/item_list');
+});
+router.get('/item_pay',function (req, res) {
+  res.render('item/item_pay');
 });
 router.get('/notice',function (req, res) {
   res.render('help/notice');
+});
+router.get('/tem',function (req, res) {
+  res.render('tem');
 });
 module.exports = router;
