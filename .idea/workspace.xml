@@ -5,7 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/public/admin/controller_admin/item.js" afterPath="$PROJECT_DIR$/panda/public/admin/controller_admin/item.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/routes/admin.js" afterPath="$PROJECT_DIR$/panda/routes/admin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/views/admin/item_regist.ejs" afterPath="$PROJECT_DIR$/panda/views/admin/item_regist.ejs" />
     </list>
     <ignored path="panda_interface.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,50 +24,46 @@
     <favorites_list name="panda_interface" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="admin.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/panda/routes/admin.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1882">
-              <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="item.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/panda/public/admin/controller_admin/item.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="item_regist.ejs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/panda/views/admin/item_regist.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="95" column="56" selection-start-line="95" selection-start-column="56" selection-end-line="95" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/panda/public/admin/pages/forms.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5508">
-              <caret line="481" column="65" selection-start-line="481" selection-start-column="65" selection-end-line="481" selection-end-column="65" />
-              <folding>
-                <element signature="n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+          <file leaf-file-name="admin.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/panda/routes/admin.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1306">
+                  <caret line="99" column="30" selection-start-line="99" selection-start-column="30" selection-end-line="99" selection-end-column="30" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="item.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/panda/public/admin/controller_admin/item.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="360">
+                  <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="item.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/panda/public/admin/controller_admin/item.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="180">
+                  <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -132,9 +127,9 @@
         <option value="$PROJECT_DIR$/panda/views/product/product_item.ejs" />
         <option value="$PROJECT_DIR$/panda/views/include/nav.ejs" />
         <option value="$PROJECT_DIR$/panda/views/main/index.ejs" />
-        <option value="$PROJECT_DIR$/panda/public/admin/controller_admin/item.js" />
-        <option value="$PROJECT_DIR$/panda/routes/admin.js" />
         <option value="$PROJECT_DIR$/panda/views/admin/item_regist.ejs" />
+        <option value="$PROJECT_DIR$/panda/routes/admin.js" />
+        <option value="$PROJECT_DIR$/panda/public/admin/controller_admin/item.js" />
       </list>
     </option>
   </component>
@@ -513,7 +508,7 @@
       <workItem from="1468283546458" duration="2037000" />
       <workItem from="1468377436748" duration="47117000" />
       <workItem from="1468764487868" duration="19189000" />
-      <workItem from="1468891356126" duration="1821000" />
+      <workItem from="1468891356126" duration="2075000" />
     </task>
     <task id="LOCAL-00001" summary="daeho version">
       <created>1468809515441</created>
@@ -543,11 +538,18 @@
       <option name="project" value="LOCAL" />
       <updated>1468893408964</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="daeho version">
+      <created>1468893904134</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1468893904134</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95483000" />
+    <option name="totallyTimeSpent" value="95737000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="4122" height="2250" extended-state="6" />
@@ -913,26 +915,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/panda/views/admin/item_regist.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3493">
+          <caret line="114" column="6" selection-start-line="114" selection-start-column="6" selection-end-line="114" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/panda/routes/admin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1882">
-          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+        <state relative-caret-position="1306">
+          <caret line="99" column="30" selection-start-line="99" selection-start-column="30" selection-end-line="99" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/panda/public/admin/controller_admin/item.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/panda/views/admin/item_regist.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="95" column="56" selection-start-line="95" selection-start-column="56" selection-end-line="95" selection-end-column="56" />
+        <state relative-caret-position="180">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
