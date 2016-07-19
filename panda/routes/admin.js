@@ -97,12 +97,11 @@ router.post('/upload_product', function(req,res){
     price : req.body.price,
     sell_type : req.body.type,
     state : req.body.state,
-    context : req.body.context,
-    id : req.body.doc_id
+    context : req.body.context
   }, function (err, doc) {
     if(err) console.log(err);
     console.log('OK_ json route.post./upload_product ?json : ' + doc)
-    console.log( doc)
+    console.log(doc)
     res.json(doc);
 
 

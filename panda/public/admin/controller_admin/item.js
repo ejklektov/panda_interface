@@ -38,15 +38,15 @@ item.service('fileUpload', ['$http', function ($http) {
 
 item.controller('itemCtrl', ['$scope', 'fileUpload','$http', function($scope, fileUpload,$http){
     $scope.uploadFile = function(id){
-        var file = $scope.myFile;
+        var file1 = $scope.myFile1;
         var file2 = $scope.myFile2;
 
         console.log('file is ');
-        console.dir(file);
+        console.dir(file1);
         console.dir(file2);
 
         var uploadUrl = "http://127.0.0.1:3000/admin/";
-        fileUpload.uploadFileToUrl(file, uploadUrl, id);
+        fileUpload.uploadFileToUrl(file1, uploadUrl, id);
         fileUpload.uploadFileToUrl(file2, uploadUrl, id);
     };
 
@@ -58,6 +58,5 @@ item.controller('itemCtrl', ['$scope', 'fileUpload','$http', function($scope, fi
             $scope.uploadFile(id);
         });
     }
-
-
+    
 }]);
