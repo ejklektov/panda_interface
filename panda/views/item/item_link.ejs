@@ -1,0 +1,153 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+    <title>Product Details | Unify - Responsive Website Template</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.min.js"></script>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- Web Fonts -->
+    <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/shop.style.css">
+
+    <!-- CSS Header and Footer -->
+    <link rel="stylesheet" href="assets/css/headers/header-default.css">
+    <link rel="stylesheet" href="assets/css/footers/footer-v4.css">
+    <link rel="stylesheet" href="assets/css/footers/footer-v6.css">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="assets/plugins/animate.css">
+    <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="assets/plugins/owl-carousel/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
+    <link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
+    <link rel="stylesheet" href="assets/plugins/master-slider/quick-start/masterslider/style/masterslider.css">
+    <link rel='stylesheet' href="assets/plugins/master-slider/quick-start/masterslider/skins/default/style.css">
+    <!-- CSS Page Style -->
+    <link rel="stylesheet" href="assets/css/pages/profile.css">
+    <link rel="stylesheet" href="assets/plugins/jquery-steps/css/custom-jquery.steps.css">
+    <!-- CSS Theme -->
+    <link rel="stylesheet" href="assets/css/theme-colors/teal.css" id="style_color">
+
+    <link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
+    <link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
+    <!--[if lt IE 9]><link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/css/sky-forms-ie8.css"><![endif]-->
+    <link rel="stylesheet" href="assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
+    <link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
+    <!-- Style Switcher -->
+    <link rel="stylesheet" href="assets/css/plugins/style-switcher.css">
+
+    <!-- CSS Theme -->
+    <link rel="stylesheet" href="assets/css/theme-colors/purple.css" id="style_color">
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+
+</head>
+
+<body ng-app="item" ng-controller="itemCtrl"><div class="wrapper">
+    <i class="style-switcher-btn icon-bell"></i>
+    <div class="style-switcher animated fadeInRight">
+        <div class="style-swticher-header">
+            <div class="style-switcher-heading">Key Word <br>Alarm System</div>
+            <div class="theme-close"><i class="icon-close"></i></div>
+        </div>
+        <div>설명</div>
+
+        <form action="#" id="sky-form4" class="sky-form" >
+            <fieldset>
+                <section>
+                    <label class="input">
+                        <!--click 시 실행되어야 할 것 추가되어야 함.-->
+                        <i class="icon-append fa fa-plus" style = "padding-left: 0px;padding-right: 0px;" ng-click = "addWord()"></i>
+                        <input type="text" name="word" placeholder="Word">
+                        <!--<b class="tooltip tooltip-bottom-right">Needed to enter the website</b>-->
+                    </label>
+                </section>
+                <labe>추가된 단어 1 <button>삭제</button></labe><br>
+                <labe>추가된 단어 2</labe>
+            </fieldset>
+        </form>
+    </div><!--/style-switcher-->
+    <!--=== End Style Switcher ===-->
+
+    <div ng-include="'nav'"></div>
+
+    <button ng-click="katlink()">btn</button>
+
+    <div ng-include="'footer'"></div>
+</div><!--/wrapper-->
+<!-- JS Global Compulsory -->
+<script src="controller/item_controller.js"></script>
+
+<script src="assets/plugins/jquery/jquery.min.js"></script>
+<script src="assets/plugins/jquery/jquery-migrate.min.js"></script>
+<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<!-- JS Implementing Plugins -->
+<script src="assets/plugins/back-to-top.js"></script>
+<script src="assets/plugins/smoothScroll.js"></script>
+<script src="assets/plugins/owl-carousel/owl-carousel/owl.carousel.js"></script>
+<script src="assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<!-- Master Slider -->
+<script src="assets/plugins/master-slider/quick-start/masterslider/masterslider.min.js"></script>
+<script src="assets/plugins/master-slider/quick-start/masterslider/jquery.easing.min.js"></script>
+<!-- JS Customization -->
+<script src="assets/js/custom.js"></script>
+<!-- JS Page Level -->
+<script src="assets/js/shop.app.js"></script>
+<script src="assets/js/plugins/owl-carousel.js"></script>
+<script src="assets/js/plugins/master-slider.js"></script>
+<script src="assets/js/forms/product-quantity.js"></script>
+<script src="assets/js/plugins/style-switcher.js"></script>
+<script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js"></script>
+<script src="assets/plugins/jquery-steps/build/jquery.steps.js"></script>
+
+<script src="assets/js/plugins/stepWizard.js"></script>
+<script src="assets/js/forms/product-quantity.js"></script>
+
+
+<script type="text/javascript" src="assets/plugins/circles-master/circles.js"></script>
+<script type="text/javascript" src="assets/plugins/sky-forms-pro/skyforms/js/jquery-ui.min.js"></script>
+<script>
+    jQuery(document).ready(function() {
+        App.init();
+        App.initScrollBar();
+        OwlCarousel.initOwlCarousel();
+        StyleSwitcher.initStyleSwitcher();
+        MasterSliderShowcase2.initMasterSliderShowcase2();
+        StepWizard.initStepWizard();
+    });
+</script>
+
+<!--[if lt IE 9]>
+<script src="assets/plugins/respond.js"></script>
+<script src="assets/plugins/html5shiv.js"></script>
+<script src="assets/js/plugins/placeholder-IE-fixes.js"></script>
+<![endif]-->
+<!--[if lt IE 10]>
+<script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.placeholder.min.js"></script>
+<![endif]-->
+
+</body>
+</html>

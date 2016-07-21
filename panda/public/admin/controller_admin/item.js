@@ -29,28 +29,34 @@ item.service('fileUpload', ['$http', function ($http) {
             transformRequest: angular.identity,
             headers: {'Content-Type': undefined}
         })
-
-            .success(function(){
-                console.log('ok');
-            })
-
+            .success(function(res){})
             .error(function(){
                 console.log('no');
             });
     }
 }]);
 
-item.controller('itemCtrl', ['$scope', 'fileUpload', function($scope, fileUpload){
-    $scope.uploadFile = function(){
-        var file = $scope.myFile;
+item.controller('itemCtrl', ['$scope', 'fileUpload','$http', function($scope, fileUpload,$http){
+    $scope.uploadFile = function(id){
+        var file1 = $scope.myFile1;
         var file2 = $scope.myFile2;
 
-        console.log('file is ' );
-        console.dir(file);
+        console.log('file is ');
+        console.dir(file1);
         console.dir(file2);
 
         var uploadUrl = "http://127.0.0.1:3000/admin/";
-        fileUpload.uploadFileToUrl(file, uploadUrl);
-        fileUpload.uploadFileToUrl(file2, uploadUrl);
+        fileUpload.uploadFileToUrl(file1, uploadUrl, id);
+        fileUpload.uploadFileToUrl(file2, uploadUrl, id);
     };
+
+    $scope.upload_product = function(){
+        var id;
+        $http.post('/admin/upload_product',$scope.Item).success(function(res){
+            id = res._id;
+            console.log('OK_ ?id : '+id)
+            $scope.uploadFile(id);
+        });
+    }
+    
 }]);
