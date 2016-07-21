@@ -17,27 +17,6 @@ router.use(expressSession({
 
 var passportHttp = require('passport-http');
 
-var allowCORS = function(req, res, next) {
-  res.header('Acess-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
-  (req.method === 'OPTIONS') ?
-      res.send(200) :
-      next();
-};
-
-// 이 부분은 app.use(router) 전에 추가하도록 하자
-router.use(allowCORS);
-var CORS = require('cors')();
-
-// 마찬가지로 app.use(router)전에 삽입한다
-router.use(CORS);
-
-router.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
 
 router.use(passport.initialize());
 router.use(passport.session());
@@ -325,4 +304,56 @@ router.get('/notice',function (req, res) {
 router.get('/tem',function (req, res) {
   res.render('tem');
 });
+
+router.get('/item_link',function (req, res) {
+  console.log('at');
+  console.log(at);
+  res.render('item/item_link',{
+    isAu:req.isAuthenticated(),
+    user:req.user,
+    istoken:at
+  })
+});
+router.get('/token',function (req, res) {
+  res.json(at);
+});
+var querystring = require('querystring');
+router.get('/katlink',function (req, res) {
+  console.log('ok');
+  var http = require("https");
+
+  var post_data = querystring.stringify({
+    'template_id':'794'
+  });
+  var options = {
+    host: 'kapi.kakao.com',
+    // port: 80,
+    path: '/v1/api/talk/memo/send',
+    method: 'POST',
+    // data: {},
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization' : 'Bearer '+at,
+      'Content-Length': Buffer.byteLength(post_data)
+    }
+
+  };
+  // http.request(options);
+  var req = http.request(options, function(res) {
+    console.log('Status: ' + res.statusCode);
+    console.log('Headers: ' + JSON.stringify(res.headers));
+    res.setEncoding('utf8');
+    res.on('data', function (body) {
+      console.log('Body: ' + body);
+    });
+  });
+  req.on('error', function(e) {
+    console.log('problem with request: ' + e.message);
+  });
+// write data to request body
+  req.write('{"string": "Hello, World"}');
+  req.end();
+});
+
+
 module.exports = router;
