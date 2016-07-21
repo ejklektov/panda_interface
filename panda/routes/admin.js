@@ -54,7 +54,9 @@ router.post('/', function(req, res, next) {
     var size;
     if (part.filename) {
       console.log(part);
-      filename = Date.now()+part.filename;
+
+      //jpg로 올릴 경우를 고려해야함, Data.now()+part.filename으로 할 경우에 파일 이름때문에 서치를 못하는 문제가 생김
+      filename = Date.now()+'.PNG';
       size = part.byteCount;
     }else{
       part.resume();
@@ -88,7 +90,6 @@ router.post('/', function(req, res, next) {
   });
 
   form.parse(req);
-
 });
 
 router.post('/upload_product', function(req,res){
@@ -97,15 +98,40 @@ router.post('/upload_product', function(req,res){
     price : req.body.price,
     sell_type : req.body.type,
     state : req.body.state,
-    context : req.body.context
+    context : req.body.context,
+    img_name : null
   }, function (err, doc) {
     if(err) console.log(err);
     console.log('OK_ json route.post./upload_product ?json : ' + doc)
     console.log(doc)
     res.json(doc);
-
-
   });
 });
+
+
+router.put('/item/upload_product_id/:id/:res',function (req, res) {
+  var img_name = req.params.res;
+  var id = req.params.id;
+  console.log("OK_item insert id is : "+img_name)
+  db.Item.findAndModify({
+    query:{_id:mongojs.ObjectId(id)},
+    update:{$set:{img_name:img_name}},
+    new:true
+  },function (err,doc) {
+    if(err){      console.log(err);    }
+    // console.log('doc is' + doc.content);
+    res.json(doc);
+  })
+});
+
+router.get('/item_list_data',function (req, res) {
+  db.Item.find(function (err, doc) {
+    res.json(doc);
+  });
+})
+
+router.get('/item_list_main', function (req, res) {
+  res.render('admin/item');
+})
 
 module.exports = router;
