@@ -4,7 +4,7 @@ var multiparty = require('multiparty');
 
 
 var mongojs = require('mongojs');
-var db = mongojs('panda',['user','incube']);
+var db = mongojs('panda',['user','incube', 'faq']);
 
 var fs = require('fs');
 
@@ -37,6 +37,64 @@ router.get('/nav',function (req, res) {
   res.render('admin/nav');
 });
 
+
+router.get('/FAQ_edit',function(req,res){
+  res.render('admin/FAQ_edit');
+})
+
+router.get('/modify_FAQ/:id',function (req, res) {
+  // console.log(req.params.id);
+  db.faq.findOne({
+        _id: mongojs.ObjectId(req.params.id)
+      }
+      , function (err, doc) {
+        console.log(doc);
+        res.json(doc);
+      });
+});
+
+router.get('/delete_FAQ/:id',function (req, res) {
+  // console.log(req.params.id);
+  db.faq.remove({
+        _id: mongojs.ObjectId(req.params.id)
+      }
+      , function (err, doc) {
+        console.log(doc);
+        res.json(doc);
+      });
+});
+
+router.put('/send_FAQ:id',function(req,res){
+  var id = req.params.id;
+  // id*=1;  //string to int
+  console.log('================');
+  console.log(req.body.question);
+  console.log(req.body.answer);
+  console.log(req.params.id);
+
+  db.faq.findAndModify({
+        query: {_id:mongojs.ObjectId(req.params.id)},
+      update:{$set:{question:req.body.question, answer:req.body.answer}}, new:true}
+      ,function(err, doc){
+        if(err){
+          console.log(err);
+        }
+        console.log('sddddd;dlfkjasd;lfkjasd;lfk');
+        console.log(doc);
+        res.json(doc);
+    })
+})
+
+router.post('/add_FAQ',function(req,res){
+  var data = {"question" : req.body.question, "answer" : req.body.answer}
+  db.faq.insert(data,function(err, doc){
+        if(err){
+          console.log(err);
+        }
+        res.json(doc);
+      })
+})
+
 /* GET upload. */
 router.post('/', function(req, res, next) {
   var form = new multiparty.Form();
@@ -57,9 +115,7 @@ router.post('/', function(req, res, next) {
       size = part.byteCount;
     }else{
       part.resume();
-
     }
-
     // console.log("Write Streaming file :"+filename);
     var writeStream = fs.createWriteStream('./tmp/'+filename);
     writeStream.filename = filename;
