@@ -77,8 +77,6 @@
 <div class="wrapper"  ng-app="home" ng-controller="homeCtrl">
     <div ng-include="'nav'"></div>
 
-
-
     <!--=== Slider ===-->
     <div class="tp-banner-container" >
         <div class="tp-banner">
@@ -89,6 +87,40 @@
                     <!-- MAIN IMAGE -->
                     <img src="assets/static_img/slider2.png"  alt="darkblurbg"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
 
+                        <div class="tp-caption revolution-ch1 sft start"
+                             data-x="left"
+                             data-hoffset="0"
+                             data-y="100"
+                             data-speed="1500"
+                             data-start="500"
+                             data-easing="Back.easeInOut"
+                             data-endeasing="Power1.easeIn"
+                             data-endspeed="300">
+                            <img src="assets/static_img/text.png" width="500"><br>
+
+
+                        </div>
+
+
+                        <!-- LAYER -->
+                        <div class="tp-caption sft pull-left text-left"
+                             data-x="center"
+                             data-hoffset="0"
+                             data-y="310"
+                             data-speed="1600"
+                             data-start="2800"
+                             data-easing="Power4.easeOut"
+                             data-endspeed="300"
+                             data-endeasing="Power1.easeIn"
+                             data-captionhidden="off"
+                             style="z-index: 6">
+
+                            <a href="/help#/app"><img class="pull-left" src="assets/static_img/and.png" width="200"></a>
+                            <a href="/help#/app"><img class="pull-left" src="assets/static_img/app.png" width="40"></a>
+                        </div>
+                    </li>
+                    <!--</a>-->
+                    <!-- END SLIDE -->
 
                     <!-- SLIDE -->
                 <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000" data-title="Slide 3">
@@ -185,7 +217,7 @@
                 <li class="item">
                     <div class="product-img product-img-brd">
                         <a href="/product_item"><img class="full-width img-responsive" src="assets/img/blog/16.jpg" alt=""></a>
-                        <a class="add-to-cart" href="/item_pay"><i class="fa fa-shopping-cart"></i>장바구니</a>
+                        <a class="add-to-cart" href="/product_item"><i class="fa fa-shopping-cart"></i>장바구니</a>
                         <div class="shop-rgba-dark-green rgba-banner">New</div>
                     </div>
                     <div class="product-description product-description-brd margin-bottom-30">
@@ -200,28 +232,29 @@
                                 <span class="title-price line-through">$95.00</span>
                                 <ul class="list-inline product-ratings pull-right">
                                     <span class="gender">보증금 : 20,000</span>
-                                </ul>
+                                </ul>`
                             </div>
                         </div>
 
                     </div>
                 </li>
-                <li class="item">
+
+
+                <li class="item" ng-repeat="x_item in items_json">
                     <div class="product-img">
-                        <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/26.jpg" alt=""></a>
+                        <a href="shop-ui-inner.html"><img class="full-width img-responsive" ng-src="image/{{x_item.img_name[0]}}" alt=""></a>
                         <a class="product-review" href="shop-ui-inner.html">Quick review</a>
                         <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                     </div>
                     <div class="product-description product-description-brd">
                         <div class="overflow-h margin-bottom-5">
                             <div class="pull-left">
-                                <h4 class="title-price"><a href="shop-ui-inner.html">Double-breasted</a></h4>
-                                <span class="gender text-uppercase">Women</span>
-                                <span class="gender">Suits - Blazers</span>
+                                <h4 class="title-price"><a href="shop-ui-inner.html">{{x_item.title}}</a></h4>
+                                <span class="gender text-uppercase">{{x_item.sell_type}}</span>
+                                <span class="gender">{{x_item.state}}</span>
                             </div>
                             <div class="product-price">
-                                <span class="title-price">$60.00</span>
-                                <span class="title-price line-through">$95.00</span>
+                                <span class="title-price">{{x_item.price}}</span>
                             </div>
                         </div>
                         <ul class="list-inline product-ratings">
@@ -234,6 +267,8 @@
                         </ul>
                     </div>
                 </li>
+
+
                 <li class="item">
                     <div class="product-img">
                         <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/11.jpg" alt=""></a>

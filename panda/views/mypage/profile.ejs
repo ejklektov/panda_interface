@@ -13,27 +13,37 @@
                         <dt><strong>이름</strong></dt>
                         <dd>
                             <%= user.name.username%>
-                        </dd>
-                        <hr>
-                        <dt><strong>피드백 </strong></dt>
-                        <dd>
-                            Score
+                            <%=  %>
+                            {{doc.name}}
                         </dd>
                         <hr>
                         <dt><strong>이메일</strong></dt>
-                        <dd>
-                            <input placeholder="edward-rooster"> @ <input placeholder="gmail.com">
+                        <dd>{{currentPerson.email}}
+                            <input ng-model="person.mail" type = "text" placeholder="{{splitEmail[0]}}">@ <input ng-model="person.domain" type = "text" placeholder="{{splitEmail[1]}}">
                         </dd>
                         <hr>
                         <dt><strong>연락처</strong></dt>
                         <dd>
-                            <input placeholder="010"> - <input placeholder="xxxx"> - <input placeholder="aaaa">
+                            <input ng-model="person.front" type = "text" placeholder="{{front}}"> - <input ng-model="person.middle" type = "text" placeholder="{{middle}}"> - <input ng-model="person.rear" type = "text" placeholder="{{rear}}">
                         </dd>
                         <hr>
-
+                        <dt><strong>은행</strong></dt>
+                        <dd>
+                            <input ng-model="person" type = "text" placeholder="{{}}">
+                        </dd>
+                        <br>
+                        <dt><strong>계좌번호</strong></dt>
+                        <dd>
+                            <input ng-model="person" type = "text" placeholder="{{}}">
+                        </dd>
+                        <hr>
+                        <dt><strong>전공</strong></dt>
+                        <dd>
+                            <input ng-model="person" type = "text" placeholder="{{}}">
+                        </dd>
                     </dl>
-                    <button type="button" class="btn-u btn-u-default" style="float: right;"><a href="/"><h style="color:white">취소</h></a></button>
-                    <button type="button" class="btn-u" style="float: right; margin-right : 5px;" ng-click="">저장</button>
+                    <a href="/"><button type="button" class="btn-u btn-u-default" style="float: right;" ><a href="/"><h style="color:white">취소</h></a></button></a>
+                    <a href="/mypage"><button type="button" class="btn-u" style="float: right; margin-right : 5px;" ng-click = "modifyUserData()">저장</button></a>
                 </div>
             </div>
         </div>

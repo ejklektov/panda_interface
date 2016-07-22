@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var multiparty = require('multiparty');
 var mongojs = require('mongojs');
-var db    = mongojs('panda', ['User','Docu', 'Item', 'State', 'Feedback', 'Sell', 'Buy']);
+var db    = mongojs('panda', ['User','Docu', 'Item', 'State', 'Feedback', 'Sell','faq', 'Buy']);
 
 //블록
 db = mongojs('panda',['user','incube']);
@@ -38,6 +38,64 @@ router.get('/nav',function (req, res) {
   res.render('admin/nav');
 });
 
+
+router.get('/FAQ_edit',function(req,res){
+  res.render('admin/FAQ_edit');
+})
+
+router.get('/modify_FAQ/:id',function (req, res) {
+  // console.log(req.params.id);
+  db.faq.findOne({
+        _id: mongojs.ObjectId(req.params.id)
+      }
+      , function (err, doc) {
+        console.log(doc);
+        res.json(doc);
+      });
+});
+
+router.get('/delete_FAQ/:id',function (req, res) {
+  // console.log(req.params.id);
+  db.faq.remove({
+        _id: mongojs.ObjectId(req.params.id)
+      }
+      , function (err, doc) {
+        console.log(doc);
+        res.json(doc);
+      });
+});
+
+router.put('/send_FAQ:id',function(req,res){
+  var id = req.params.id;
+  // id*=1;  //string to int
+  console.log('================');
+  console.log(req.body.question);
+  console.log(req.body.answer);
+  console.log(req.params.id);
+
+  db.faq.findAndModify({
+        query: {_id:mongojs.ObjectId(req.params.id)},
+      update:{$set:{question:req.body.question, answer:req.body.answer}}, new:true}
+      ,function(err, doc){
+        if(err){
+          console.log(err);
+        }
+        console.log('sddddd;dlfkjasd;lfkjasd;lfk');
+        console.log(doc);
+        res.json(doc);
+    })
+})
+
+router.post('/add_FAQ',function(req,res){
+  var data = {"question" : req.body.question, "answer" : req.body.answer}
+  db.faq.insert(data,function(err, doc){
+        if(err){
+          console.log(err);
+        }
+        res.json(doc);
+      })
+})
+
 /* GET upload. */
 router.post('/', function(req, res, next) {
   var form = new multiparty.Form();
@@ -64,7 +122,7 @@ router.post('/', function(req, res, next) {
     }
 
     // console.log("Write Streaming file :"+filename);
-    var writeStream = fs.createWriteStream('./tmp/'+filename);
+    var writeStream = fs.createWriteStream('./public/image/'+filename);
     writeStream.filename = filename;
     part.pipe(writeStream);
 
@@ -113,17 +171,22 @@ router.post('/upload_product', function(req,res){
 router.put('/item/upload_product_id/:id/:res',function (req, res) {
   var img_name = req.params.res;
   var id = req.params.id;
-  console.log("OK_item insert id is : "+img_name)
-  db.Item.findAndModify({
-    query:{_id:mongojs.ObjectId(id)},
-    update:{$set:{img_name:img_name}},
-    new:true
-  },function (err,doc) {
-    if(err){      console.log(err);    }
-    // console.log('doc is' + doc.content);
-    res.json(doc);
-  })
+  console.log("OK_item insert id is : "+img_name);
+
+
+    db.Item.findAndModify({
+        query: {_id: mongojs.ObjectId(id)},
+        update: {$push: {img_name: img_name}},
+        new: true
+    }, function (err, doc) {
+        if (err) {
+            console.log(err);
+        }
+        res.json(doc);
+    })
+
 });
+
 router.get('/item_list_data',function (req, res) {
   db.Item.find(function (err, doc) {
     res.json(doc);

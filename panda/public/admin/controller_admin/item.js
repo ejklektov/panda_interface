@@ -31,7 +31,7 @@ item.service('fileUpload', ['$http', function ($http) {
                 transformRequest: angular.identity,
                 headers: {'Content-Type': undefined}
             })
-                .success(function(){
+                .success(function(res){
                     console.log();
                 })
                 .error(function(){
@@ -55,17 +55,26 @@ item.service('fileUpload', ['$http', function ($http) {
 }]);
 
 item.controller('itemCtrl', ['$scope', 'fileUpload','$http', function($scope, fileUpload,$http) {
-    $scope.uploadFile = function (id) {
+    var uploadFile = function (id) {
         var file1 = $scope.myFile1;
         var file2 = $scope.myFile2;
+        var file3 = $scope.myFile3;
+        var file4 = $scope.myFile4;
+        var file5 = $scope.myFile5;
 
         console.log('file is ');
         console.dir(file1);
         console.dir(file2);
+        console.dir(file3);
+        console.dir(file4);
+        console.dir(file5);
 
         var uploadUrl = "http://127.0.0.1:3000/admin/";
         fileUpload.uploadFileToUrl(file1, uploadUrl, id);
         fileUpload.uploadFileToUrl(file2, uploadUrl, id);
+        fileUpload.uploadFileToUrl(file3, uploadUrl, id);
+        fileUpload.uploadFileToUrl(file4, uploadUrl, id);
+        fileUpload.uploadFileToUrl(file5, uploadUrl, id);
     };
 
     $scope.upload_product = function () {
@@ -73,7 +82,7 @@ item.controller('itemCtrl', ['$scope', 'fileUpload','$http', function($scope, fi
         $http.post('/admin/upload_product', $scope.Item).success(function (res) {
             id = res._id;
             console.log('OK_ ?id : ' + id)
-            $scope.uploadFile(id);
+            uploadFile(id);
         });
     }
 
