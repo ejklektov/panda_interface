@@ -36,12 +36,12 @@ var home = angular.module('home',['ngRoute'])
                 templateUrl: '/edit_payment', controller: 'mypageCtrl'
             })
 
-            .when('/product_detail', {
-                templateUrl: '/product_show', controller: 'productCtrl'
-            })
-
             .when('/add_product',{
                 templateUrl:'/add_product',controller:'addProductCtrl'
+            })
+            
+            .when('/product_item', {
+                templateUrl:'/product/product_item', controller:'productCtrl'
             })
 
             .when('/search',{
@@ -142,19 +142,32 @@ home.controller('addProductCtrl',['$scope','$http',function ($scope, $http) {
         })
     };
     incubeInfo();
-    
+
     var refresh = function () {
         $http.get('/document').success(function (res) {
             $scope.docs = res;
         })
     };
     refresh();
-    
+
     $scope.addData = function () {
         $http.post('/document',$scope.newDoc).success(function (res) {
             console.log(res);
             refresh();
         })
     };
+
+}]);
+
+home.controller('productCtrl',['$scope','$http',function ($scope, $http) {
+    var getItemData = function(){
+        var jsonDataUrl = "/admin/item_list_data";
+        $http.get(jsonDataUrl).success(function (doc) {
+            console.log(doc)
+            $scope.items_json = doc;
+        });
+    }
+    getItemData();
+    
 
 }]);

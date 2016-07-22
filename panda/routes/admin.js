@@ -64,7 +64,7 @@ router.post('/', function(req, res, next) {
     }
 
     // console.log("Write Streaming file :"+filename);
-    var writeStream = fs.createWriteStream('./tmp/'+filename);
+    var writeStream = fs.createWriteStream('./public/image/'+filename);
     writeStream.filename = filename;
     part.pipe(writeStream);
 
@@ -99,7 +99,11 @@ router.post('/upload_product', function(req,res){
     sell_type : req.body.type,
     state : req.body.state,
     context : req.body.context,
-    img_name : null
+    img_name1 : null,
+    img_name2 : null,
+    img_name3 : null,
+    img_name4 : null,
+    img_name5 : null
   }, function (err, doc) {
     if(err) console.log(err);
     console.log('OK_ json route.post./upload_product ?json : ' + doc)
@@ -112,16 +116,20 @@ router.post('/upload_product', function(req,res){
 router.put('/item/upload_product_id/:id/:res',function (req, res) {
   var img_name = req.params.res;
   var id = req.params.id;
-  console.log("OK_item insert id is : "+img_name)
-  db.Item.findAndModify({
-    query:{_id:mongojs.ObjectId(id)},
-    update:{$set:{img_name:img_name}},
-    new:true
-  },function (err,doc) {
-    if(err){      console.log(err);    }
-    // console.log('doc is' + doc.content);
-    res.json(doc);
-  })
+  console.log("OK_item insert id is : "+img_name);
+
+
+    db.Item.findAndModify({
+        query: {_id: mongojs.ObjectId(id)},
+        update: {$push: {img_name: img_name}},
+        new: true
+    }, function (err, doc) {
+        if (err) {
+            console.log(err);
+        }
+        res.json(doc);
+    })
+
 });
 
 router.get('/item_list_data',function (req, res) {

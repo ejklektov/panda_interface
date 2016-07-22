@@ -183,7 +183,7 @@
                 <li class="item">
                     <div class="product-img product-img-brd">
                         <a href="/product_item"><img class="full-width img-responsive" src="assets/img/blog/16.jpg" alt=""></a>
-                        <a class="add-to-cart" href="/item_pay"><i class="fa fa-shopping-cart"></i>장바구니</a>
+                        <a class="add-to-cart" href="/product_item"><i class="fa fa-shopping-cart"></i>장바구니</a>
                         <div class="shop-rgba-dark-green rgba-banner">New</div>
                     </div>
                     <div class="product-description product-description-brd margin-bottom-30">
@@ -198,15 +198,17 @@
                                 <span class="title-price line-through">$95.00</span>
                                 <ul class="list-inline product-ratings pull-right">
                                     <span class="gender">보증금 : 20,000</span>
-                                </ul>
+                                </ul>`
                             </div>
                         </div>
 
                     </div>
                 </li>
+
+
                 <li class="item" ng-repeat="x_item in items_json">
                     <div class="product-img">
-                        <a href="shop-ui-inner.html"><img class="full-width img-responsive" ng-src="TEST_img/{{x_item.img_name}}" alt=""></a>
+                        <a href="shop-ui-inner.html"><img class="full-width img-responsive" ng-src="image/{{x_item.img_name[0]}}" alt=""></a>
                         <a class="product-review" href="shop-ui-inner.html">Quick review</a>
                         <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                     </div>
@@ -231,6 +233,8 @@
                         </ul>
                     </div>
                 </li>
+
+
                 <li class="item">
                     <div class="product-img">
                         <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/11.jpg" alt=""></a>
