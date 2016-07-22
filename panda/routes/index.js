@@ -45,7 +45,7 @@ passport.deserializeUser(function (id,done) {
 
 passport.use(new KakaoStrategy({
       clientID : 'df2591dce718bea4bdd968389332bef7',
-      callbackURL : 'http://ec2-54-218-18-22.us-west-2.compute.amazonaws.com:3000/oauth'
+      callbackURL : '/oauth'
     },
     function(accessToken, refreshToken, profile, done){
       // 사용자의 정보는 profile에 들어있다.
