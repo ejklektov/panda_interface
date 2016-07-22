@@ -318,55 +318,40 @@ router.get('/token',function (req, res) {
   res.json(at);
 });
 var querystring = require('querystring');
-router.post('/katlink',function (req, res) {
+router.get('/katlink',function (req, res) {
   console.log('ok');
   var http = require("https");
 
   var post_data = querystring.stringify({
-     'template_id':794
+    'template_id':'794'
   });
-
   var options = {
     host: 'kapi.kakao.com',
     // port: 80,
-    path: '/v1/api/talk/memo/send?template_id=794',
+    path: '/v1/api/talk/memo/send',
     method: 'POST',
     // data: {},
     headers: {
       'Content-Type': 'application/json',
-      // 'Content-Type': 'application/x-www-form-urlencoded',
       'Authorization' : 'Bearer '+at,
       'Content-Length': Buffer.byteLength(post_data)
-      // 'Content-Length': post_data.length,
-    },
-    form:{template_id:794}
+    }
 
   };
   // http.request(options);
   var req = http.request(options, function(res) {
-    var str = "";
-    console.log('res is');
-    console.log(res);
     console.log('Status: ' + res.statusCode);
     console.log('Headers: ' + JSON.stringify(res.headers));
     res.setEncoding('utf8');
-
     res.on('data', function (body) {
-      // body.template_id = 794;
-      str += body;
-      console.log('data: ' + body);
-      // return body;
+      console.log('Body: ' + body);
     });
-    res.on('end', function() {
-      console.log('end is '+str)
-  })
   });
   req.on('error', function(e) {
     console.log('problem with request: ' + e.message);
   });
 // write data to request body
-  req.write(post_data);
-  // req.write({'template_id':794});
+  req.write('{"string": "Hello, World"}');
   req.end();
 });
 
