@@ -8,12 +8,13 @@ var product_page = angular.module('product_page',['ngRoute'])
          //             templateUrl:'/li',controller:'listCtrl'})
          //         .when('/home',{
          //             templateUrl:'/ho',controller:'practiceCtrl'})
-
+             .when('/product_item_buy',{
+             templateUrl:'/product_item_buy', controller: 'productCtrl'
+            })
              .otherwise({
                  templateUrl: '/', controller: 'productCtrl'
              })
          })
-
 
 product_page.controller('productCtrl',['$scope','$http',function ($scope, $http) {
     $scope.choose = true;
@@ -51,30 +52,10 @@ product_page.controller('productCtrl',['$scope','$http',function ($scope, $http)
             refresh();
         })
     }
-}]);
 
-product_page.controller('listCtrl',['$scope','$http',function ($scope, $http) {
-    var productInfo = function () {
-        $http.get('/productInfo').success(function (res) {
-            console.log(res)
-            $scope.info = res;
-        })
-    };
-    productInfo();
-    var refresh = function () {
-        $http.get('/document').success(function (res) {
-            $scope.docs = res;
-        })
-    };
-
-    refresh();
-
-    $scope.addData = function () {
-        $http.post('/document',$scope.newDoc).success(function (res) {
+    $scope.buyProduct = function(){
+        $http.post('/product_item_buy').success(function(res){
             console.log(res);
-            refresh();
         })
-    };
-
-
+    }
 }]);

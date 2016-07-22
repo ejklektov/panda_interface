@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var mongojs = require('mongojs');
-var db = mongojs('panda',['user','document','incube']);
+var db = mongojs('panda',['user','document','incube', 'faq']);
 var passport = require('passport')
 var KakaoStrategy = require('passport-kakao').Strategy;
 
@@ -17,27 +17,6 @@ router.use(expressSession({
 
 var passportHttp = require('passport-http');
 
-var allowCORS = function(req, res, next) {
-  res.header('Acess-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
-  (req.method === 'OPTIONS') ?
-      res.send(200) :
-      next();
-};
-
-// 이 부분은 app.use(router) 전에 추가하도록 하자
-router.use(allowCORS);
-var CORS = require('cors')();
-
-// 마찬가지로 app.use(router)전에 삽입한다
-router.use(CORS);
-
-router.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
 
 router.use(passport.initialize());
 router.use(passport.session());
@@ -66,7 +45,7 @@ passport.deserializeUser(function (id,done) {
 
 passport.use(new KakaoStrategy({
       clientID : 'df2591dce718bea4bdd968389332bef7',
-      callbackURL : 'http://localhost:3000/oauth'
+      callbackURL : 'http://ec2-54-218-18-22.us-west-2.compute.amazonaws.com:3000/oauth'
     },
     function(accessToken, refreshToken, profile, done){
       // 사용자의 정보는 profile에 들어있다.
@@ -82,7 +61,9 @@ passport.use(new KakaoStrategy({
             name: profile.id,
             roles : ['authenticated'],
             provider: 'kakao',
-            kakao: profile._json
+            kakao: profile._json,
+            phone: profile.phone,
+            email: profile.email
           }
         },
         new: true,   // return new doc if one is upserted
@@ -157,16 +138,38 @@ router.get('/mypage',function(req,res){
     title: 'incube',
     isAu: req.isAuthenticated(),
     user: req.user,
-    token: req.token
+    token: req.token,
+    phone: req.phone,
+    email: req.email
   })
 });
+
 router.get('/mypage_profile',function (req, res) {
   res.render('mypage/profile', {
     title: 'incube',
     isAu: req.isAuthenticated(),
     user: req.user,
     token: req.token
-  });
+   })
+});
+router.get('/findMe', function(req,res) {
+  db.user.findOne({
+    name:req.user.id}
+      ,function (err, doc) {
+        console.log(doc);
+        res.json(doc);
+  })
+})
+
+router.put('/profile',function (req, res) {
+  // console.log(req.user);
+  db.user.findAndModify({
+    query:{name:req.user.id},
+    update:
+    {$set:{phone:req.body.phone, email:req.body.email}},new:true},function (err,doc) {
+    res.json(doc);
+    // console.log(doc);
+  })
 });
 
 router.get('/edit_password',function(req,res){
@@ -254,12 +257,14 @@ router.get('/product_detail', function(req,res){
 router.get('/introduce_us', function(req,res){
   res.render('system/introduce_us')
 });
+
 router.get('/product_show', function(req,res){
   res.render('product/product_show')
 });
+
 router.get('/datas',function (req, res) {
   db.user.find(function (err, docs) {
-    console.log(docs);
+    // console.log(docs);
     res.json(docs);
   });
 });
@@ -278,6 +283,11 @@ router.get('/product_item',function (req, res) {
   });
 })
 
+
+router.get('/product_item_buy',function (req, res) {
+
+})
+
 //help class
 router.get('/help',function (req, res) {
   res.render('help/help',{
@@ -287,9 +297,29 @@ router.get('/help',function (req, res) {
     token:req.token
   });
 });
+
 router.get('/FAQ',function (req, res) {
   res.render('help/FAQ');
 });
+
+router.get('/FAQ_get',function(req,res){
+  db.faq.find(function(err,docs){
+    console.log(docs);
+    res.json(docs);
+  })
+});
+
+// router.get('/admin/modify_FAQ',function(req,res){
+//   console.log(modifyFAQ);
+//   // console.log('This is req');
+//   // console.log(res);
+//   // db.faq.findAndModify({
+//   //   update:
+//   //   {$set:{question: req.body.question, answer: req.body.answer}}, new:true},function(err,docs){
+//   //   res.json(docs);
+//   //   console.log(docs);
+//   // })
+// })
 
 router.get('/question',function (req,res) {
   res.render('help/question');
@@ -314,9 +344,67 @@ router.get('/app',function (req, res) {
   res.render('help/app');
 });
 router.get('/item_list',function (req, res) {
-  res.render('list/item_list');
+  res.render('item/item_list');
+});
+router.get('/item_pay',function (req, res) {
+  res.render('item/item_pay');
 });
 router.get('/notice',function (req, res) {
   res.render('help/notice');
 });
+router.get('/tem',function (req, res) {
+  res.render('tem');
+});
+
+router.get('/item_link',function (req, res) {
+  console.log('at');
+  console.log(at);
+  res.render('item/item_link',{
+    isAu:req.isAuthenticated(),
+    user:req.user,
+    istoken:at
+  })
+});
+router.get('/token',function (req, res) {
+  res.json(at);
+});
+var querystring = require('querystring');
+router.get('/katlink',function (req, res) {
+  console.log('ok');
+  var http = require("https");
+
+  var post_data = querystring.stringify({
+    'template_id':'794'
+  });
+  var options = {
+    host: 'kapi.kakao.com',
+    // port: 80,
+    path: '/v1/api/talk/memo/send',
+    method: 'POST',
+    // data: {},
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization' : 'Bearer '+at,
+      'Content-Length': Buffer.byteLength(post_data)
+    }
+
+  };
+  // http.request(options);
+  var req = http.request(options, function(res) {
+    console.log('Status: ' + res.statusCode);
+    console.log('Headers: ' + JSON.stringify(res.headers));
+    res.setEncoding('utf8');
+    res.on('data', function (body) {
+      console.log('Body: ' + body);
+    });
+  });
+  req.on('error', function(e) {
+    console.log('problem with request: ' + e.message);
+  });
+// write data to request body
+  req.write('{"string": "Hello, World"}');
+  req.end();
+});
+
+
 module.exports = router;

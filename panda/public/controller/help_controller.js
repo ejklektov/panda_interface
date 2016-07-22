@@ -15,6 +15,9 @@ var help = angular.module('help',['ngRoute'])
              .when('/FAQ', {
                  templateUrl: '/FAQ', controller: 'FAQCtrl'
              })
+             .when('/FAQ_edit',{
+                templateUrl: '/FAQ_edit', controller:'FAQCtrl'
+            })
              .when('/question', {
                  templateUrl: '/question', controller: 'questionCtrl'
              })
@@ -30,47 +33,55 @@ var help = angular.module('help',['ngRoute'])
                  templateUrl: '/request', controller: 'requestCtrl'
              })
 
+             .when('/modify_FAQ',{
+                 templateUrl: '/modify_FAQ', controller: 'FAQCtrl'
+             })
              .otherwise({
                  templateUrl: '/FAQ',controller:'FAQCtrl'
              })
          })
 
-help.controller('FAQCtrl',['$scope','$http',function ($scope, $http,$location) {
-    $scope.choose = true;
-    var incubeInfo = function () {
-        $http.get('/datas').success(function (res) {
-            console.log(res)
-            $scope.info = res;
+help.controller('FAQCtrl',['$scope','$http','$location',function ($scope, $http,$location) {
+    var FAQS;
+    var FAQ = function(){
+        $http.get('/FAQ_get').success(function(res){
+            // console.log(res);
+            $scope.FAQS = res;
+            FAQS = res;
         })
-    };
-    incubeInfo();
-    var refresh = function () {
-        $http.get('/document').success(function (res) {
-            $scope.docs = res;
-        })
-    };
-    var token = function () {
-        $http.get('/at').success(function (res) {
-            $scope.at = 5;//res;
-        })
-    };
-    token();
+    }
+    FAQ();
 
-    refresh();
-
-    $scope.addData = function () {
-        $http.post('/document',$scope.newDoc).success(function (res) {
-            console.log(res);
-            refresh();
+    $scope.modify_FAQ = function (id) {
+        $http.get('/admin/modify_FAQ/'+id).success(function (res) {
+            // console.log(res);
+            $scope.new=res;
         })
-    };
+    }
 
-    $scope.addWord = function(){
-        $http.post('/addWord',$scope.newDoc).success(function (res) {
-            console.log(res);
-            refresh();
+    $scope.delete_FAQ = function (id) {
+        if(confirm("삭제하시겠습니까?")){
+            $http.get('/admin/delete_FAQ/'+id).success(function (res) {
+                FAQ();
+            })
+        }
+        else{
+            FAQ();
+        }
+
+    }
+    
+    $scope.send_FAQ = function(id){
+        console.log(id);
+       $http.put('/admin/send_FAQ'+id,$scope.new).success(function(res){
+           FAQ();
         })
     }
 
 
+    $scope.add_FAQ = function(){
+        $http.post('/admin/add_FAQ',$scope.addFAQ).success(function(res){
+            FAQ();
+        })
+    }
 }]);

@@ -20,30 +20,18 @@ var home = angular.module('home',['ngRoute'])
                 templateUrl: '/sell_product_list', controller: 'mypageCtrl'
             })
 
-            .when('/buy_product_list', {
-                templateUrl: '/buy_product_list', controller: 'mypageCtrl'
-            })
-
-            .when('/edit_profile', {
-                templateUrl: '/edit_profile', controller: 'mypageCtrl'
-            })
-
-            .when('/edit_password', {
-                templateUrl: '/edit_password', controller: 'mypageCtrl'
-            })
-
-            .when('/edit_payment', {
-                templateUrl: '/edit_payment', controller: 'mypageCtrl'
-            })
-
-            .when('/add_product',{
-                templateUrl:'/add_product',controller:'addProductCtrl'
-            })
+             .when('/buy_product_list', {
+                 templateUrl: '/buy_product_list', controller: 'mypageCtrl'
+             })
+             
+             .when('/add_product',{
+                 templateUrl:'/add_product',controller:'addProductCtrl'
+             })
             
             .when('/product_item', {
                 templateUrl:'/product/product_item', controller:'productCtrl'
             })
-
+            
             .when('/search',{
                 templateUrl:'/search', controller:'searchCtrl'
             })
@@ -106,6 +94,7 @@ home.controller('homeCtrl',['$scope','$http',function ($scope, $http,$location) 
         })
     }
 
+
 }]);
 
 home.controller('listCtrl',['$scope','$http',function ($scope, $http) {
@@ -141,6 +130,7 @@ home.controller('addProductCtrl',['$scope','$http',function ($scope, $http) {
             $scope.info = res;
         })
     };
+
     incubeInfo();
 
     var refresh = function () {
@@ -148,6 +138,7 @@ home.controller('addProductCtrl',['$scope','$http',function ($scope, $http) {
             $scope.docs = res;
         })
     };
+
     refresh();
 
     $scope.addData = function () {
@@ -156,6 +147,7 @@ home.controller('addProductCtrl',['$scope','$http',function ($scope, $http) {
             refresh();
         })
     };
+
 
 }]);
 
