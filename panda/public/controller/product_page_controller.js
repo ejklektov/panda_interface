@@ -58,4 +58,14 @@ product_page.controller('productCtrl',['$scope','$http',function ($scope, $http)
             console.log(res);
         })
     }
+
+
+    var getItemData = function(){
+        var jsonDataUrl = "/admin/item_list_data";
+        $http.get(jsonDataUrl).success(function (doc) {
+            console.log(doc)
+            $scope.items_json = doc;
+        });
+    }
+    getItemData();
 }]);

@@ -20,16 +20,12 @@ var home = angular.module('home',['ngRoute'])
                 templateUrl: '/sell_product_list', controller: 'mypageCtrl'
             })
 
-             .when('/buy_product_list', {
+            .when('/buy_product_list', {
                  templateUrl: '/buy_product_list', controller: 'mypageCtrl'
-             })
+            })
              
-             .when('/add_product',{
+            .when('/add_product',{
                  templateUrl:'/add_product',controller:'addProductCtrl'
-             })
-            
-            .when('/product_item', {
-                templateUrl:'/product/product_item', controller:'productCtrl'
             })
             
             .when('/search',{
@@ -148,18 +144,5 @@ home.controller('addProductCtrl',['$scope','$http',function ($scope, $http) {
         })
     };
 
-
-}]);
-
-home.controller('productCtrl',['$scope','$http',function ($scope, $http) {
-    var getItemData = function(){
-        var jsonDataUrl = "/admin/item_list_data";
-        $http.get(jsonDataUrl).success(function (doc) {
-            console.log(doc)
-            $scope.items_json = doc;
-        });
-    }
-    getItemData();
-    
 
 }]);
