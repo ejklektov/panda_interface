@@ -45,7 +45,7 @@ passport.deserializeUser(function (id,done) {
 
 passport.use(new KakaoStrategy({
       clientID : 'df2591dce718bea4bdd968389332bef7',
-      callbackURL : 'http://localhost:3000/oauth'
+      callbackURL : 'http://ec2-54-218-18-22.us-west-2.compute.amazonaws.com:3000/oauth'
     },
     function(accessToken, refreshToken, profile, done){
       // 사용자의 정보는 profile에 들어있다.
@@ -318,40 +318,55 @@ router.get('/token',function (req, res) {
   res.json(at);
 });
 var querystring = require('querystring');
-router.get('/katlink',function (req, res) {
+router.post('/katlink',function (req, res) {
   console.log('ok');
   var http = require("https");
 
   var post_data = querystring.stringify({
-    'template_id':'794'
+     'template_id':794
   });
+
   var options = {
     host: 'kapi.kakao.com',
     // port: 80,
-    path: '/v1/api/talk/memo/send',
+    path: '/v1/api/talk/memo/send?template_id=794',
     method: 'POST',
     // data: {},
     headers: {
       'Content-Type': 'application/json',
+      // 'Content-Type': 'application/x-www-form-urlencoded',
       'Authorization' : 'Bearer '+at,
       'Content-Length': Buffer.byteLength(post_data)
-    }
+      // 'Content-Length': post_data.length,
+    },
+    form:{template_id:794}
 
   };
   // http.request(options);
   var req = http.request(options, function(res) {
+    var str = "";
+    console.log('res is');
+    console.log(res);
     console.log('Status: ' + res.statusCode);
     console.log('Headers: ' + JSON.stringify(res.headers));
     res.setEncoding('utf8');
+
     res.on('data', function (body) {
-      console.log('Body: ' + body);
+      // body.template_id = 794;
+      str += body;
+      console.log('data: ' + body);
+      // return body;
     });
+    res.on('end', function() {
+      console.log('end is '+str)
+  })
   });
   req.on('error', function(e) {
     console.log('problem with request: ' + e.message);
   });
 // write data to request body
-  req.write('{"string": "Hello, World"}');
+  req.write(post_data);
+  // req.write({'template_id':794});
   req.end();
 });
 

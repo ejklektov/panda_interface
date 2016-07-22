@@ -558,7 +558,8 @@ blockquote.hero.hero-default:hover {
 .copyright a,
 .footer a:hover,
 .copyright a:hover {
-	color: #18ba9b;
+	color: #ededed;
+	background-color:#2b2b2b;
 }
 
 /* Footer Blog */
