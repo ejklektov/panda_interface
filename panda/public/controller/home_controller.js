@@ -42,15 +42,6 @@ home.controller('main',['$scope','$http',function ($scope, $http,$location) {
     $scope.view=true;
 }]);
 home.controller('homeCtrl',['$scope','$http',function ($scope, $http,$location) {
-    $scope.choose = true;
-    var incubeInfo = function () {
-        $http.get('/datas').success(function (res) {
-            console.log(res)
-            $scope.info = res;
-        })
-    };
-    incubeInfo();
-
     var refresh = function () {
         $http.get('/document').success(function (res) {
             $scope.docs = res;
