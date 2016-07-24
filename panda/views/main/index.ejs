@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.min.js"></script>
-
+    <script>x="<%=itemId%>";</script>
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -232,24 +232,23 @@
                                 <span class="title-price line-through">$95.00</span>
                                 <ul class="list-inline product-ratings pull-right">
                                     <span class="gender">보증금 : 20,000</span>
-                                </ul>`
+                                </ul>
                             </div>
                         </div>
-
                     </div>
                 </li>
 
 
                 <li class="item" ng-repeat="x_item in items_json">
                     <div class="product-img">
-                        <a href="shop-ui-inner.html"><img class="full-width img-responsive" ng-src="image/{{x_item.img_name[0]}}" alt=""></a>
-                        <a class="product-review" href="shop-ui-inner.html">Quick review</a>
-                        <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                        <a ng-href="/product_item#{{x_item._id}}"><img class="full-width img-responsive" ng-src="image/{{x_item.img_name[0]}}" alt=""></a>
+                        <a class="product-review" ng-href="/product_item#{{x_item._id}}">Quick review</a>
+                        <a class="add-to-cart" ng-href="/product_item#{{x_item._id}}"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                     </div>
                     <div class="product-description product-description-brd">
                         <div class="overflow-h margin-bottom-5">
                             <div class="pull-left">
-                                <h4 class="title-price"><a href="shop-ui-inner.html">{{x_item.title}}</a></h4>
+                                <h4 class="title-price"><a ng-href="/product_item#{{x_item._id}}">{{x_item.title}}</a></h4>
                                 <span class="gender text-uppercase">{{x_item.sell_type}}</span>
                                 <span class="gender">{{x_item.state}}</span>
                             </div>

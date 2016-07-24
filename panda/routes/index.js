@@ -45,7 +45,7 @@ passport.deserializeUser(function (id,done) {
 
 passport.use(new KakaoStrategy({
       clientID : 'df2591dce718bea4bdd968389332bef7',
-      callbackURL : 'http://ec2-54-218-18-22.us-west-2.compute.amazonaws.com:3000/oauth'
+      callbackURL : '/oauth'
     },
     function(accessToken, refreshToken, profile, done){
       // 사용자의 정보는 profile에 들어있다.
@@ -245,15 +245,6 @@ router.get('/search',function(req,res){
 })
 
 
-router.get('/product_detail', function(req,res){
-  res.render('product/product_detail', {
-    title: 'incube',
-    isAu:req.isAuthenticated(),
-    user:req.user,
-    token:req.token
-  });
-})
-
 router.get('/introduce_us', function(req,res){
   res.render('system/introduce_us')
 });
@@ -276,16 +267,29 @@ router.get('/logout',function (req, res) {
 
 router.get('/product_item',function (req, res) {
   res.render('product/product_item',{
-    title: 'incube',
+    title: 'panda',
     isAu:req.isAuthenticated(),
     user:req.user,
     token:req.token
   });
 })
 
-
-router.get('/product_item_buy',function (req, res) {
-
+router.get('/product_item/:id', function (req, res) {
+  var id = req.params.id;
+  res.render('product/product_item', {
+    title: 'panda',
+    isAu:req.isAuthenticated(),
+    user:req.user,
+    id:id
+  });
+})
+router.get('/product_item_info/:id',function (req, res) {
+  db.Item.findOne({_id : mongojs.ObjectId(id)}, function(err, doc){
+    if(err) {
+      console.log(err)
+    }
+    res.json(doc);
+  })
 })
 
 //help class
