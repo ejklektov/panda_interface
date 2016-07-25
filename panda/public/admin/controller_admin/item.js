@@ -95,3 +95,4 @@ item.controller('itemCtrl', ['$scope', 'fileUpload','$http', function($scope, fi
     }
     getItemData();
 }]);
+
