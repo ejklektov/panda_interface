@@ -20,43 +20,79 @@ item.directive('fileModel', ['$parse', function ($parse) {
     };
 }]);
 
+
 item.service('fileUpload', ['$http', function ($http) {
-    this.uploadFileToUrl = function(file, uploadUrl){
+    this.uploadFileToUrl = function(file, uploadUrl, id){
         var fd = new FormData();
         fd.append('file', file);
 
+        var putImgId = function(res){
+            $http.put('/admin/item/upload_product_id/'+id+'/'+res, {
+                transformRequest: angular.identity,
+                headers: {'Content-Type': undefined}
+            })
+                .success(function(res){
+                    console.log();
+                })
+                .error(function(){
+                    console.log('Code Error : item.service(fileUpload).http.put');
+                });
+        }
+
         $http.post(uploadUrl, fd, {
             transformRequest: angular.identity,
-            headers: {'Content-Type': undefined}
+            headers:{'Content-Type': undefined}
         })
-            .success(function(res){})
+            .success(function(res){
+                putImgId(res);
+            })
             .error(function(){
-                console.log('no');
-            });
+                console.log('Code Error : item.service(fileUpload).http.post')
+            })
     }
+
+    this.upload
 }]);
 
-item.controller('itemCtrl', ['$scope', 'fileUpload','$http', function($scope, fileUpload,$http){
-    $scope.uploadFile = function(id){
+item.controller('itemCtrl', ['$scope', 'fileUpload','$http', function($scope, fileUpload,$http) {
+    var uploadFile = function (id) {
         var file1 = $scope.myFile1;
         var file2 = $scope.myFile2;
+        var file3 = $scope.myFile3;
+        var file4 = $scope.myFile4;
+        var file5 = $scope.myFile5;
 
         console.log('file is ');
         console.dir(file1);
         console.dir(file2);
+        console.dir(file3);
+        console.dir(file4);
+        console.dir(file5);
 
         var uploadUrl = "http://127.0.0.1:3000/admin/";
         fileUpload.uploadFileToUrl(file1, uploadUrl, id);
         fileUpload.uploadFileToUrl(file2, uploadUrl, id);
+        fileUpload.uploadFileToUrl(file3, uploadUrl, id);
+        fileUpload.uploadFileToUrl(file4, uploadUrl, id);
+        fileUpload.uploadFileToUrl(file5, uploadUrl, id);
     };
 
-    $scope.upload_product = function(){
+    $scope.upload_product = function () {
         var id;
-        $http.post('/admin/upload_product',$scope.Item).success(function(res){
+        $http.post('/admin/upload_product', $scope.Item).success(function (res) {
             id = res._id;
-            console.log('OK_ ?id : '+id)
-            $scope.uploadFile(id);
+            console.log('OK_ ?id : ' + id)
+            uploadFile(id);
         });
     }
-    
+
+    var getItemData = function(){
+        var jsonDataUrl = "/admin/item_list_data";
+        $http.get(jsonDataUrl).success(function (doc) {
+            console.log(doc)
+            $scope.items_json = doc;
+        });
+    }
+    getItemData();
 }]);
+

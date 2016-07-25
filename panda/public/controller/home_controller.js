@@ -50,11 +50,13 @@ home.controller('homeCtrl',['$scope','$http',function ($scope, $http,$location) 
         })
     };
     incubeInfo();
+
     var refresh = function () {
         $http.get('/document').success(function (res) {
             $scope.docs = res;
         })
     };
+
     var token = function () {
         $http.get('/at').success(function (res) {
             $scope.at = 5;//res;
@@ -62,6 +64,16 @@ home.controller('homeCtrl',['$scope','$http',function ($scope, $http,$location) 
     };
     token();
 
+    var getItemData = function(){
+        var jsonDataUrl = "/admin/item_list_data";
+        $http.get(jsonDataUrl).success(function (doc) {
+            console.log(doc)
+            $scope.items_json = doc;
+        });
+    }
+    getItemData();
+
+    
     refresh();
 
     $scope.addData = function () {
@@ -133,18 +145,3 @@ home.controller('addProductCtrl',['$scope','$http',function ($scope, $http) {
 
 
 }]);
-
-// home.controller('mypageCtrl',['$scope','$http',function ($scope, $http) {
-//
-// }]);
-//
-// home.controller('productCtrl',['$scope','$http',function ($scope, $http) {
-// <<<<<<< HEAD
-//    
-// =======
-//
-// }]);
-//
-// home.controller('searchCtrl',['$scope','$http',function ($scope, $http) {
-// >>>>>>> 6289e386ac696df8b39d5742c4771c1ee962c947
-// }]);

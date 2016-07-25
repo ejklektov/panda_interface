@@ -226,7 +226,7 @@
                                                         <div class="form-group">
                                                             <label class="col-sm-4 no-col-space control-label">입금자명</label>
                                                             <div class="col-sm-8">
-                                                                <input type="text" class="form-control required" name="cardholder" placeholder="">
+                                                                <% if (isAu) {%><%=user.name.username%><%}%>
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
@@ -242,33 +242,6 @@
                                                             <label class="col-sm-4 no-col-space control-label">입금기한</label>
                                                             <div class="col-sm-8">
                                                                 현 시각 + 12시간 후
-                                                            </div>
-                                                        </div>
-                                                        <hr>
-                                                        <div class="form-group">
-                                                            <label class="col-sm-4">현금영수증</label>
-                                                            <div class="col-sm-8 input-small-field">
-                                                                <section>
-                                                                    <div class="some-class">
-                                                                        <div class="col-md-2"> <label class="radio"><input type="radio" name="radio-inline" checked>미발행</label></div>
-                                                                        <div class="col-md-2"><label class="radio"><input type="radio" name="radio-inline">소득공제용</label></div>
-                                                                        <div class="col-md-2"><label class="radio"><input type="radio" name="radio-inline">지출증빙용</label></div>
-                                                                    </div>
-                                                                </section>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="col-sm-4 no-col-space control-label">발급번호</label>
-                                                            <div class="col-sm-4 input-small-field">
-                                                                <select class="form-control">
-                                                                    <option>주민(사업자)번호</option>
-                                                                    <option>휴대폰 번호</option>
-                                                                    <option>현금영수증 카드</option>
-                                                                    <option>기타카드</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="col-sm-4">
-                                                                <input type="text" class="form-control required" name="cardholder" placeholder="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -353,5 +326,6 @@
 <script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.placeholder.min.js"></script>
 <![endif]-->
 
+<script> x = "<%=user.name.username%>";</script>
 </body>
 </html>

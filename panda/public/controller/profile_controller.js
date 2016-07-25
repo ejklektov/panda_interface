@@ -86,6 +86,29 @@ home.controller('mypageCtrl',['$scope','$http',function ($scope, $http,$location
 
     refresh();
 
+    $scope.modifyUserData = function () {
+        // console.log('===============================modify : ' + id);
+        // console.log($scope.person);
+        $scope.person.phone = $scope.person.front + $scope.person.middle + $scope.person.rear;
+        $scope.person.email = $scope.person.mail +"@"+ $scope.person.domain;
+
+        // var splitEmail = email.split('@');
+        // var phoneFront = phone.substring(0,3);
+        // var phoneMiddle = phone.substring(4,8);
+        // var phoneRear= phone.substring(9,12);
+
+        $http.put('/profile',$scope.person).success(function (res) {
+            console.log(res);
+            findMe();
+
+            // $scope.front=phoneFront;
+            // $scope.middle=phoneMiddle;
+            // $scope.rear=phoneRear;
+            // $scope.mail=splitEmail[0];
+            // $scope.domain=splitEmail[1];
+
+        })
+    };
 
     $scope.addWord = function(){
         $http.post('/addWord',$scope.newDoc).success(function (res) {

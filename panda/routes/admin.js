@@ -1,20 +1,20 @@
 var express = require('express');
 var router = express.Router();
 var multiparty = require('multiparty');
-
-
 var mongojs = require('mongojs');
 var db    = mongojs('panda', ['user','Docu', 'Item', 'State', 'Feedback', 'Sell','faq', 'Buy', 'inquire']);
 
+//블록
+db = mongojs('panda',['user','incube']);
 
 var fs = require('fs');
 
 router.get('/',function (req,res) {
-  res.render('admin/index');
+  res.render('admin/index')
 });
 
 router.get('/item_regist',function (req,res) {
-  res.render('admin/item_regist');
+  res.render('admin/item_regist')
 });
 
 router.put('/incube/:id',function (req, res) {
@@ -30,11 +30,11 @@ router.put('/incube/:id',function (req, res) {
   })
 });
 
-router.get('/template', function (req, res) {
+router.get('/template',function (req, res) {
   res.render('admin/template');
 });
 
-router.get('/nav', function (req, res) {
+router.get('/nav',function (req, res) {
   res.render('admin/nav');
 });
 
@@ -96,7 +96,6 @@ router.post('/add_FAQ', function(req,res){
 /* GET upload */
 router.post('/', function(req, res, next) {
   var form = new multiparty.Form();
-
   // get field name & value
   form.on('field',function(name,type){
     console.log('normal field / name = '+name+' , value = '+type);
@@ -118,7 +117,7 @@ router.post('/', function(req, res, next) {
     }
 
     // console.log("Write Streaming file :"+filename);
-    var writeStream = fs.createWriteStream('./tmp/'+filename);
+    var writeStream = fs.createWriteStream('./public/image/'+filename);
     writeStream.filename = filename;
     part.pipe(writeStream);
 
@@ -153,14 +152,41 @@ router.post('/upload_product', function(req,res){
     price : req.body.price,
     sell_type : req.body.type,
     state : req.body.state,
-    context : req.body.context
+    context : req.body.context,
+    img_name : null
   }, function (err, doc) {
     if(err) console.log(err);
     res.json(doc);
 
 
-  });
+router.put('/item/upload_product_id/:id/:res',function (req, res) {
+  var img_name = req.params.res;
+  var id = req.params.id;
+  console.log("OK_item insert id is : "+img_name);
+
+
+    db.Item.findAndModify({
+        query: {_id: mongojs.ObjectId(id)},
+        update: {$push: {img_name: img_name}},
+        new: true
+    }, function (err, doc) {
+        if (err) {
+            console.log(err);
+        }
+        res.json(doc);
+    })
+
 });
+
+router.get('/item_list_data',function (req, res) {
+  db.Item.find(function (err, doc) {
+    res.json(doc);
+  });
+})
+
+router.get('/item_list_main', function (req, res) {
+  res.render('admin/item');
+})
 
 /* End Get upload */
 

@@ -16,8 +16,12 @@ var help = angular.module('help',['ngRoute'])
                  templateUrl: '/FAQ', controller: 'FAQCtrl'
              })
              .when('/FAQ_edit',{
-                templateUrl: '/FAQ_edit', controller:'FAQCtrl'
-            })
+                 templateUrl: '/FAQ_edit', controller:'FAQCtrl'
+             })
+             
+             .when('/question', {
+                 templateUrl: '/question', controller: 'questionCtrl'
+             })
 
              .when('/app', {
                  templateUrl: '/app', controller: 'appCtrl'

@@ -45,13 +45,14 @@ passport.deserializeUser(function (id,done) {
 
 passport.use(new KakaoStrategy({
       clientID : 'df2591dce718bea4bdd968389332bef7',
-      callbackURL : 'http://localhost:3000/oauth'
+      callbackURL : '/oauth'
     },
     function(accessToken, refreshToken, profile, done){
       // 사용자의 정보는 profile에 들어있다.
       tokensave(accessToken);
       at=accessToken;
-      console.log('token is '+at);
+      console.log('token is '+profile);
+      console.log(profile);
       console.log(profile);
       db.user.findAndModify({
         query: { kakaoId: profile.id },
@@ -137,13 +138,15 @@ router.get('/mypage',function(req,res){
     user: req.user,
     token: req.token,
     phone: req.phone,
+    email: req.email
+    token: req.token,
+    phone: req.phone,
     email: req.email,
     bank: req.bank,
     account: req.account,
     major: req.major
   })
 });
-
 router.get('/mypage_profile',function (req, res) {
   res.render('mypage/profile', {
     title: 'incube',
@@ -277,16 +280,29 @@ router.get('/logout',function (req, res) {
 
 router.get('/product_item',function (req, res) {
   res.render('product/product_item',{
-    title: 'incube',
+    title: 'panda',
     isAu:req.isAuthenticated(),
     user:req.user,
     token:req.token
   });
 })
 
-
-router.get('/product_item_buy',function (req, res) {
-
+router.get('/product_item/:id', function (req, res) {
+  var id = req.params.id;
+  res.render('product/product_item', {
+    title: 'panda',
+    isAu:req.isAuthenticated(),
+    user:req.user,
+    id:id
+  });
+})
+router.get('/product_item_info/:id',function (req, res) {
+  db.Item.findOne({_id : mongojs.ObjectId(id)}, function(err, doc){
+    if(err) {
+      console.log(err)
+    }
+    res.json(doc);
+  })
 })
 
 //help class
@@ -372,7 +388,10 @@ router.get('/item_list',function (req, res) {
   res.render('item/item_list');
 });
 router.get('/item_pay',function (req, res) {
-  res.render('item/item_pay');
+  res.render('item/item_pay',{
+      isAu:req.isAuthenticated(),
+      user:req.user
+  });
 });
 router.get('/notice',function (req, res) {
   res.render('help/notice');
