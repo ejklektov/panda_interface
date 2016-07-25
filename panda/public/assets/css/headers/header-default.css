@@ -661,7 +661,8 @@ body.header-fixed-space-default {
 .header .mega-menu .nav,
 .header .mega-menu .dropup,
 .header .mega-menu .dropdown,
-.header .mega-menu .collapse {
+.header .mega-menu .collapse
+{
   	position: static;
 }
 
@@ -710,7 +711,7 @@ body.header-fixed-space-default {
 .header .mega-menu .dropdown.mega-menu-fullwidth .dropdown-menu {
   	left: 0;
   	right: 0;
-  	overflow: hidden;
+  	overflow: visible;
 }
 
 @media (min-width: 992px) {

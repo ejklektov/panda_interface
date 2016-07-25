@@ -51,7 +51,8 @@ passport.use(new KakaoStrategy({
       // 사용자의 정보는 profile에 들어있다.
       tokensave(accessToken);
       at=accessToken;
-      console.log('token is '+at);
+      console.log('token is '+profile);
+      console.log(profile);
       console.log(profile);
       db.user.findAndModify({
         query: { kakaoId: profile.id },
@@ -347,7 +348,10 @@ router.get('/item_list',function (req, res) {
   res.render('item/item_list');
 });
 router.get('/item_pay',function (req, res) {
-  res.render('item/item_pay');
+  res.render('item/item_pay',{
+      isAu:req.isAuthenticated(),
+      user:req.user
+  });
 });
 router.get('/notice',function (req, res) {
   res.render('help/notice');
