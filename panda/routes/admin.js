@@ -66,12 +66,6 @@ router.get('/delete_FAQ/:id',function (req, res) {
 });
 
 router.put('/send_FAQ:id',function(req,res){
-  var id = req.params.id;
-  // id*=1;  //string to int
-  console.log('================');
-  console.log(req.body.question);
-  console.log(req.body.answer);
-  console.log(req.params.id);
 
   db.faq.findAndModify({
         query: {_id:mongojs.ObjectId(req.params.id)},
@@ -80,8 +74,6 @@ router.put('/send_FAQ:id',function(req,res){
         if(err){
           console.log(err);
         }
-        console.log('sddddd;dlfkjasd;lfkjasd;lfk');
-        console.log(doc);
         res.json(doc);
     })
 })
@@ -161,8 +153,8 @@ router.post('/upload_product', function(req,res){
     img_name : null
   }, function (err, doc) {
     if(err) console.log(err);
-    console.log('OK_ json route.post./upload_product ?json : ' + doc)
-    console.log(doc)
+    // console.log('OK_ json route.post./upload_product ?json : ' + doc)
+    // console.log(doc)
     res.json(doc);
   });
 });
