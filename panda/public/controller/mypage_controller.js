@@ -26,6 +26,7 @@ var mypage = angular.module('mypage',['ngRoute'])
 
 
 mypage.controller('editProfileCtrl',['$scope','$http',function($scope, $http){
+    
 }]);
 
 mypage.controller('sellProductListCtrl',['$scope','$http',function($scope, $http){

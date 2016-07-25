@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var mongojs = require('mongojs');
-var db = mongojs('panda',['user','document','incube']);
+var db = mongojs('panda',['user','document','incube', 'faq', 'inquire']);
 var passport = require('passport')
 var KakaoStrategy = require('passport-kakao').Strategy;
 
@@ -61,7 +61,9 @@ passport.use(new KakaoStrategy({
             name: profile.id,
             roles : ['authenticated'],
             provider: 'kakao',
-            kakao: profile._json
+            kakao: profile._json,
+            phone: profile.phone,
+            email: profile.email
           }
         },
         new: true,   // return new doc if one is upserted
@@ -109,10 +111,7 @@ router.get('/document',function (req, res) {
   })
 });
 router.post('/document',function (req, res) {
-  var data = {"title":req.body.title, "writer":req.user.name.username, "data":Date.now()}
-  db.document.insert(data,function (err, doc) {
-    res.json(doc);
-  })
+
 });
 
 router.get('/incubeInfo',function (req, res) {
@@ -136,16 +135,42 @@ router.get('/mypage',function(req,res){
     title: 'incube',
     isAu: req.isAuthenticated(),
     user: req.user,
-    token: req.token
+    token: req.token,
+    phone: req.phone,
+    email: req.email,
+    bank: req.bank,
+    account: req.account,
+    major: req.major
   })
 });
+
 router.get('/mypage_profile',function (req, res) {
   res.render('mypage/profile', {
     title: 'incube',
     isAu: req.isAuthenticated(),
     user: req.user,
     token: req.token
-  });
+   })
+});
+router.get('/findUser', function(req,res) {
+  db.user.findOne({
+    name:req.user.id}
+      ,function (err, doc) {
+        console.log(doc);
+        res.json(doc);
+  })
+})
+
+router.put('/profile',function (req, res) {
+  // console.log(req.body);
+  // console.log(req.user.id);
+  db.user.findAndModify({
+    query:{name:req.user.id},
+    update:
+    {$set: {phone: req.body.phone, email: req.body.email, bank: req.body.bank, account: req.body.account, major: req.body.major}},new:true},function (err,doc) {
+    res.json(doc);
+    // console.log(doc);
+  })
 });
 
 router.get('/edit_password',function(req,res){
@@ -233,12 +258,14 @@ router.get('/product_detail', function(req,res){
 router.get('/introduce_us', function(req,res){
   res.render('system/introduce_us')
 });
+
 router.get('/product_show', function(req,res){
   res.render('product/product_show')
 });
+
 router.get('/datas',function (req, res) {
   db.user.find(function (err, docs) {
-    console.log(docs);
+    // console.log(docs);
     res.json(docs);
   });
 });
@@ -257,6 +284,11 @@ router.get('/product_item',function (req, res) {
   });
 })
 
+
+router.get('/product_item_buy',function (req, res) {
+
+})
+
 //help class
 router.get('/help',function (req, res) {
   res.render('help/help',{
@@ -266,13 +298,57 @@ router.get('/help',function (req, res) {
     token:req.token
   });
 });
+
 router.get('/FAQ',function (req, res) {
   res.render('help/FAQ');
 });
 
-router.get('/question',function (req,res) {
-  res.render('help/question');
+router.get('/FAQ_get',function(req,res){
+  db.faq.find(function(err,docs){
+    console.log(docs);
+    res.json(docs);
+  })
 });
+
+// router.get('/admin/modify_FAQ',function(req,res){
+//   console.log(modifyFAQ);
+//   // console.log('This is req');
+//   // console.log(res);
+//   // db.faq.findAndModify({
+//   //   update:
+//   //   {$set:{question: req.body.question, answer: req.body.answer}}, new:true},function(err,docs){
+//   //   res.json(docs);
+//   //   console.log(docs);
+//   // })
+// })
+
+router.get('/inquire',function (req,res) {
+  res.render('help/inquire');
+});
+
+router.get('/inquire_get',function (req,res) {
+  // console.log(req.user.name.username);
+  db.inquire.find({name:req.user.name.username}, function(err,docs){
+    console.log(docs);
+    res.json(docs);
+  })
+});
+
+router.post('/inquire_regist',function (req,res) {
+  var data = {"name":req.user.name.username, "type":req.body.inquireType, "inquire": req.body.inquireText, "answer" : null, "date":Date()}
+  db.inquire.insert(data,function (err, docs) {
+    // console.log(docs);
+    res.json(docs);
+  })
+
+
+  // console.log(req);
+  // db.inquire.insert({name:req.user.name.username, type:req.body.inquireType, inquire:req.body.inquireText, data:Date.noew()}, function(err,docs){
+  //   console.log(docs);
+  //   res.json(docs);
+  // })
+});
+
 router.get('/request',function (req,res) {
   res.render('help/request');
 });

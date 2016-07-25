@@ -4,39 +4,53 @@
     <div class="profile-body margin-bottom-20">
         <div class="tab-v1">
             <ul class="nav nav-justified nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#edit_profile"> Profile</a></li>
+                <li class="active"><a data-toggle="tab"> Profile</a></li>
             </ul>
             <div class="tab-content">
                 <div id="edit_profile" class="profile-edit tab-pane fade in active">
                     <br>
-                    <dl class="dl-horizontal">
+                    <dl class="dl-horizontal" style="margin-left: 0px;">
+                        <div class="profile_image" style="align : center; width : 200px; right : 200px;">
+                            <img src="{{user.kakao.properties.profile_image}}" alt="프로필 이미지">
+                        </div>
                         <dt><strong>이름</strong></dt>
                         <dd>
                             <%= user.name.username%>
-                        </dd>
-                        <hr>
-                        <dt><strong>피드백 </strong></dt>
-                        <dd>
-                            Score
+                            {{doc.name}}
                         </dd>
                         <hr>
                         <dt><strong>이메일</strong></dt>
                         <dd>
-                            <input placeholder="edward-rooster"> @ <input placeholder="gmail.com">
+                            <input ng-model = "splitEmail[0]" type = "text">@ <input ng-model = "splitEmail[1]" type = "text">
+                            <!--<input ng-model="person.mail" type = "email" placeholder="{{splitEmail[0]}}">-->
                         </dd>
                         <hr>
                         <dt><strong>연락처</strong></dt>
                         <dd>
-                            <input placeholder="010"> - <input placeholder="xxxx"> - <input placeholder="aaaa">
+                            <input ng-model = "front" type = "text" size="1" style="vertical-align:middle;"> - <input ng-model = "middle" type = "text" size="4" style="vertical-align:middle;"> - <input ng-model = "rear" type = "text" size="4" style="vertical-align:middle;">
                         </dd>
                         <hr>
-
+                        <dt><strong>은행</strong></dt>
+                        <dd>
+                            <input ng-model= "bank" type = "text">
+                        </dd>
+                        <br>
+                        <dt><strong>계좌번호</strong></dt>
+                        <dd>
+                            <input ng-model = "account" type = "text">
+                        </dd>
+                        <hr>
+                        <dt><strong>전공</strong></dt>
+                        <dd>
+                            <input ng-model = "major" type = "text">
+                        </dd>
                     </dl>
-                    <button type="button" class="btn-u btn-u-default" style="float: right;"><a href="/"><h style="color:white">취소</h></a></button>
-                    <button type="button" class="btn-u" style="float: right; margin-right : 5px;" ng-click="">저장</button>
+                    <a href="/"><button type="button" class="btn-u btn-u-default" style="float: right;" ><a href="/"><h style="color:white">취소</h></a></button></a>
+                    <a href="/mypage"><button type="button" class="btn-u" style="float: right; margin-right : 5px;" ng-click = "modifyUserData()">저장</button></a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <!-- End Profile Content -->

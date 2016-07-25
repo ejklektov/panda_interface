@@ -1,20 +1,20 @@
 var express = require('express');
 var router = express.Router();
 var multiparty = require('multiparty');
-var mongojs = require('mongojs');
-var db    = mongojs('panda', ['User','Docu', 'Item', 'State', 'Feedback', 'Sell', 'Buy']);
 
-//블록
-db = mongojs('panda',['user','incube']);
+
+var mongojs = require('mongojs');
+var db    = mongojs('panda', ['user','Docu', 'Item', 'State', 'Feedback', 'Sell','faq', 'Buy', 'inquire']);
+
 
 var fs = require('fs');
 
 router.get('/',function (req,res) {
-  res.render('admin/index')
+  res.render('admin/index');
 });
 
 router.get('/item_regist',function (req,res) {
-  res.render('admin/item_regist')
+  res.render('admin/item_regist');
 });
 
 router.put('/incube/:id',function (req, res) {
@@ -30,17 +30,73 @@ router.put('/incube/:id',function (req, res) {
   })
 });
 
-router.get('/template',function (req, res) {
+router.get('/template', function (req, res) {
   res.render('admin/template');
 });
 
-router.get('/nav',function (req, res) {
+router.get('/nav', function (req, res) {
   res.render('admin/nav');
 });
 
-/* GET upload. */
+/* FAQ area */
+router.get('/FAQ_edit', function(req,res){
+  res.render('admin/FAQ_edit');
+})
+
+router.get('/modify_FAQ/:id', function (req, res) {
+  // console.log(req.params.id);
+  db.faq.findOne({
+        _id: mongojs.ObjectId(req.params.id)
+      }, function (err, doc) {
+        // console.log(doc);
+        res.json(doc);
+      });
+});
+
+router.get('/delete_FAQ/:id',function (req, res) {
+  // console.log(req.params.id);
+  db.faq.remove({
+        _id: mongojs.ObjectId(req.params.id)
+      }
+      , function (err, doc) {
+        console.log(doc);
+        res.json(doc);
+      });
+});
+
+router.put('/send_FAQ:id', function(req,res){
+  var id = req.params.id;
+  // console.log(req.body.question);
+  // console.log(req.body.answer);
+  // console.log(req.params.id);
+  db.faq.findAndModify({
+        query: {_id:mongojs.ObjectId(req.params.id)},
+      update:{$set:{question:req.body.question, answer:req.body.answer}}, new:true}
+      ,function(err, doc){
+        if(err){
+          console.log(err);
+        }
+        // console.log(doc);
+        res.json(doc);
+    })
+})
+
+router.post('/add_FAQ', function(req,res){
+  var data = {"question" : req.body.question, "answer" : req.body.answer}
+  db.faq.insert(data,function(err, doc){
+        if(err){
+          console.log(err);
+        }
+        res.json(doc);
+      })
+})
+
+/* End FAQ area */
+
+/* GET upload */
 router.post('/', function(req, res, next) {
   var form = new multiparty.Form();
+
   // get field name & value
   form.on('field',function(name,type){
     console.log('normal field / name = '+name+' , value = '+type);
@@ -105,5 +161,76 @@ router.post('/upload_product', function(req,res){
 
   });
 });
+
+/* End Get upload */
+
+/* Inquire area */
+
+router.get('/inquire_answer', function(req,res){
+  res.render('admin/inquire_answer');
+})
+
+router.get('/inquire_get_all', function(req,res){
+  db.inquire.find(function(err,docs){
+    // console.log(docs);
+    res.json(docs);
+  })
+})
+
+router.get('/inquire_ans/:id', function(req,res){
+  db.inquire.findOne({
+    _id: mongojs.ObjectId(req.params.id)
+  }, function(err, doc){
+    res.json(doc);
+  });
+})
+
+router.put('/delete_ans/:id', function(req,res){
+  db.inquire.findAndModify({
+    query:{_id: mongojs.ObjectId(req.params.id)},
+    update: {$set: {answer: null}}, new: true
+  }, function(err,doc){
+    if(err){
+      console.log(err);
+    }
+      res.json(doc)
+  })
+})
+
+router.put('/send_ans/:id', function(req,res){
+  console.log(req.body.answer);
+  
+  db.inquire.findAndModify({
+    query:{_id: mongojs.ObjectId(req.params.id)},
+    update: {$set: {answer: req.body.answer}}, new: true
+  }, function(err,doc){
+    if(err){
+      console.log(err);
+    }
+    res.json(doc)
+  })
+})
+
+/* End inquire area */
+
+/* User check area */
+
+router.get('/user_check', function(req,res){
+  res.render('admin/user_check');
+})
+
+router.get('/user_get_all', function(req,res){
+  db.user.find(function(err,docs){
+    if(err){
+      console.log(err);
+    }
+    console.log('router_user_get_all');
+    console.log(docs);
+    res.json(docs);
+  })
+})
+
+/* End user check area */
+
 
 module.exports = router;
