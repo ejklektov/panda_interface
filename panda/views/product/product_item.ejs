@@ -61,7 +61,7 @@
 
 </head>
 
-<body ng-app = "product_page">
+<body ng-app="product_page" ng-controller="productCtrl">
 <div class="wrapper">
     <i class="style-switcher-btn icon-bell"></i>
     <div class="style-switcher animated fadeInRight">
@@ -135,15 +135,15 @@
 
                 <div class="col-md-6">
                     <div class="shop-product-heading">
-                        <h2>제목</h2>
+                        <h2>{{1+1}} {{items_json_target.title}}</h2>
                     </div><!--/end shop product social-->
                     <p>상품명</p>
                     <ul class="list-inline shop-product-prices margin-bottom-30">
-                        <li class="shop">12,000원</li>
+                        <li class="shop">{{tems_json_target.price}}원</li>
                     </ul><!--/end shop product prices-->
 
-                    <h3 class="shop-product-title">판매 유형 - SELL</h3>
-                    <h3 class="shop-product-title">물건 상태 - 미개봉</h3>
+                    <h3 class="shop-product-title">판매 유형 - {{items_json_target.sell_type}}</h3>
+                    <h3 class="shop-product-title">물건 상태 - {{items_json_target.state}}</h3>
 
 
                     <div class="margin-bottom-40">
@@ -248,6 +248,7 @@
         MasterSliderShowcase2.initMasterSliderShowcase2();
     });
 </script>
+<script src="controller/product_page_controller.js"></script>
 
 <!--[if lt IE 9]>
 <script src="assets/plugins/respond.js"></script>

@@ -18,6 +18,9 @@ var help = angular.module('help',['ngRoute'])
              .when('/FAQ_edit',{
                 templateUrl: '/FAQ_edit', controller:'FAQCtrl'
             })
+             .when('/question', {
+                 templateUrl: '/question', controller: 'questionCtrl'
+             })
 
              .when('/app', {
                  templateUrl: '/app', controller: 'appCtrl'
@@ -30,14 +33,9 @@ var help = angular.module('help',['ngRoute'])
                  templateUrl: '/request', controller: 'requestCtrl'
              })
 
-             .when('/modify_FAQ', {
+             .when('/modify_FAQ',{
                  templateUrl: '/modify_FAQ', controller: 'FAQCtrl'
              })
-
-             .when('/inquire', {
-                 templateUrl: '/inquire', controller: 'inquireCtrl'
-             })
-
              .otherwise({
                  templateUrl: '/FAQ',controller:'FAQCtrl'
              })
@@ -70,39 +68,20 @@ help.controller('FAQCtrl',['$scope','$http','$location',function ($scope, $http,
         else{
             FAQ();
         }
-    }
 
+    }
+    
     $scope.send_FAQ = function(id){
-       // console.log(id);
+        console.log(id);
        $http.put('/admin/send_FAQ'+id,$scope.new).success(function(res){
            FAQ();
         })
     }
 
+
     $scope.add_FAQ = function(){
         $http.post('/admin/add_FAQ',$scope.addFAQ).success(function(res){
             FAQ();
         })
-    }
-}]);
-
-help.controller('inquireCtrl',['$scope','$http','$location',function ($scope, $http, $location){
-    var getInqu = function(){
-        // console.log($scope.inquireText);
-        $http.get('/inquire_get').success(function(res){
-            // console.log(res);
-            $scope.inquires = res;
-        })
-    }
-
-    getInqu();
-
-    $scope.registInqu = function(){
-        // console.log('currentInquire');
-        // console.log($scope.curInqu);
-        $http.post('/inquire_regist', $scope.curInqu).success(function(res){
-            $scope.inquire = res;
-        })
-        getInqu();
     }
 }]);
