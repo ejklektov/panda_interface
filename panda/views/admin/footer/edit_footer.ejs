@@ -89,31 +89,31 @@
                                     <br>
                                 </div>
 
-                                <button onclick="add_row()">행 추가하기</button>
-                                <button onclick="delete_row()">행 삭제하기</button>
+                                <!--<button onclick="add_row()">행 추가하기</button>-->
+                                <!--<button onclick="delete_row()">행 삭제하기</button>-->
 
-                                <table id="mytable" border="2" cellspacing="0">
-                                    <th colspan="2">테이블 헤더</th>
-                                </table>
+                                <!--<table id="mytable" border="2" cellspacing="0">-->
+                                    <!--<th colspan="2">테이블 헤더</th>-->
+                                <!--</table>-->
 
-                                <script>
-                                    function add_row() {
-                                        mytable = document.getElementById('mytable');
-                                        row = mytable.insertRow(mytable.rows.length);
-                                        cell1 = row.insertCell(0);
-                                        cell2 = row.insertCell(1);
-                                        cell1.innerHTML = '항목';
-                                        cell2.innerHTML = '<input type="text" name="strs[]"/>';
-                                    }
-                                    function delete_row() {
-                                        mytable = document.getElementById('mytable');
-                                        if(mytable.rows.length < 2) return;
-                                        mytable.deleteRow(mytable.rows.length-1);
-                                    }
-                                </script>
+                                <!--<script>-->
+                                    <!--function add_row() {-->
+                                        <!--mytable = document.getElementById('mytable');-->
+                                        <!--row = mytable.insertRow(mytable.rows.length);-->
+                                        <!--cell1 = row.insertCell(0);-->
+                                        <!--cell2 = row.insertCell(1);-->
+                                        <!--cell1.innerHTML = '항목';-->
+                                        <!--cell2.innerHTML = '<input type="text" name="strs[]"/>';-->
+                                    <!--}-->
+                                    <!--function delete_row() {-->
+                                        <!--mytable = document.getElementById('mytable');-->
+                                        <!--if(mytable.rows.length < 2) return;-->
+                                        <!--mytable.deleteRow(mytable.rows.length-1);-->
+                                    <!--}-->
+                                <!--</script>-->
 
                                 <div class = "add">
-                                    <label>New category</label>
+                                    <label>New footer_content</label>
                                     <input ng-model="addCategory.group" class="form-control" type="text">
                                     <br>
                                     <input class = "btn btn-default" type="button" ng-click="add_category()" value = "추가" style = "float : right">
