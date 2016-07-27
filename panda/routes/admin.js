@@ -1,90 +1,55 @@
 var express = require('express');
 var router = express.Router();
 var multiparty = require('multiparty');
-
-
 var mongojs = require('mongojs');
-var db    = mongojs('panda', ['user','Docu', 'Item', 'State', 'Feedback', 'Sell','faq', 'Buy', 'inquire', 'category', 'footer']);
+var db    = mongojs('panda', ['User','Docu', 'Item', 'State', 'Feedback', 'Sell','faq', 'Buy']);
 
+//블록
+db = mongojs('panda',['user','incube']);
 
 var fs = require('fs');
 
 router.get('/',function (req,res) {
-  res.render('admin/index');
+  res.render('admin/index')
 });
 
-/* item area */
-router.get('/item_regist', function (req,res) {
-  res.render('admin/item/item_regist');
+router.get('/item_regist',function (req,res) {
+  res.render('admin/item_regist')
 });
 
-router.get('/item_check', function(req,res){
-  res.render('admin/item/item_check');
-})
-
-router.get('/admin/item_get_all', function(req,res){
-  db.Item.find(function(err,docs){
-    // console.log(docs);
-    res.json(docs);
-  })
-})
-
-router.post('/admin/delete_item/:id', function(req,res){
-  db.Item.remove({
-        _id: mongojs.ObjectId(req.params.id)
-      }
-      , function (err, doc) {
-        // console.log(doc);
-        res.json(doc);
-      });
-})
-
-router.get('/modify_item/:id', function (req, res) {
-  // console.log(req.params.id);
-  db.Item.findOne({
-    _id: mongojs.ObjectId(req.params.id)
-  }, function (err, doc) {
-    // console.log(doc);
-    res.json(doc);
-  });
-});
-
-router.put('/send_item/:id', function(req,res){
-  // console.log(req.body);
-  db.Item.findAndModify({
-    query:{_id: mongojs.ObjectId(req.params.id)},
-
-    //picture: req.body.picture 추가 필요.
-    update: {$set: {title: req.body.title, sell_type: req.body.sell_type, price: req.body.price, state: req.body.state, context: req.body.context, payment_state: req.body.payment_state}}, new: true
-  }, function(err,doc){
+router.put('/incube/:id',function (req, res) {
+  var id = req.params.id;
+  console.log("id is : "+id)
+  db.incube.findAndModify({query:{_id:mongojs.ObjectId(id)},
+    update:{$set:{content:req.body.content}},new:true},function (err,doc) {
     if(err){
       console.log(err);
     }
+    // console.log('doc is' + doc.content);
     res.json(doc);
   })
-})
+});
 
-/* End item area */
-
-router.get('/template', function (req, res) {
+router.get('/template',function (req, res) {
   res.render('admin/template');
 });
 
-router.get('/nav', function (req, res) {
+router.get('/nav',function (req, res) {
   res.render('admin/nav');
 });
 
-/* FAQ area */
-router.get('/FAQ_edit', function(req,res){
-  res.render('admin/service_center/FAQ_edit');
+
+router.get('/FAQ_edit',function(req,res){
+  res.render('admin/FAQ_edit');
 })
 
-router.get('/modify_FAQ/:id', function (req, res) {
+router.get('/modify_FAQ/:id',function (req, res) {
   // console.log(req.params.id);
   db.faq.findOne({
         _id: mongojs.ObjectId(req.params.id)
-      }, function (err, doc) {
-        // console.log(doc);
+      }
+      , function (err, doc) {
+        console.log(doc);
         res.json(doc);
       });
 });
@@ -95,16 +60,19 @@ router.get('/delete_FAQ/:id',function (req, res) {
         _id: mongojs.ObjectId(req.params.id)
       }
       , function (err, doc) {
-        // console.log(doc);
+        console.log(doc);
         res.json(doc);
       });
 });
 
-router.put('/send_FAQ:id', function(req,res){
+router.put('/send_FAQ:id',function(req,res){
   var id = req.params.id;
-  // console.log(req.body.question);
-  // console.log(req.body.answer);
-  // console.log(req.params.id);
+  // id*=1;  //string to int
+  console.log('================');
+  console.log(req.body.question);
+  console.log(req.body.answer);
+  console.log(req.params.id);
+
   db.faq.findAndModify({
         query: {_id:mongojs.ObjectId(req.params.id)},
       update:{$set:{question:req.body.question, answer:req.body.answer}}, new:true}
@@ -112,12 +80,13 @@ router.put('/send_FAQ:id', function(req,res){
         if(err){
           console.log(err);
         }
-        // console.log(doc);
+        console.log('sddddd;dlfkjasd;lfkjasd;lfk');
+        console.log(doc);
         res.json(doc);
     })
 })
 
-router.post('/add_FAQ', function(req,res){
+router.post('/add_FAQ',function(req,res){
   var data = {"question" : req.body.question, "answer" : req.body.answer}
   db.faq.insert(data,function(err, doc){
         if(err){
@@ -127,12 +96,9 @@ router.post('/add_FAQ', function(req,res){
       })
 })
 
-/* End FAQ area */
-
-/* GET upload */
+/* GET upload. */
 router.post('/', function(req, res, next) {
   var form = new multiparty.Form();
-
   // get field name & value
   form.on('field',function(name,type){
     console.log('normal field / name = '+name+' , value = '+type);
@@ -146,7 +112,9 @@ router.post('/', function(req, res, next) {
     var size;
     if (part.filename) {
       console.log(part);
-      filename = Date.now()+part.filename;
+
+      //jpg로 올릴 경우를 고려해야함, Data.now()+part.filename으로 할 경우에 파일 이름때문에 서치를 못하는 문제가 생김
+      filename = Date.now()+'.PNG';
       size = part.byteCount;
     }else{
       part.resume();
@@ -154,7 +122,7 @@ router.post('/', function(req, res, next) {
     }
 
     // console.log("Write Streaming file :"+filename);
-    var writeStream = fs.createWriteStream('./tmp/'+filename);
+    var writeStream = fs.createWriteStream('./public/image/'+filename);
     writeStream.filename = filename;
     part.pipe(writeStream);
 
@@ -189,219 +157,48 @@ router.post('/upload_product', function(req,res){
     price : req.body.price,
     sell_type : req.body.type,
     state : req.body.state,
-    context : req.body.context,
-    payment_state : null
-    // picture : req.body.picture
+    context : req.body.context
   }, function (err, doc) {
-    if(err) console.log(err);
+    if(err) {
+      console.log('Code Error : admin.js=>router.put(/upload_product)')
+      console.log(err);
+    }
+    console.log('OK_ json route.post./upload_product ?json : ' + doc)
+    console.log(doc)
     res.json(doc);
   });
 });
 
-/* End Get upload */
 
-/* Inquire area */
+router.put('/item/upload_product_id/:id/:res',function (req, res) {
+  var img_name = req.params.res;
+  var id = req.params.id;
+  console.log("OK_item insert id is : "+img_name);
 
-router.get('/inquire_answer', function(req,res){
-  res.render('admin/service_center/inquire_answer');
-})
 
-router.get('/inquire_get_all', function(req,res){
-  db.inquire.find(function(err,docs){
-    // console.log(docs);
-    res.json(docs);
-  })
-})
+    db.Item.findAndModify({
+        query: {_id: mongojs.ObjectId(id)},
+        update: {$push: {img_name: img_name}},
+        new: true
+    }, function (err, doc) {
+        if (err) {
+            console.log('Code Error : admin.js=>router.put(/item/upload_prodzuct_id/:id/:res)')
+            console.log(err);
+        }
+        res.json(doc);
+    })
 
-router.get('/inquire_ans/:id', function(req,res){
-  db.inquire.findOne({
-    _id: mongojs.ObjectId(req.params.id)
-  }, function(err, doc){
+});
+
+router.get('/item_list_data',function (req, res) {
+  db.Item.find(function (err, doc) {
     res.json(doc);
   });
 })
 
-// 수정 후 확인 x
-router.put('/delete_ans/:id', function(req,res){
-  db.inquire.remove({
-    _id: mongojs.ObjectId(req.params.id)
-  }, function (err, doc) {
-    if (err)
-      console.log(err);
-  })
+router.get('/item_list_main', function (req, res) {
+  res.render('admin/item');
 })
-
-router.put('/send_ans/:id', function(req,res){
-  // console.log(req.body.answer);
-  
-  db.inquire.findAndModify({
-    query:{_id: mongojs.ObjectId(req.params.id)},
-    update: {$set: {answer: req.body.answer}}, new: true
-  }, function(err,doc){
-    if(err){
-      console.log(err);
-    }
-    res.json(doc)
-  })
-})
-
-/* End inquire area */
-
-/* User area */
-
-router.get('/user_check', function(req,res){
-  res.render('admin/user/user_check');
-})
-
-router.get('/user_get_all', function(req,res){
-  db.user.find(function(err,docs){
-    if(err){
-      console.log(err);
-    }
-    console.log('router_user_get_all');
-    console.log(docs);
-    res.json(docs);
-  })
-})
-
-router.post('/delete_user/:id', function(req,res){
-  db.user.remove({
-    _id: mongojs.ObjectId(req.params.id)
-  },
-  function(err){
-    if(err){
-      console.log(err);
-    }
-  })
-})
-
-/* End user area */
-
-
-/* Category area */
-
-router.get('/category_edit', function(req,res){
-  res.render('admin/category/category_edit');
-})
-
-router.get('/category_get_all', function(req,res){
-  db.category.find(function(err,docs){
-    // if(err){
-    //   console.log(err);
-    // }
-    // console.log('router_category_get_all');
-    // console.log(docs);
-    res.json(docs);
-  })
-})
-
-router.get('/category_modify/:id', function(req,res){
-  db.category.findOne({
-    _id: mongojs.ObjectId(req.params.id)
-  }, function(err, doc){
-    res.json(doc);
-  });  
-})
-
-router.put('/send_category/:id', function(req,res){
-  // console.log(req.body);
-  db.category.findAndModify({
-    query:{_id: mongojs.ObjectId(req.params.id)},
-    update: {$set: {group: req.body.group}}, new: true
-  }, function(err,doc){
-    if(err){
-      console.log(err);
-    }
-    res.json(doc);
-  })
-})
-
-router.post('/add_category', function(req,res) {
-  db.category.insert({
-    group: req.body.group
-  }, function (err, doc) {
-    if (err) {
-      console.log(err);
-    }
-    else {
-      res.json(doc)
-    }
-  })
-})
-
-router.get('/delete_category/:id', function(req,res) {
-  // console.log(req.params.id);
-  db.category.remove({
-    _id: mongojs.ObjectId(req.params.id)
-  }, function (err, doc) {
-    if (err)
-      console.log(err);
-  })
-})
-
-/* End category area */
-
-/* footer area */
-
-router.get('/edit_footer', function(req,res){
-  res.render('admin/footer/edit_footer');
-})
-
-router.get('/get_all_footer', function(req,res){
-  db.footer.find(function(err,docs){
-    // if(err){
-    //   console.log(err);
-    // }
-    // console.log('router_category_get_all');
-    // console.log(docs);
-    res.json(docs);
-  })
-})
-
-router.get('/modify_footer/:id', function(req,res){
-  db.footer.findOne({
-    _id: mongojs.ObjectId(req.params.id)
-  }, function(err, doc){
-    res.json(doc);
-  });
-})
-
-router.put('/send_footer/:id', function(req,res){
-  // console.log(req.body);
-  db.footer.findAndModify({
-    query:{_id: mongojs.ObjectId(req.params.id)},
-    update: {$set: { }}, new: true
-  }, function(err,doc){
-    if(err){
-      console.log(err);
-    }
-    res.json(doc);
-  })
-})
-
-router.post('/add_footer', function(req,res) {
-  db.footer.insert({
-    // group: req.body.group
-  }, function (err, doc) {
-    if (err) {
-      console.log(err);
-    }
-    else {
-      res.json(doc)
-    }
-  })
-})
-
-router.get('/delete_footer/:id', function(req,res) {
-  // console.log(req.params.id);
-  db.footer.remove({
-    _id: mongojs.ObjectId(req.params.id)
-  }, function (err, doc) {
-    if (err)
-      console.log(err);
-  })
-})
-
-/* End footer area */
 
 module.exports = router;
+
