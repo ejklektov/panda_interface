@@ -1,0 +1,41 @@
+
+<!-- Begin Content -->
+<div class="col-md-9" ng-app = "help" ng-controller="inquireCtrl">
+    <form action="#" class="sky-form">
+        <header>1:1 문의/신고</header>
+        <fieldset>
+            <section>
+                <label class="select">
+                    <select ng-model="curInqu.inquireType">
+                        <option value="구매">구매</option>
+                        <option value="판매">판매</option>
+                        <option value="신고">신고</option>
+                    </select>
+                    <i></i>
+                </label>
+            </section>
+            <section>
+                <label class="textarea">
+                    <textarea rows="3" ng-model = "curInqu.inquireText" placeholder="문의 내용을 입력 하세요"></textarea>
+                </label>
+            </section>
+            <input class = "btn-u btn-u-purple pull-right" type="button" ng-click="registInqu()" value = "등록 버튼">
+        </fieldset>
+        <div class = "inquire_area" ng-repeat = "inquire in inquires">
+            <footer>
+                <div style = "font-weight:bold; font-size:15px">
+                    {{inquire.inquire}}
+                </div>
+                <br>
+                <div style = "margin-left : 20px;">
+                    {{inquire.answer}}
+                </div>
+            </footer>
+        </div>
+        <!--<footer>(아이콘)내가 올린 질문 <br> (아이콘)답</footer>-->
+        <!--<footer>(아이콘)내가 올린 질문 <br> (아이콘)답</footer>-->
+    </form>
+    <!-- End Basic Form -->
+    <div class="margin-bottom-60"></div>
+</div>
+<!-- End Content -->
