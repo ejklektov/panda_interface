@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<html lang="en" ng-app = "help" ng-controller = "FAQCtrl">
+<html lang="en" ng-app = "admin" ng-controller = "categoryCtrl">
 
 <head>
     <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
@@ -51,11 +50,11 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">FAQ 수정</h1>
+                <h1 class="page-header">카테고리 수정 및 삭제</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
-        <!-- /.row -->
+         <!--/.row -->
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel-body">
@@ -63,44 +62,24 @@
                         <div class="col-md-12">
                             <form role="form">
                                 <div class = "modify">
-                                    <label>Modify</label>
-                                    <input ng-model="new.question" class="form-control" placeholder="{{new.question}}" type="text">
+                                    <label style="margin-bottom: 10px;">Modify</label>
                                     <br>
-                                    <input ng-model="new.answer" class="form-control" placeholder="{{new.answer}}" type="text">
-                                    <br>
-                                    <input style="float:right" class = "btn btn-default" type="button" ng-click="send_FAQ(new._id)" value = "확인">
+                                    <input ng-model="new.group" class="form-control" placeholder="{{new.group}}" type="text" style="margin-bottom: 5px;">
+                                    <!--<input ng-model="new.answer" class="form-control" placeholder="{{new.answer}}" type="text">-->
+                                    <input style="float:right" class = "btn btn-default" type="button" ng-click="send_category(new._id)" value = "확인">
                                 </div>
                                 <br>
                                 <br>
-                                <div ng-repeat = "FAQ in FAQS" >
+                                <div ng-repeat = "category in categories" >
 
                                     <!--<button class="btn btn-default" ng-click="send_FAQ(FAQ._id)" ng-model = "modify">수정</button>-->
 
                                     <div class="form-group">
-                                        <label>Question </label>
-                                        <br><div style="margin-left:20px">{{FAQ.question}}</div>
-                                        <br><label>Answer</label>
-                                        <br><div style="margin-left:20px">{{FAQ.answer}}</div>
-                                        <!--<br><div style="margin-left:20px">{{FAQ._id}}</div>-->
-                                        <!--<button class="btn btn-default"  ><a href="/admin/modify_FAQ?id={{FAQ._id}}">수정</a></button>-->
-                                        <br>
-                                        <!--Click me: <input type="checkbox" ng-model="checked" aria-label="Toggle ngHide"><br/>-->
-                                        <!--<div>-->
-                                            <!--Show:-->
-                                            <!--<div class="check-element animate-show" ng-show="checked">-->
-                                                <!--<span class="glyphicon glyphicon-thumbs-up"></span> I show up when your checkbox is checked.-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                        <!--<div>-->
-                                            <!--Hide:-->
-                                            <!--<div class="check-element animate-show" ng-hide="checked">-->
-                                                <!--<span class="glyphicon glyphicon-thumbs-down"></span> I hide when your checkbox is checked.-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                        <!--<input type="checkbox" ng-model="modify">-->
+                                        <label>Category Group</label>
+                                        <br><div style="margin-left:20px">{{category.group}}</div>
                                         <div class = "modify_confirm" style="float:right">
-                                            <input class = "btn btn-default" type="button" ng-model="modify" ng-click="modify_FAQ(FAQ._id)" value = "수정">
-                                            <input class = "btn btn-default" type="button" ng-model="modify" ng-click="delete_FAQ(FAQ._id)" value = "삭제">
+                                            <input class = "btn btn-default" type="button" ng-click="modify_category(category._id)" value = "수정">
+                                            <input class = "btn btn-default" type="button" ng-click="delete_category(category._id)" value = "삭제">
                                         </div>
 
 
@@ -111,12 +90,10 @@
                                     <br>
                                 </div>
                                 <div class = "add">
-                                    <label>Question </label>
-                                    <input ng-model="addFAQ.question" class="form-control" type="text">
-                                    <br><label>Answer</label>
-                                    <input ng-model="addFAQ.answer" class="form-control" type="text">
+                                    <label>New category</label>
+                                    <input ng-model="addCategory.group" class="form-control" type="text">
                                     <br>
-                                    <input class = "btn btn-default" type="button" ng-click="add_FAQ()" value = "추가" style = "float : right">
+                                    <input class = "btn btn-default" type="button" ng-click="add_category()" value = "추가" style = "float : right">
                                 </div>
                             </form>
                         </div>
@@ -150,7 +127,7 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="dist/js/sb-admin-2.js"></script>
-<script src="../controller/help_controller.js"></script>
+<script src="../admin/controller_admin/admin_controller.js"></script>
 </body>
 
 </html>

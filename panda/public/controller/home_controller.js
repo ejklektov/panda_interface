@@ -40,7 +40,16 @@ var home = angular.module('home',['ngRoute'])
 
 home.controller('main',['$scope','$http',function ($scope, $http,$location) {
     $scope.view=true;
+
+    var getAllCategory = function(){
+        $http.get('/category_get_all').success(function(res){
+            $scope.categories = res;
+        })
+    }
+
+    getAllCategory();
 }]);
+
 home.controller('homeCtrl',['$scope','$http',function ($scope, $http,$location) {
     $scope.choose = true;
     var incubeInfo = function () {
@@ -56,7 +65,6 @@ home.controller('homeCtrl',['$scope','$http',function ($scope, $http,$location) 
             $scope.docs = res;
         })
     };
-
     var token = function () {
         $http.get('/at').success(function (res) {
             $scope.at = 5;//res;
@@ -64,17 +72,8 @@ home.controller('homeCtrl',['$scope','$http',function ($scope, $http,$location) 
     };
     token();
 
-    var getItemData = function(){
-        var jsonDataUrl = "/admin/item_list_data";
-        $http.get(jsonDataUrl).success(function (doc) {
-            console.log(doc)
-            $scope.items_json = doc;
-        });
-    }
-    getItemData();
-
-    
     refresh();
+
 
     $scope.addData = function () {
         $http.post('/document',$scope.newDoc).success(function (res) {
@@ -145,3 +144,18 @@ home.controller('addProductCtrl',['$scope','$http',function ($scope, $http) {
 
 
 }]);
+
+// home.controller('mypageCtrl',['$scope','$http',function ($scope, $http) {
+//
+// }]);
+//
+// home.controller('productCtrl',['$scope','$http',function ($scope, $http) {
+// <<<<<<< HEAD
+//    
+// =======
+//
+// }]);
+//
+// home.controller('searchCtrl',['$scope','$http',function ($scope, $http) {
+// >>>>>>> 6289e386ac696df8b39d5742c4771c1ee962c947
+// }]);

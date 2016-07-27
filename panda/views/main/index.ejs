@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Shop UI | Unify - Responsive Website Template</title>
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.min.js"></script>
-
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -31,6 +27,7 @@
     <link rel="stylesheet" href="assets/css/headers/header-default.css">
     <link rel="stylesheet" href="assets/css/footers/footer-v6.css">
 
+
     <!-- CSS Implementing Plugins -->
     <link rel="stylesheet" href="assets/plugins/animate.css">
     <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
@@ -41,57 +38,74 @@
     <link rel="stylesheet" href="assets/plugins/hover-effects/css/custom-hover-effects.css">
 
     <link rel="stylesheet" href="assets/plugins/owl-carousel/owl-carousel/owl.carousel.css">
-    <link rel="stylesheet" href="assets/plugins/revolution-slider/rs-plugin/css/settings.css">
+    <link rel="stylesheet" href="assets/plugins/revolution-slider/rs-plugin/css/settings.css" type="text/css" media="screen">
+    <!--[if lt IE 9]><link rel="stylesheet" href="assets/plugins/revolution-slider/rs-plugin/css/settings-ie8.css" type="text/css" media="screen"><![endif]-->
+
+    <!-- CSS Page Style -->
+    <link rel="stylesheet" href="assets/css/pages/page_log_reg_v1.css">
+    <link rel="stylesheet" href="assets/css/pages/page_search.css">
+    <link rel="stylesheet" href="assets/plugins/animate.css">
+    <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/pages/page_search_inner_tables.css">
+
+
+
+    <link rel="stylesheet" href="assets/plugins/ladda-buttons/css/custom-lada-btn.css">
+    <link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
+    <link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
+    <!--[if lt IE 9]><link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/css/sky-forms-ie8.css"><![endif]-->
 
     <!-- CSS Theme -->
-    <link rel="stylesheet" href="assets/css/theme-colors/teal.css" id="style_color">
     <link rel="stylesheet" href="assets/css/theme-colors/purple.css" id="style_color">
-
+    <link rel="stylesheet" href="assets/css/theme-skins/dark.css">
 
     <!-- CSS Customization -->
     <link rel="stylesheet" href="assets/css/custom.css">
+
 </head>
 
-<body class="header-fixed">
+<body>
 
-<i class="style-switcher-btn icon-bell"></i>
-<div class="style-switcher animated fadeInRight">
-    <div class="style-swticher-header">
-        <div class="style-switcher-heading">Key Word <br>Alarm System</div>
-        <div class="theme-close"><i class="icon-close"></i></div>
-    </div>
-    <div>설명</div>
+    <div class="wrapper" ng-app="home" ng-controller="main">
+        <i class="style-switcher-btn icon-bell"></i>
+        <div class="style-switcher animated fadeInRight">
+            <div class="style-swticher-header">
+                <div class="style-switcher-heading">Key Word <br>Alarm System</div>
+                <div class="theme-close"><i class="icon-close"></i></div>
+            </div>
+            <div>설명</div>
 
-    <form action="#" id="sky-form4" class="sky-form" >
-        <fieldset>
-            <section>
-                <label class="input">
-                    <!--click 시 실행되어야 할 것 추가되어야 함.-->
-                    <i class="icon-append fa fa-plus" style = "padding-left: 0px;padding-right: 0px;" ng-click = "addWord()"></i>
-                    <input type="text" name="word" placeholder="Word">
-                    <!--<b class="tooltip tooltip-bottom-right">Needed to enter the website</b>-->
-                </label>
-            </section>
-            <labe>추가된 단어 1 <button>삭제</button></labe><br>
-            <labe>추가된 단어 2</labe>
-        </fieldset>
-    </form>
-</div><!--/style-switcher-->
-<!--=== End Style Switcher ===-->
-<div class="wrapper"  ng-app="home" ng-controller="homeCtrl">
-    <div ng-include="'nav'"></div>
+            <form action="#" id="sky-form4" class="sky-form" >
+                <fieldset>
+                    <section>
+                        <label class="input">
+                            <!--click 시 실행되어야 할 것 추가되어야 함.-->
+                            <i class="icon-append fa fa-plus" style = "padding-left: 0px;padding-right: 0px;" ng-click = "addWord()"></i>
+                            <input type="text" name="word" placeholder="Word">
+                            <!--<b class="tooltip tooltip-bottom-right">Needed to enter the website</b>-->
+                        </label>
+                    </section>
+                    <labe>추가된 단어 1 <button>삭제</button></labe><br>
+                    <labe>추가된 단어 2</labe>
+                </fieldset>
+            </form>
+        </div><!--/style-switcher-->
+        <!--=== End Style Switcher ===-->
+<div ng-include="'nav'"></div>
 
-    <!--=== Slider ===-->
-    <div class="tp-banner-container" >
-        <div class="tp-banner">
-            <ul>
-                <!--<a href="/help#/app">-->
-                <!-- SLIDE -->
-                <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000" data-title="Slide 2">
-                    <!-- MAIN IMAGE -->
-                    <img src="assets/static_img/slider2.png"  alt="darkblurbg"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
 
-                        <div class=""
+        <!--=== Slider ===-->
+        <div class="tp-banner-container" ng-show="view" >
+            <div class="tp-banner">
+                <ul>
+                    <!--<a href="/help#/app">-->
+                    <!-- SLIDE -->
+                    <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000" data-title="Slide 2">
+                        <!-- MAIN IMAGE -->
+                        <img src="assets/static_img/slider2.png"  alt="darkblurbg"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+
+                        <div class="tp-caption revolution-ch1 sft start"
                              data-x="left"
                              data-hoffset="0"
                              data-y="100"
@@ -100,7 +114,7 @@
                              data-easing="Back.easeInOut"
                              data-endeasing="Power1.easeIn"
                              data-endspeed="300">
-                            <!--<img src="assets/static_img/text.png" width="500"><br>-->
+                            <img src="assets/static_img/text.png" width="500"><br>
 
 
                         </div>
@@ -119,432 +133,413 @@
                              data-captionhidden="off"
                              style="z-index: 6">
 
+                            <a href="/help#/app"><img class="pull-left" src="assets/static_img/and.png" width="200"></a>
+                            <a href="/help#/app"><img class="pull-left" src="assets/static_img/app.png" width="40"></a>
                         </div>
                     </li>
                     <!--</a>-->
                     <!-- END SLIDE -->
 
                     <!-- SLIDE -->
-                <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000" data-title="Slide 3">
-                    <!-- MAIN IMAGE -->
-                    <img src="#"  alt="darkblurbg"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                    <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000" data-title="Slide 3">
+                        <!-- MAIN IMAGE -->
+                        <img src="assets/img/sliders/3.jpg"  alt="darkblurbg"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
 
-                    <div class="tp-caption revolution-ch1 sft start"
-                         data-x="center"
-                         data-hoffset="0"
-                         data-y="100"
-                         data-speed="1500"
-                         data-start="500"
-                         data-easing="Back.easeInOut"
-                         data-endeasing="Power1.easeIn"
-                         data-endspeed="300">
-                        Over 12000+ Satisfied Users
-                    </div>
+                        <div class="tp-caption revolution-ch1 sft start"
+                             data-x="center"
+                             data-hoffset="0"
+                             data-y="100"
+                             data-speed="1500"
+                             data-start="500"
+                             data-easing="Back.easeInOut"
+                             data-endeasing="Power1.easeIn"
+                             data-endspeed="300">
+                            Over 12000+ Satisfied Users
+                        </div>
 
-                    <!-- LAYER -->
-                    <div class="tp-caption revolution-ch2 sft"
-                         data-x="center"
-                         data-hoffset="0"
-                         data-y="190"
-                         data-speed="1400"
-                         data-start="2000"
-                         data-easing="Power4.easeOut"
-                         data-endspeed="300"
-                         data-endeasing="Power1.easeIn"
-                         data-captionhidden="off"
-                         style="z-index: 6">
-                        We are creative technology company providing <br/>
-                        key digital services on web and mobile.
-                    </div>
+                        <!-- LAYER -->
+                        <div class="tp-caption revolution-ch2 sft"
+                             data-x="center"
+                             data-hoffset="0"
+                             data-y="190"
+                             data-speed="1400"
+                             data-start="2000"
+                             data-easing="Power4.easeOut"
+                             data-endspeed="300"
+                             data-endeasing="Power1.easeIn"
+                             data-captionhidden="off"
+                             style="z-index: 6">
+                            We are creative technology company providing <br/>
+                            key digital services on web and mobile.
+                        </div>
 
-                    <!-- LAYER -->
-                    <div class="tp-caption sft"
-                         data-x="center"
-                         data-hoffset="0"
-                         data-y="310"
-                         data-speed="1600"
-                         data-start="2800"
-                         data-easing="Power4.easeOut"
-                         data-endspeed="300"
-                         data-endeasing="Power1.easeIn"
-                         data-captionhidden="off"
-                         style="z-index: 6">
-                        <a href="#" class="btn-u btn-brd btn-brd-hover btn-u-light">Learn More</a>
-                        <a href="#" class="btn-u btn-brd btn-brd-hover btn-u-light">Our Work</a>
-                    </div>
-                </li>
-                <!-- END SLIDE -->
-            </ul>
-            <div class="tp-bannertimer tp-bottom"></div>
+                        <!-- LAYER -->
+                        <div class="tp-caption sft"
+                             data-x="center"
+                             data-hoffset="0"
+                             data-y="310"
+                             data-speed="1600"
+                             data-start="2800"
+                             data-easing="Power4.easeOut"
+                             data-endspeed="300"
+                             data-endeasing="Power1.easeIn"
+                             data-captionhidden="off"
+                             style="z-index: 6">
+                            <a href="#" class="btn-u btn-brd btn-brd-hover btn-u-light">Learn More</a>
+                            <a href="#" class="btn-u btn-brd btn-brd-hover btn-u-light">Our Work</a>
+                        </div>
+                    </li>
+                    <!-- END SLIDE -->
+                </ul>
+                <div class="tp-bannertimer tp-bottom"></div>
+            </div>
         </div>
+        <!--=== End Slider ===-->
+
+        <!--=== Cube-Portfdlio ===-->
+        <div class="cube-portfolio container margin-bottom-60">
+
+            <div class="content-xs">
+                <div class="col-md-8">
+                <div id="filters-container" class="cbp-l-filters-text content-xs pull-left">
+                    <div data-filter="*" class="cbp-filter-item-active cbp-filter-item"> All </div> |
+                    <div data-filter=".identity" class="cbp-filter-item"> 책 </div> |
+                    <div data-filter=".web-design" class="cbp-filter-item"> 생활 용품 </div> |
+                    <div data-filter=".graphic" class="cbp-filter-item"> Giving Tree </div>
+                </div><!--/end Filters Container-->
+            </div>
+
+            </div>
+            <br><br>
+            <div id="grid-container" class="cbp-l-grid-agency">
+                <div class="cbp-item graphic">
+                    <div class="cbp-caption margin-bottom-20">
+                        <div class="cbp-caption-defaultWrap">
+                            <img src="assets/img/blog/28-thumb.jpg" alt="">
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                            <div class="cbp-l-caption-alignCenter">
+                                <div class="cbp-l-caption-body">
+                                    <ul class="link-captions no-bottom-space">
+                                        <li><a href="/product_item" ><i class="rounded-x fa fa-search"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cbp-title-dark">
+                        <div class="cbp-l-grid-agency-title">Design Object 01</div>
+                        <div class="cbp-l-grid-agency-desc">Web Design</div>
+                    </div>
+                </div>
+
+                <div class="cbp-item web-design logos">
+                    <div class="cbp-caption margin-bottom-20">
+                        <div class="cbp-caption-defaultWrap">
+                            <img src="assets/img/main/img2.jpg" alt="">
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                            <div class="cbp-l-caption-alignCenter">
+                                <div class="cbp-l-caption-body">
+                                    <ul class="link-captions no-bottom-space">
+                                        <li><a href="/product_item"><i class="rounded-x fa fa-link"></i></a></li>
+                                        <li><a href="assets/img/main/img2.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cbp-title-dark">
+                        <div class="cbp-l-grid-agency-title">Design Object 02</div>
+                        <div class="cbp-l-grid-agency-desc">Web Design</div>
+                    </div>
+                </div>
+                <div class="cbp-item graphic logos">
+                    <div class="cbp-caption margin-bottom-20">
+                        <div class="cbp-caption-defaultWrap">
+                            <img src="assets/img/main/img9.jpg" alt="">
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                            <div class="cbp-l-caption-alignCenter">
+                                <div class="cbp-l-caption-body">
+                                    <ul class="link-captions no-bottom-space">
+                                        <li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
+                                        <li><a href="assets/img/main/img9.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cbp-title-dark">
+                        <div class="cbp-l-grid-agency-title">Design Object 03</div>
+                        <div class="cbp-l-grid-agency-desc">Web Design</div>
+                    </div>
+                </div>
+                <div class="cbp-item web-design graphic">
+                    <div class="cbp-caption margin-bottom-20">
+                        <div class="cbp-caption-defaultWrap">
+                            <img src="assets/img/main/img10.jpg" alt="">
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                            <div class="cbp-l-caption-alignCenter">
+                                <div class="cbp-l-caption-body">
+                                    <ul class="link-captions no-bottom-space">
+                                        <li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
+                                        <li><a href="assets/img/main/img10.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cbp-title-dark">
+                        <div class="cbp-l-grid-agency-title">Design Object 04</div>
+                        <div class="cbp-l-grid-agency-desc">Web Design</div>
+                    </div>
+                </div>
+                <div class="cbp-item identity web-design">
+                    <div class="cbp-caption margin-bottom-20">
+                        <div class="cbp-caption-defaultWrap">
+                            <img src="assets/img/main/img11.jpg" alt="">
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                            <div class="cbp-l-caption-alignCenter">
+                                <div class="cbp-l-caption-body">
+                                    <ul class="link-captions no-bottom-space">
+                                        <li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
+                                        <li><a href="assets/img/main/img11.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cbp-title-dark">
+                        <div class="cbp-l-grid-agency-title">Design Object 05</div>
+                        <div class="cbp-l-grid-agency-desc">Web Design</div>
+                    </div>
+                </div>
+                <div class="cbp-item identity web-design">
+                    <div class="cbp-caption margin-bottom-20">
+                        <div class="cbp-caption-defaultWrap">
+                            <img src="assets/img/main/img12.jpg" alt="">
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                            <div class="cbp-l-caption-alignCenter">
+                                <div class="cbp-l-caption-body">
+                                    <ul class="link-captions no-bottom-space">
+                                        <li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
+                                        <li><a href="assets/img/main/img12.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cbp-title-dark">
+                        <div class="cbp-l-grid-agency-title">Design Object 06</div>
+                        <div class="cbp-l-grid-agency-desc">Web Design</div>
+                    </div>
+                </div>
+                <div class="cbp-item web-design identity">
+                    <div class="cbp-caption margin-bottom-20">
+                        <div class="cbp-caption-defaultWrap">
+                            <img src="assets/img/main/img19.jpg" alt="">
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                            <div class="cbp-l-caption-alignCenter">
+                                <div class="cbp-l-caption-body">
+                                    <ul class="link-captions no-bottom-space">
+                                        <li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
+                                        <li><a href="assets/img/main/img19.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cbp-title-dark">
+                        <div class="cbp-l-grid-agency-title">Design Object 07</div>
+                        <div class="cbp-l-grid-agency-desc">Web Design</div>
+                    </div>
+                </div>
+                <div class="cbp-item identity logo">
+                    <div class="cbp-caption margin-bottom-20">
+                        <div class="cbp-caption-defaultWrap">
+                            <img src="assets/img/main/img7.jpg" alt="">
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                            <div class="cbp-l-caption-alignCenter">
+                                <div class="cbp-l-caption-body">
+                                    <ul class="link-captions no-bottom-space">
+                                        <li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
+                                        <li><a href="assets/img/main/img7.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cbp-title-dark">
+                        <div class="cbp-l-grid-agency-title">Design Object 08</div>
+                        <div class="cbp-l-grid-agency-desc">Web Design</div>
+                    </div>
+                </div>
+                <div class="cbp-item graphic">
+                    <div class="cbp-caption margin-bottom-20">
+                        <div class="cbp-caption-defaultWrap">
+                            <img src="assets/img/main/img20.jpg" alt="">
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                            <div class="cbp-l-caption-alignCenter">
+                                <div class="cbp-l-caption-body">
+                                    <ul class="link-captions no-bottom-space">
+                                        <li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
+                                        <li><a href="assets/img/main/img20.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cbp-title-dark">
+                        <div class="cbp-l-grid-agency-title">Design Object 09</div>
+                        <div class="cbp-l-grid-agency-desc">Web Design</div>
+                    </div>
+                </div>
+                <div class="cbp-item web-design logos">
+                    <div class="cbp-caption margin-bottom-20">
+                        <div class="cbp-caption-defaultWrap">
+                            <img src="assets/img/main/img3.jpg" alt="">
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                            <div class="cbp-l-caption-alignCenter">
+                                <div class="cbp-l-caption-body">
+                                    <ul class="link-captions no-bottom-space">
+                                        <li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
+                                        <li><a href="assets/img/main/img3.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cbp-title-dark">
+                        <div class="cbp-l-grid-agency-title">Design Object 10</div>
+                        <div class="cbp-l-grid-agency-desc">Web Design</div>
+                    </div>
+                </div>
+                <div class="cbp-item graphic logos">
+                    <div class="cbp-caption margin-bottom-20">
+                        <div class="cbp-caption-defaultWrap">
+                            <img src="assets/img/main/img6.jpg" alt="">
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                            <div class="cbp-l-caption-alignCenter">
+                                <div class="cbp-l-caption-body">
+                                    <ul class="link-captions no-bottom-space">
+                                        <li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
+                                        <li><a href="assets/img/main/img6.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cbp-title-dark">
+                        <div class="cbp-l-grid-agency-title">Design Object 11</div>
+                        <div class="cbp-l-grid-agency-desc">Web Design</div>
+                    </div>
+                </div>
+                <div class="cbp-item web-design graphic">
+                    <div class="cbp-caption margin-bottom-20">
+                        <div class="cbp-caption-defaultWrap">
+                            <img src="assets/img/blog/28-thumb.jpg" alt="">
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                            <div class="cbp-l-caption-alignCenter">
+                                <div class="cbp-l-caption-body">
+                                    <ul class="link-captions no-bottom-space">
+                                        <li><a href="portfolio_single_item.html"><i class="rounded-x fa fa-link"></i></a></li>
+                                        <li><a href="assets/img/blog/28-thumb.jpg" class="cbp-lightbox" data-title="Design Object"><i class="rounded-x fa fa-search"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cbp-title-dark">
+                        <div class="cbp-l-grid-agency-title">Design Object 12</div>
+                        <div class="cbp-l-grid-agency-desc">Web Design</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--=== End Cube-Portfdlio ===-->
+
+<div ng-include="'footer'"></div>
+
     </div>
-    <!--=== End Slider ===-->
-
-    <!--=== Product Content ===-->
-    <div class="container content-xs">
-        <!--=== Illustration v1 ===-->
-        <div class="row margin-bottom-60">
-            <div class="col-md-6 md-margin-bottom-30">
-                <div class="overflow-h">
-                    <div class="illustration-v1 illustration-img1">
-                        <div class="illustration-bg">
-                            <div class="illustration-ads ad-details-v1">
-                                <h3>NEW YEAR <strong>SALE</strong> 30% - 60% <strong>off</strong></h3>
-                                <a class="btn-u btn-brd btn-brd-hover btn-u-light" href="#">Shop Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="overflow-h">
-                    <a class="illustration-v1 illustration-img2" href="#">
-						<span class="illustration-bg">
-							<span class="illustration-ads ad-details-v2">
-								<span class="item-time">Spring 2014</span>
-								<span class="item-name">Lacoste</span>
-							</span>
-						</span>
-                    </a>
-                </div>
-            </div>
-        </div><!--/end row-->
-        <!--=== End Illustration v1 ===-->
+</div>
 
 
-        <!--=== Illustration v2 ===-->
-        <div class="illustration-v2 margin-bottom-60">
-
-            <ul class="list-inline owl-slider">
-                <li class="item">
-                    <div class="product-img product-img-brd">
-                        <a href="/product_item"><img class="full-width img-responsive" src="assets/img/blog/16.jpg" alt=""></a>
-                        <a class="add-to-cart" href="/item_pay"><i class="fa fa-shopping-cart"></i>장바구니</a>
-                        <div class="shop-rgba-dark-green rgba-banner">New</div>
-                    </div>
-                    <div class="product-description product-description-brd margin-bottom-30">
-                        <div class="overflow-h margin-bottom-5">
-                            <div class="pull-left">
-                                <h4 class="title-price"><a href="/product_item">상품명</a></h4>
-                                <span class=""><h4><font color="#9b6bcc"> 대여</font></h4></span>
-                                <span class="gender ">중고 새상품</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="title-price">$60.00</span>
-                                <span class="title-price line-through">$95.00</span>
-                                <ul class="list-inline product-ratings pull-right">
-                                    <span class="gender">보증금 : 20,000</span>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-                </li>
-                <li class="item">
-                    <div class="product-img">
-                        <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/26.jpg" alt=""></a>
-                        <a class="product-review" href="shop-ui-inner.html">Quick review</a>
-                        <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                    </div>
-                    <div class="product-description product-description-brd">
-                        <div class="overflow-h margin-bottom-5">
-                            <div class="pull-left">
-                                <h4 class="title-price"><a href="shop-ui-inner.html">Double-breasted</a></h4>
-                                <span class="gender text-uppercase">Women</span>
-                                <span class="gender">Suits - Blazers</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="title-price">$60.00</span>
-                                <span class="title-price line-through">$95.00</span>
-                            </div>
-                        </div>
-                        <ul class="list-inline product-ratings">
-                            <li><i class="rating-selected fa fa-star"></i></li>
-                            <li><i class="rating-selected fa fa-star"></i></li>
-                            <li><i class="rating-selected fa fa-star"></i></li>
-                            <li><i class="rating fa fa-star"></i></li>
-                            <li><i class="rating fa fa-star"></i></li>
-                            <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip" data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="item">
-                    <div class="product-img">
-                        <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/11.jpg" alt=""></a>
-                        <a class="product-review" href="shop-ui-inner.html">Quick review</a>
-                        <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                        <div class="shop-rgba-red rgba-banner">Out of stock</div>
-                    </div>
-                    <div class="product-description product-description-brd">
-                        <div class="overflow-h margin-bottom-5">
-                            <div class="pull-left">
-                                <h4 class="title-price"><a href="shop-ui-inner.html">Double-breasted</a></h4>
-                                <span class="gender text-uppercase">Men</span>
-                                <span class="gender">Suits - Blazers</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="title-price">$95.00</span>
-                            </div>
-                        </div>
-                        <ul class="list-inline product-ratings">
-                            <li><i class="rating-selected fa fa-star"></i></li>
-                            <li><i class="rating-selected fa fa-star"></i></li>
-                            <li><i class="rating-selected fa fa-star"></i></li>
-                            <li><i class="rating fa fa-star"></i></li>
-                            <li><i class="rating fa fa-star"></i></li>
-                            <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip" data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="item">
-                    <div class="product-img">
-                        <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/12.jpg" alt=""></a>
-                        <a class="product-review" href="shop-ui-inner.html">Quick review</a>
-                        <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                        <div class="shop-rgba-dark-green rgba-banner">New</div>
-                    </div>
-                    <div class="product-description product-description-brd">
-                        <div class="overflow-h margin-bottom-5">
-                            <div class="pull-left">
-                                <h4 class="title-price"><a href="shop-ui-inner.html">Double-breasted</a></h4>
-                                <span class="gender text-uppercase">Women</span>
-                                <span class="gender">Suits - Blazers</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="title-price">$95.00</span>
-                            </div>
-                        </div>
-                        <ul class="list-inline product-ratings">
-                            <li><i class="rating-selected fa fa-star"></i></li>
-                            <li><i class="rating-selected fa fa-star"></i></li>
-                            <li><i class="rating-selected fa fa-star"></i></li>
-                            <li><i class="rating fa fa-star"></i></li>
-                            <li><i class="rating fa fa-star"></i></li>
-                            <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip" data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="item">
-                    <div class="product-img">
-                        <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/10.jpg" alt=""></a>
-                        <a class="product-review" href="shop-ui-inner.html">Quick review</a>
-                        <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                    </div>
-                    <div class="product-description product-description-brd">
-                        <div class="overflow-h margin-bottom-5">
-                            <div class="pull-left">
-                                <h4 class="title-price"><a href="shop-ui-inner.html">Double-breasted</a></h4>
-                                <span class="gender text-uppercase">Women</span>
-                                <span class="gender">Suits - Blazers</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="title-price">$95.00</span>
-                            </div>
-                        </div>
-                        <ul class="list-inline product-ratings">
-                            <li><i class="rating-selected fa fa-star"></i></li>
-                            <li><i class="rating-selected fa fa-star"></i></li>
-                            <li><i class="rating-selected fa fa-star"></i></li>
-                            <li><i class="rating fa fa-star"></i></li>
-                            <li><i class="rating fa fa-star"></i></li>
-                            <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip" data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="item">
-                    <div class="product-img">
-                        <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/11.jpg" alt=""></a>
-                        <a class="product-review" href="shop-ui-inner.html">Quick review</a>
-                        <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                        <div class="shop-rgba-red rgba-banner">Out of stock</div>
-                    </div>
-                    <div class="product-description product-description-brd">
-                        <div class="overflow-h margin-bottom-5">
-                            <div class="pull-left">
-                                <h4 class="title-price"><a href="shop-ui-inner.html">Double-breasted</a></h4>
-                                <span class="gender text-uppercase">Men</span>
-                                <span class="gender">Suits - Blazers</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="title-price">$95.00</span>
-                            </div>
-                        </div>
-                        <ul class="list-inline product-ratings">
-                            <li><i class="rating-selected fa fa-star"></i></li>
-                            <li><i class="rating-selected fa fa-star"></i></li>
-                            <li><i class="rating-selected fa fa-star"></i></li>
-                            <li><i class="rating fa fa-star"></i></li>
-                            <li><i class="rating fa fa-star"></i></li>
-                            <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip" data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a></li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <!--=== End Illustration v2 ===-->
-
-        <!--=== Illustration v2 ===-->
-        <div class="row illustration-v2">
-            <div class="col-md-3 col-sm-6 md-margin-bottom-30">
-                <div class="product-img">
-                    <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/25.jpg" alt=""></a>
-                    <a class="product-review" href="shop-ui-inner.html">Quick review</a>
-                    <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                </div>
-                <div class="product-description product-description-brd">
-                    <div class="overflow-h margin-bottom-5">
-                        <div class="pull-left">
-                            <h4 class="title-price"><a href="shop-ui-inner.html">Double-breasted</a></h4>
-                            <span class="gender text-uppercase">Woman</span>
-                            <span class="gender">Suits - Blazers</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="title-price">$95.00</span>
-                        </div>
-                    </div>
-                    <ul class="list-inline product-ratings">
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating fa fa-star"></i></li>
-                        <li><i class="rating fa fa-star"></i></li>
-                        <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip" data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 md-margin-bottom-30">
-                <div class="product-img">
-                    <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/09.jpg" alt=""></a>
-                    <a class="product-review" href="shop-ui-inner.html">Quick review</a>
-                    <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                </div>
-                <div class="product-description product-description-brd">
-                    <div class="overflow-h margin-bottom-5">
-                        <div class="pull-left">
-                            <h4 class="title-price"><a href="shop-ui-inner.html">Double-breasted</a></h4>
-                            <span class="gender text-uppercase">Men</span>
-                            <span class="gender">Suits - Blazers</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="title-price">$60.00</span>
-                            <span class="title-price line-through">$95.00</span>
-                        </div>
-                    </div>
-                    <ul class="list-inline product-ratings">
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating fa fa-star"></i></li>
-                        <li><i class="rating fa fa-star"></i></li>
-                        <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip" data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 md-margin-bottom-30">
-                <div class="product-img">
-                    <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/10.jpg" alt=""></a>
-                    <a class="product-review" href="shop-ui-inner.html">Quick review</a>
-                    <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                    <div class="shop-rgba-red rgba-banner">Out of stock</div>
-                </div>
-                <div class="product-description product-description-brd">
-                    <div class="overflow-h margin-bottom-5">
-                        <div class="pull-left">
-                            <h4 class="title-price"><a href="shop-ui-inner.html">Double-breasted</a></h4>
-                            <span class="gender text-uppercase">Women</span>
-                            <span class="gender">Suits - Blazers</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="title-price">$95.00</span>
-                        </div>
-                    </div>
-                    <ul class="list-inline product-ratings">
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating fa fa-star"></i></li>
-                        <li><i class="rating fa fa-star"></i></li>
-                        <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip" data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 md-margin-bottom-30">
-                <div class="product-img">
-                    <a href="shop-ui-inner.html"><img class="full-width img-responsive" src="assets/img/blog/11.jpg" alt=""></a>
-                    <a class="product-review" href="shop-ui-inner.html">Quick review</a>
-                    <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                    <div class="shop-rgba-dark-green rgba-banner">New</div>
-                </div>
-                <div class="product-description product-description-brd">
-                    <div class="overflow-h margin-bottom-5">
-                        <div class="pull-left">
-                            <h4 class="title-price"><a href="shop-ui-inner.html">Double-breasted</a></h4>
-                            <span class="gender text-uppercase">Men</span>
-                            <span class="gender">Suits - Blazers</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="title-price">$95.00</span>
-                        </div>
-                    </div>
-                    <ul class="list-inline product-ratings">
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating-selected fa fa-star"></i></li>
-                        <li><i class="rating fa fa-star"></i></li>
-                        <li><i class="rating fa fa-star"></i></li>
-                        <li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip" data-placement="left" class="tooltips" href="#"><i class="fa fa-heart"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!--=== End Illustration v2 ===-->
-    </div>
-    <!--=== End Product Content ===-->
-
-
-    <div ng-include="'footer'"></div>
-
-</div><!--/wrapper-->
-
+</body>
 
 <!-- JS Global Compulsory -->
-<script src="assets/plugins/jquery/jquery.min.js"></script>
-<script src="assets/plugins/jquery/jquery-migrate.min.js"></script>
-<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="assets/plugins/jquery/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 <!-- JS Implementing Plugins -->
-<script src="assets/plugins/back-to-top.js"></script>
-<script src="assets/plugins/smoothScroll.js"></script>
-<script src="assets/plugins/jquery.parallax.js"></script>
-<script src="assets/plugins/owl-carousel/owl-carousel/owl.carousel.js"></script>
-<script src="assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-<script src="assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+<script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
+<script type="text/javascript" src="assets/plugins/smoothScroll.js"></script>
+<script type="text/javascript" src="assets/plugins/cube-portfolio/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+
 <!-- JS Customization -->
-<script src="assets/js/custom.js"></script>
+<script type="text/javascript" src="assets/js/custom.js"></script>
 <!-- JS Page Level -->
-<script src="assets/js/shop.app.js"></script>
-<script src="assets/js/plugins/owl-carousel.js"></script>
-<script src="assets/js/plugins/revolution-slider.js"></script>
-<script src="assets/js/plugins/style-switcher.js"></script>
-<script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script type="text/javascript" src="assets/js/plugins/style-switcher.js"></script>
+<script type="text/javascript" src="assets/js/plugins/ladda-buttons.js"></script>
+<script src="assets/plugins/ladda-buttons/js/spin.min.js"></script>
+<script src="assets/plugins/ladda-buttons/js/ladda.min.js"></script>
+<script type="text/javascript" src="assets/js/plugins/cube-portfolio/cube-portfolio-4.js"></script>
+<script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js"></script>
+<script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.maskedinput.min.js"></script>
+<script src="assets/plugins/sky-forms-pro/skyforms/js/jquery-ui.min.js"></script>
+<script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.form.min.js"></script>
+
+<script type="text/javascript" src="assets/plugins/owl-carousel/owl-carousel/owl.carousel.js"></script>
+<script type="text/javascript" src="assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+<script type="text/javascript" src="assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script type="text/javascript" src="assets/js/plugins/fancy-box.js"></script>
+<script type="text/javascript" src="assets/js/plugins/owl-carousel.js"></script>
+<script type="text/javascript" src="assets/js/plugins/revolution-slider.js"></script>
+<script type="text/javascript" src="assets/js/plugins/style-switcher.js"></script>
+
+
+<script type="text/javascript">
     jQuery(document).ready(function() {
         App.init();
-        App.initScrollBar();
-        App.initParallaxBg();
+        StyleSwitcher.initStyleSwitcher();
         OwlCarousel.initOwlCarousel();
         RevolutionSlider.initRSfullWidth();
-        StyleSwitcher.initStyleSwitcher();
     });
 </script>
 <!--[if lt IE 9]>
 <script src="assets/plugins/respond.js"></script>
 <script src="assets/plugins/html5shiv.js"></script>
-<script src="assets/js/plugins/placeholder-IE-fixes.js"></script>
+<script src="assets/plugins/placeholder-IE-fixes.js"></script>
+<script src="assets/plugins/sky-forms-pro/skyforms/js/sky-forms-ie8.js"></script>
 <![endif]-->
 
+<!--[if lt IE 10]>
+<script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.placeholder.min.js"></script>
+<![endif]-->
+<!--<script>-->
+    <!--$('#myAffix').affix({-->
+        <!--offset: {-->
+            <!--top: 100,-->
+            <!--bottom: function () {-->
+                <!--return (this.bottom = $('.footer').outerHeight(true))-->
+            <!--}-->
+        <!--}-->
+    <!--})-->
+
+<!--</script>-->
 
 <script src="controller/home_controller.js"></script>
 
-</body>
 </html>
-

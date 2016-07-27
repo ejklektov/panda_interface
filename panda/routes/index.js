@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var mongojs = require('mongojs');
-var db = mongojs('panda',['user','document','incube', 'faq', 'inquire']);
+var db = mongojs('panda',['user','document','incube', 'faq', 'inquire', 'category']);
 var passport = require('passport')
 var KakaoStrategy = require('passport-kakao').Strategy;
 
@@ -45,14 +45,13 @@ passport.deserializeUser(function (id,done) {
 
 passport.use(new KakaoStrategy({
       clientID : 'df2591dce718bea4bdd968389332bef7',
-      callbackURL : '/oauth'
+      callbackURL : 'http://localhost:3000/oauth'
     },
     function(accessToken, refreshToken, profile, done){
       // 사용자의 정보는 profile에 들어있다.
       tokensave(accessToken);
       at=accessToken;
-      console.log('token is '+profile);
-      console.log(profile);
+      console.log('token is '+at);
       console.log(profile);
       db.user.findAndModify({
         query: { kakaoId: profile.id },
@@ -85,17 +84,6 @@ router.get('/oauth', passport.authenticate('kakao', {
 });
 
 /* GET home page. */
-// router.get('/',function (req, res) {
-//   res.render('incube');
-// })
-
-router.get('/ho',function (req, res) {
-  res.render('incbue_view/home')
-})
-
-router.get('/li',function (req, res) {
-  res.render('incbue_view/list')
-})
 
 router.get('/',function (req, res) {
   res.render('main/index', {
@@ -106,21 +94,6 @@ router.get('/',function (req, res) {
   })
 });
 
-router.get('/document',function (req, res) {
-  db.document.find(function (err, docs) {
-    res.json(docs);
-  })
-});
-router.post('/document',function (req, res) {
-
-});
-
-router.get('/incubeInfo',function (req, res) {
-  db.incube.findOne(function (err, doc) {
-    // console.log(doc)
-    res.json(doc)
-  })
-});
 
 router.get('/kakao',function (req, res) {
   res.render('kakao')
@@ -138,17 +111,15 @@ router.get('/mypage',function(req,res){
     user: req.user,
     token: req.token,
     phone: req.phone,
-    email: req.email
-    token: req.token,
-    phone: req.phone,
     email: req.email,
     bank: req.bank,
     account: req.account,
     major: req.major
   })
 });
+
 router.get('/mypage_profile',function (req, res) {
-  res.render('mypage/profile', {
+    res.render('mypage/profile', {
     title: 'incube',
     isAu: req.isAuthenticated(),
     user: req.user,
@@ -280,33 +251,21 @@ router.get('/logout',function (req, res) {
 
 router.get('/product_item',function (req, res) {
   res.render('product/product_item',{
-    title: 'panda',
+    title: 'incube',
     isAu:req.isAuthenticated(),
     user:req.user,
     token:req.token
   });
 })
 
-router.get('/product_item/:id', function (req, res) {
-  var id = req.params.id;
-  res.render('product/product_item', {
-    title: 'panda',
-    isAu:req.isAuthenticated(),
-    user:req.user,
-    id:id
-  });
-})
-router.get('/product_item_info/:id',function (req, res) {
-  db.Item.findOne({_id : mongojs.ObjectId(id)}, function(err, doc){
-    if(err) {
-      console.log(err)
-    }
-    res.json(doc);
-  })
+
+router.get('/product_item_buy',function (req, res) {
+
 })
 
 //help class
 router.get('/help',function (req, res) {
+  console.log(req);
   res.render('help/help',{
     title: 'incube',
     isAu:req.isAuthenticated(),
@@ -314,6 +273,7 @@ router.get('/help',function (req, res) {
     token:req.token
   });
 });
+
 
 router.get('/FAQ',function (req, res) {
   res.render('help/FAQ');
@@ -326,6 +286,7 @@ router.get('/FAQ_get',function(req,res){
   })
 });
 
+
 // router.get('/admin/modify_FAQ',function(req,res){
 //   console.log(modifyFAQ);
 //   // console.log('This is req');
@@ -337,6 +298,7 @@ router.get('/FAQ_get',function(req,res){
 //   //   console.log(docs);
 //   // })
 // })
+
 
 router.get('/inquire',function (req,res) {
   res.render('help/inquire');
@@ -365,6 +327,7 @@ router.post('/inquire_regist',function (req,res) {
   // })
 });
 
+
 router.get('/request',function (req,res) {
   res.render('help/request');
 });
@@ -388,10 +351,7 @@ router.get('/item_list',function (req, res) {
   res.render('item/item_list');
 });
 router.get('/item_pay',function (req, res) {
-  res.render('item/item_pay',{
-      isAu:req.isAuthenticated(),
-      user:req.user
-  });
+  res.render('item/item_pay');
 });
 router.get('/notice',function (req, res) {
   res.render('help/notice');
@@ -399,6 +359,17 @@ router.get('/notice',function (req, res) {
 router.get('/tem',function (req, res) {
   res.render('tem');
 });
+
+router.get('/category_get_all', function(req,res){
+  db.category.find(function(err,docs){
+    if(err){
+      console.log(err);
+    }
+    // console.log('router_category_get_all');
+    // console.log(docs);
+    res.json(docs);
+  })
+})
 
 router.get('/item_link',function (req, res) {
   console.log('at');
@@ -449,6 +420,8 @@ router.get('/katlink',function (req, res) {
   req.write('{"string": "Hello, World"}');
   req.end();
 });
+
+
 
 
 module.exports = router;

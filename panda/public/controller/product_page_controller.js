@@ -16,16 +16,20 @@ var product_page = angular.module('product_page',['ngRoute'])
              })
          })
 
-
 product_page.controller('productCtrl',['$scope','$http',function ($scope, $http) {
     $scope.choose = true;
-    
+    var productInfo = function () {
+        $http.get('/product_detail').success(function (res) {
+            console.log(res)
+            $scope.info = res;
+        })
+    };
+    productInfo();
     var refresh = function () {
         $http.get('/document').success(function (res) {
             $scope.docs = res;
         })
     };
-    
     var token = function () {
         $http.get('/at').success(function (res) {
             $scope.at = 5;//res;
@@ -48,22 +52,10 @@ product_page.controller('productCtrl',['$scope','$http',function ($scope, $http)
             refresh();
         })
     }
-}]);
 
     $scope.buyProduct = function(){
         $http.post('/product_item_buy').success(function(res){
             console.log(res);
-            refresh();
         })
     }
-    
-    $http.get('/prodcut_item_info/'+param1, {
-        
-    }).success(function (res) {
-        $scope.items_json_target = res;
-    }).error(function () {
-        console.log('Access error product_page_controller.js productCtrl $http.get.product/product_item:id')
-        console.log(err)
-    })
-    
 }]);

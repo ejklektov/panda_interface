@@ -2,19 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ebc73d0-1f19-4d11-869b-706d99622293" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kakao2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/panda/public/controller/item_controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/panda/views/item/item_link.ejs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/panda/views/main/index719.ejs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/panda/views/main/index_Back.ejs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/panda/views/template/shop/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/public/assets/static_img/logo.png" afterPath="$PROJECT_DIR$/panda/public/assets/static_img/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/HaYoung.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/panda/views/admin/category/category_edit.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/panda/views/admin/item/item_check.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/panda/views/mypage/manage_keyword.ejs" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/panda/public/assets/static_img/logo2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/panda/public/controller/category_controller.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/panda/views/admin/item.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/panda/views/admin/item_add.js" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/panda/views/admin/FAQ_edit.ejs" afterPath="$PROJECT_DIR$/panda/views/admin/service_center/FAQ_edit.ejs" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/panda/views/admin/category_edit.ejs" afterPath="$PROJECT_DIR$/panda/views/admin/footer/edit_footer.ejs" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/panda/views/admin/inquire_answer.ejs" afterPath="$PROJECT_DIR$/panda/views/admin/service_center/inquire_answer.ejs" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/panda/views/admin/item_regist.ejs" afterPath="$PROJECT_DIR$/panda/views/admin/item/item_regist.ejs" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/panda/views/admin/modify_FAQ.ejs" afterPath="$PROJECT_DIR$/panda/views/admin/item/item_modify.ejs" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/panda/views/admin/user_check.ejs" afterPath="$PROJECT_DIR$/panda/views/admin/user/user_check.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/public/assets/css/shop.style.css" afterPath="$PROJECT_DIR$/panda/public/assets/css/shop.style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/package.json" afterPath="$PROJECT_DIR$/panda/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/public/admin/controller_admin/admin_controller.js" afterPath="$PROJECT_DIR$/panda/public/admin/controller_admin/admin_controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/public/admin/controller_admin/item.js" afterPath="$PROJECT_DIR$/panda/public/admin/controller_admin/item.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/public/assets/css/footers/footer-v6.css" afterPath="$PROJECT_DIR$/panda/public/assets/css/footers/footer-v6.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/public/assets/css/headers/header-default.css" afterPath="$PROJECT_DIR$/panda/public/assets/css/headers/header-default.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/public/assets/css/shop.blocks.css" afterPath="$PROJECT_DIR$/panda/public/assets/css/shop.blocks.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/public/assets/css/shop.plugins.css" afterPath="$PROJECT_DIR$/panda/public/assets/css/shop.plugins.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/public/assets/css/theme-colors/purple.css" afterPath="$PROJECT_DIR$/panda/public/assets/css/theme-colors/purple.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/public/assets/css/theme-colors/teal.css" afterPath="$PROJECT_DIR$/panda/public/assets/css/theme-colors/teal.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/public/assets/plugins/bootstrap/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/panda/public/assets/plugins/bootstrap/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/public/controller/help_controller.js" afterPath="$PROJECT_DIR$/panda/public/controller/help_controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/public/controller/home_controller.js" afterPath="$PROJECT_DIR$/panda/public/controller/home_controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/public/controller/item_controller.js" afterPath="$PROJECT_DIR$/panda/public/controller/item_controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/public/controller/product_page_controller.js" afterPath="$PROJECT_DIR$/panda/public/controller/product_page_controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/public/controller/profile_controller.js" afterPath="$PROJECT_DIR$/panda/public/controller/profile_controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/routes/admin.js" afterPath="$PROJECT_DIR$/panda/routes/admin.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/routes/index.js" afterPath="$PROJECT_DIR$/panda/routes/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/views/admin/nav.ejs" afterPath="$PROJECT_DIR$/panda/views/admin/nav.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/views/help/help.ejs" afterPath="$PROJECT_DIR$/panda/views/help/help.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/views/include/footer.ejs" afterPath="$PROJECT_DIR$/panda/views/include/footer.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/views/include/nav.ejs" afterPath="$PROJECT_DIR$/panda/views/include/nav.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/views/include/nav2.ejs" afterPath="$PROJECT_DIR$/panda/views/include/nav2.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/views/item/item_list.ejs" afterPath="$PROJECT_DIR$/panda/views/item/item_list.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/views/item/item_pay.ejs" afterPath="$PROJECT_DIR$/panda/views/item/item_pay.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/views/main/index.ejs" afterPath="$PROJECT_DIR$/panda/views/main/index.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/views/mypage/mypage.ejs" afterPath="$PROJECT_DIR$/panda/views/mypage/mypage.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/views/mypage/profile.ejs" afterPath="$PROJECT_DIR$/panda/views/mypage/profile.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/views/product/product_item.ejs" afterPath="$PROJECT_DIR$/panda/views/product/product_item.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panda/views/template/blog_large_full_width.html" afterPath="$PROJECT_DIR$/panda/views/template/blog_large_full_width.html" />
     </list>
     <ignored path="panda_interface.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,6 +56,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -33,99 +65,121 @@
     <favorites_list name="panda_interface" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="index.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/panda/views/main/index.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2775">
-              <caret line="185" column="26" selection-start-line="185" selection-start-column="26" selection-end-line="206" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="item_list.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/panda/views/item/item_list.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2925">
-              <caret line="195" column="24" selection-start-line="195" selection-start-column="24" selection-end-line="218" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="shop.style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/panda/public/assets/css/shop.style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3930">
-              <caret line="262" column="25" selection-start-line="262" selection-start-column="25" selection-end-line="262" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="07.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/panda/public/assets/img/blog/07.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="08.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/panda/public/assets/img/blog/08.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index719.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/panda/views/main/index719.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="item_controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/panda/public/controller/item_controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="item_link.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/panda/views/item/item_link.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1440">
-              <caret line="96" column="29" selection-start-line="96" selection-start-column="22" selection-end-line="96" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/panda/routes/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="326" column="5" selection-start-line="326" selection-start-column="5" selection-end-line="326" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="09.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/panda/public/assets/img/blog/09.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.38519925">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+          <file leaf-file-name="index.ejs" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/panda/views/main/index.ejs">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="3230">
+                  <caret line="170" column="48" selection-start-line="170" selection-start-column="48" selection-end-line="170" selection-end-column="48" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/panda/routes/index.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="590">
+                  <caret line="61" column="38" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="admin.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/panda/routes/admin.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="284">
+                  <caret line="346" column="41" selection-start-line="346" selection-start-column="41" selection-end-line="346" selection-end-column="41" />
+                  <folding>
+                    <element signature="e#332#364#0" expanded="false" />
+                    <element signature="e#430#473#0" expanded="false" />
+                    <element signature="e#520#562#0" expanded="false" />
+                    <element signature="e#616#705#0" expanded="false" />
+                    <element signature="e#763#930#0" expanded="false" />
+                    <element signature="e#984#1158#0" expanded="false" />
+                    <element signature="e#1208#1644#0" expanded="false" />
+                    <element signature="e#1712#1747#0" expanded="false" />
+                    <element signature="e#1790#1820#0" expanded="false" />
+                    <element signature="e#1880#1930#0" expanded="false" />
+                    <element signature="e#1983#2176#0" expanded="false" />
+                    <element signature="e#2229#2428#0" expanded="false" />
+                    <element signature="e#2476#2914#0" expanded="false" />
+                    <element signature="e#3245#4422#0" expanded="false" />
+                    <element signature="e#4474#4784#0" expanded="false" />
+                    <element signature="e#4877#4933#0" expanded="false" />
+                    <element signature="e#4984#5076#0" expanded="false" />
+                    <element signature="e#5127#5244#0" expanded="false" />
+                    <element signature="e#5307#5442#0" expanded="false" />
+                    <element signature="e#5490#5757#0" expanded="false" />
+                    <element signature="e#5844#5886#0" expanded="false" />
+                    <element signature="e#5934#6103#0" expanded="false" />
+                    <element signature="e#6155#6288#0" expanded="false" />
+                    <element signature="e#6380#6429#0" expanded="false" />
+                    <element signature="e#6481#6673#0" expanded="false" />
+                    <element signature="e#6728#6848#0" expanded="false" />
+                    <element signature="e#6901#7158#0" expanded="false" />
+                    <element signature="e#7208#7374#0" expanded="false" />
+                    <element signature="e#7430#7599#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="admin_controller.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/panda/public/admin/controller_admin/admin_controller.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="609">
+                  <caret line="177" column="13" selection-start-line="177" selection-start-column="13" selection-end-line="177" selection-end-column="13" />
+                  <folding>
+                    <element signature="e#1034#1038#0" expanded="false" />
+                    <element signature="e#1162#2168#0" expanded="false" />
+                    <element signature="e#2291#3468#0" expanded="false" />
+                    <element signature="e#3587#4110#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="footer.ejs" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/panda/views/include/footer.ejs">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="228">
+                  <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="edit_footer.ejs" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/panda/views/admin/footer/edit_footer.ejs">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="372">
+                  <caret line="102" column="66" selection-start-line="102" selection-start-column="66" selection-end-line="102" selection-end-column="66" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="category_edit.ejs" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/panda/views/admin/category/category_edit.ejs">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1463">
+                  <caret line="77" column="69" selection-start-line="77" selection-start-column="69" selection-end-line="77" selection-end-column="69" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -142,11 +196,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/panda/routes/upload.js" />
-        <option value="$PROJECT_DIR$/panda/views/search.ejs" />
-        <option value="$PROJECT_DIR$/panda/views/product_show.ejs" />
-        <option value="$PROJECT_DIR$/panda/views/main.html" />
-        <option value="$PROJECT_DIR$/panda/views/product_detail.ejs" />
         <option value="$PROJECT_DIR$/panda/views/edit_profile.ejs" />
         <option value="$PROJECT_DIR$/panda/public/controller/profile_controller.js" />
         <option value="$PROJECT_DIR$/panda/views/buy_product_list.ejs" />
@@ -181,8 +230,6 @@
         <option value="$PROJECT_DIR$/panda/views/admin/item_add.js" />
         <option value="$PROJECT_DIR$/panda/views/admin/nav.ejs" />
         <option value="$PROJECT_DIR$/panda/views/product/product_item.ejs" />
-        <option value="$PROJECT_DIR$/panda/public/admin/controller_admin/item.js" />
-        <option value="$PROJECT_DIR$/panda/routes/admin.js" />
         <option value="$PROJECT_DIR$/panda/views/admin/item_regist.ejs" />
         <option value="$PROJECT_DIR$/panda/views/item/item_list.ejs" />
         <option value="$PROJECT_DIR$/kakao2.html" />
@@ -190,9 +237,16 @@
         <option value="$PROJECT_DIR$/panda/public/controller/home_controller.js" />
         <option value="$PROJECT_DIR$/panda/public/assets/css/shop.style.css" />
         <option value="$PROJECT_DIR$/panda/views/main/index.ejs" />
-        <option value="$PROJECT_DIR$/panda/public/controller/item_controller.js" />
         <option value="$PROJECT_DIR$/panda/views/item/item_link.ejs" />
         <option value="$PROJECT_DIR$/panda/routes/index.js" />
+        <option value="$PROJECT_DIR$/panda/public/controller/item_controller.js" />
+        <option value="$PROJECT_DIR$/panda/public/admin/controller_admin/item.js" />
+        <option value="$PROJECT_DIR$/panda/views/admin/item/item_check.ejs" />
+        <option value="$PROJECT_DIR$/panda/views/admin/category/category_edit.ejs" />
+        <option value="$PROJECT_DIR$/panda/views/admin/footer/footer_edit.ejs" />
+        <option value="$PROJECT_DIR$/panda/public/admin/controller_admin/admin_controller.js" />
+        <option value="$PROJECT_DIR$/panda/routes/admin.js" />
+        <option value="$PROJECT_DIR$/panda/views/admin/footer/edit_footer.ejs" />
       </list>
     </option>
   </component>
@@ -203,8 +257,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1280" />
-    <option name="height" value="800" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -231,8 +287,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -411,12 +465,202 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="help" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="panda_interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="panda_interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="panda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="panda_interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="panda_interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="panda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="item" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="panda_interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="panda_interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="panda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="footer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="panda_interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="panda_interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="panda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="category" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="panda_interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="panda_interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="panda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="routes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="panda_interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="panda_interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="panda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="panda_interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="panda_interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="panda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="panda_interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="panda_interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="panda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller_admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -428,23 +672,22 @@
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="FullScreen" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\HaYoung\Desktop\Panda\panda_interface\panda_interface\panda\views\admin\footer" />
+      <recent name="$PROJECT_DIR$/panda/views/main" />
+      <recent name="$PROJECT_DIR$/panda/views/template/shop" />
+      <recent name="$PROJECT_DIR$/panda/public/assets/static_img" />
+      <recent name="$PROJECT_DIR$/panda/public/admin" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/panda/public/admin" />
       <recent name="$PROJECT_DIR$/panda/views/etc" />
       <recent name="$PROJECT_DIR$/panda/views/system" />
       <recent name="$PROJECT_DIR$/panda/views/main" />
       <recent name="$PROJECT_DIR$/panda/views/mypage" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/panda/views/main" />
-      <recent name="$PROJECT_DIR$/panda/views/template/shop" />
-      <recent name="$PROJECT_DIR$/panda/public/assets/static_img" />
-      <recent name="$PROJECT_DIR$/panda/public/admin" />
-      <recent name="$PROJECT_DIR$/panda/views/include" />
     </key>
   </component>
   <component name="RestClientSettings">
@@ -631,11 +874,6 @@
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
-    <configuration default="true" type="MongoRunConfiguration" factoryName="Mongo">
-      <setting name="path" value="" />
-      <setting name="shellParams" value="" />
-      <method />
-    </configuration>
     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
       <method />
     </configuration>
@@ -678,14 +916,10 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <configuration default="false" name="bin\www" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="/usr/local/Cellar/node/0.12.5/bin/node" path-to-js-file="bin/www" working-dir="$PROJECT_DIR$/panda">
+    <configuration default="false" name="bin\www" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" path-to-js-file="bin/www" working-dir="$PROJECT_DIR$/panda">
       <envs>
         <env name="DEBUG" value="panda:*" />
       </envs>
-      <profiling v8-profiler-path="" />
-      <EXTENSION ID="com.jetbrains.nodejs.run.NodeJSProfilingRunConfigurationExtension">
-        <profiling v8-profiler-path="" />
-      </EXTENSION>
       <method />
     </configuration>
     <list size="1">
@@ -719,6 +953,9 @@
       <workItem from="1468891356126" duration="1821000" />
       <workItem from="1468913289693" duration="15337000" />
       <workItem from="1469062965667" duration="36000" />
+      <workItem from="1469498415049" duration="6468000" />
+      <workItem from="1469519402115" duration="22000" />
+      <workItem from="1469580705425" duration="1886000" />
     </task>
     <task id="LOCAL-00001" summary="daeho version">
       <created>1468809515441</created>
@@ -759,31 +996,31 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110856000" />
+    <option name="totallyTimeSpent" value="119232000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16639742" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16613925" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3328767" sideWeight="0.503231" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13424657" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.279476" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39935845" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3328767" sideWeight="0.49676898" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27260274" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39935845" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -819,52 +1056,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="daeho version" />
     <MESSAGE value="yoyoyo" />
-    <option name="LAST_COMMIT_MESSAGE" value="yoyoyo" />
+    <MESSAGE value="7.27_heewan" />
+    <option name="LAST_COMMIT_MESSAGE" value="7.27_heewan" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/panda/routes/api/product.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/panda/tmp/스크린샷 2016-07-15 오후 3.43.22.png" />
-    <entry file="file://$PROJECT_DIR$/panda/views/template/blog_large_full_width1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="141" column="20" selection-start-line="141" selection-start-column="20" selection-end-line="141" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/panda/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/panda/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/panda/public/assets/static_img/slider1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/panda/public/assets/static_img/slider2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/panda/public/assets/static_img/KakaoTalk_Photo_2016-07-14-11-13-17_54.png" />
     <entry file="file://$PROJECT_DIR$/panda/public/assets/static_img/and.png">
       <provider selected="true" editor-type-id="images">
@@ -890,13 +1091,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/panda/views/admin/item_add.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/panda/views/admin/item_add.js" />
     <entry file="file://$PROJECT_DIR$/panda/views/admin/template.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -960,20 +1155,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/panda/views/admin/item_regist.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="86" column="27" selection-start-line="86" selection-start-column="27" selection-end-line="86" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/panda/routes/admin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/panda/views/admin/item_regist.ejs" />
     <entry file="file://$PROJECT_DIR$/panda/public/admin/pages/forms.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="449">
@@ -995,13 +1177,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kakao.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/kakao.html" />
     <entry file="file://$PROJECT_DIR$/kakao2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -1013,13 +1189,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
           <caret line="68" column="18" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/panda/public/admin/controller_admin/item.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -1062,7 +1231,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1104,62 +1272,161 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/panda/public/assets/img/blog/08.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/panda/public/assets/css/shop.style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3930">
+        <state relative-caret-position="4978">
           <caret line="262" column="25" selection-start-line="262" selection-start-column="25" selection-end-line="262" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/panda/views/item/item_list.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2925">
-          <caret line="195" column="24" selection-start-line="195" selection-start-column="24" selection-end-line="218" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/panda/public/controller/item_controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="299">
+          <caret line="62" column="10" selection-start-line="62" selection-start-column="10" selection-end-line="62" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/panda/views/item/item_link.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1440">
+        <state relative-caret-position="632">
           <caret line="96" column="29" selection-start-line="96" selection-start-column="22" selection-end-line="96" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/panda/views/main/index.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2775">
-          <caret line="185" column="26" selection-start-line="185" selection-start-column="26" selection-end-line="206" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/panda/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="326" column="5" selection-start-line="326" selection-start-column="5" selection-end-line="326" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/panda/public/assets/img/blog/09.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/panda/views/help/inquire.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="29" selection-start-line="8" selection-start-column="20" selection-end-line="12" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/panda/public/assets/img/blog/08.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/panda/views/item/item_list.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="188" column="33" selection-start-line="188" selection-start-column="33" selection-end-line="188" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/panda/views/admin/item/item_regist.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="78" column="38" selection-start-line="78" selection-start-column="38" selection-end-line="78" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/panda/public/admin/controller_admin/item.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="85" column="29" selection-start-line="85" selection-start-column="29" selection-end-line="85" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/panda/views/main/index.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3230">
+          <caret line="170" column="48" selection-start-line="170" selection-start-column="48" selection-end-line="170" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/panda/views/include/footer.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/panda/views/admin/item/item_check.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="67" column="58" selection-start-line="67" selection-start-column="58" selection-end-line="67" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/panda/views/admin/category/category_edit.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1463">
+          <caret line="77" column="69" selection-start-line="77" selection-start-column="69" selection-end-line="77" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/panda/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="590">
+          <caret line="61" column="38" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/panda/public/admin/controller_admin/admin_controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="177" column="13" selection-start-line="177" selection-start-column="13" selection-end-line="177" selection-end-column="13" />
+          <folding>
+            <element signature="e#1034#1038#0" expanded="false" />
+            <element signature="e#1162#2168#0" expanded="false" />
+            <element signature="e#2291#3468#0" expanded="false" />
+            <element signature="e#3587#4110#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/panda/routes/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="346" column="41" selection-start-line="346" selection-start-column="41" selection-end-line="346" selection-end-column="41" />
+          <folding>
+            <element signature="e#332#364#0" expanded="false" />
+            <element signature="e#430#473#0" expanded="false" />
+            <element signature="e#520#562#0" expanded="false" />
+            <element signature="e#616#705#0" expanded="false" />
+            <element signature="e#763#930#0" expanded="false" />
+            <element signature="e#984#1158#0" expanded="false" />
+            <element signature="e#1208#1644#0" expanded="false" />
+            <element signature="e#1712#1747#0" expanded="false" />
+            <element signature="e#1790#1820#0" expanded="false" />
+            <element signature="e#1880#1930#0" expanded="false" />
+            <element signature="e#1983#2176#0" expanded="false" />
+            <element signature="e#2229#2428#0" expanded="false" />
+            <element signature="e#2476#2914#0" expanded="false" />
+            <element signature="e#3245#4422#0" expanded="false" />
+            <element signature="e#4474#4784#0" expanded="false" />
+            <element signature="e#4877#4933#0" expanded="false" />
+            <element signature="e#4984#5076#0" expanded="false" />
+            <element signature="e#5127#5244#0" expanded="false" />
+            <element signature="e#5307#5442#0" expanded="false" />
+            <element signature="e#5490#5757#0" expanded="false" />
+            <element signature="e#5844#5886#0" expanded="false" />
+            <element signature="e#5934#6103#0" expanded="false" />
+            <element signature="e#6155#6288#0" expanded="false" />
+            <element signature="e#6380#6429#0" expanded="false" />
+            <element signature="e#6481#6673#0" expanded="false" />
+            <element signature="e#6728#6848#0" expanded="false" />
+            <element signature="e#6901#7158#0" expanded="false" />
+            <element signature="e#7208#7374#0" expanded="false" />
+            <element signature="e#7430#7599#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/panda/views/admin/footer/edit_footer.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="102" column="66" selection-start-line="102" selection-start-column="66" selection-end-line="102" selection-end-column="66" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>

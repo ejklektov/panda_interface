@@ -71,7 +71,7 @@ item.controller('itemCtrl', ['$scope', 'kakaolink','$http', function($scope, kak
         kakaolink.kakaolink($scope.token);
     };
     $scope.katlink = function () {
-        $http.post('/katlink',{template_id:"794"}).success(function (res) {
+        $http.get('/katlink').success(function (res) {
             console.log('ok');
         })
     }
