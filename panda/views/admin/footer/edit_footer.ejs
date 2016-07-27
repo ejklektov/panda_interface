@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = "admin" ng-controller = "categoryCtrl">
+
+<head>
+    <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Panda - admin</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Timeline CSS -->
+    <link href="dist/css/timeline.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="bower_components/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <div ng-include="'nav'"></div>
+    <div class="row">
+    </div>
+
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Footer 관리</h1>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+         <!--/.row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form role="form">
+                                <div class = "modify">
+                                    <label style="margin-bottom: 10px;">Modify</label>
+                                    <br>
+                                    <input ng-model="new.group" class="form-control" placeholder="{{new.group}}" type="text" style="margin-bottom: 5px;">
+                                    <!--<input ng-model="new.answer" class="form-control" placeholder="{{new.answer}}" type="text">-->
+                                    <input style="float:right" class = "btn btn-default" type="button" ng-click="send_category(new._id)" value = "확인">
+                                </div>
+                                <br>
+                                <br>
+                                <div ng-repeat = "category in categories" >
+
+                                    <!--<button class="btn btn-default" ng-click="send_FAQ(FAQ._id)" ng-model = "modify">수정</button>-->
+
+                                    <div class="form-group">
+                                        <label>Category Group</label>
+                                        <br><div style="margin-left:20px">{{category.group}}</div>
+                                        <br>
+                                        <div class = "modify_confirm" style="float:right">
+                                            <input class = "btn btn-default" type="button" ng-click="modify_category(category._id)" value = "수정">
+                                            <input class = "btn btn-default" type="button" ng-click="delete_category(category._id)" value = "삭제">
+                                        </div>
+                                    </div>
+
+                                    <!--<button type="reset" class="btn btn-default">취소</button>-->
+                                    <br>
+                                    <br>
+                                </div>
+
+                                <button onclick="add_row()">행 추가하기</button>
+                                <button onclick="delete_row()">행 삭제하기</button>
+
+                                <table id="mytable" border="2" cellspacing="0">
+                                    <th colspan="2">테이블 헤더</th>
+                                </table>
+
+                                <script>
+                                    function add_row() {
+                                        mytable = document.getElementById('mytable');
+                                        row = mytable.insertRow(mytable.rows.length);
+                                        cell1 = row.insertCell(0);
+                                        cell2 = row.insertCell(1);
+                                        cell1.innerHTML = '항목';
+                                        cell2.innerHTML = '<input type="text" name="strs[]"/>';
+                                    }
+                                    function delete_row() {
+                                        mytable = document.getElementById('mytable');
+                                        if(mytable.rows.length < 2) return;
+                                        mytable.deleteRow(mytable.rows.length-1);
+                                    }
+                                </script>
+
+                                <div class = "add">
+                                    <label>New category</label>
+                                    <input ng-model="addCategory.group" class="form-control" type="text">
+                                    <br>
+                                    <input class = "btn btn-default" type="button" ng-click="add_category()" value = "추가" style = "float : right">
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.col-lg-6 (nested) -->
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /#page-wrapper -->
+
+<!-- jQuery -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+<!-- Morris Charts JavaScript -->
+<script src="bower_components/raphael/raphael-min.js"></script>
+<script src="bower_components/morrisjs/morris.min.js"></script>
+<script src="js/morris-data.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="dist/js/sb-admin-2.js"></script>
+<script src="../admin/controller_admin/admin_controller.js"></script>
+</body>
+
+</html>

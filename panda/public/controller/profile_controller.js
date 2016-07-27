@@ -30,17 +30,48 @@ var home = angular.module('mypage',['ngRoute'])
 
 home.controller('mypageCtrl',['$scope','$http',function ($scope, $http,$location) {
     $scope.choose = true;
-    var findMe = function () {
-        $http.get('/findMe').success(function (res) {
-            // console.log(res)
-            $scope.me = res;
-            $scope.splitEmail=res.email.split('@');
-            $scope.front=res.phone.substring(0,3);
-            $scope.middle=res.phone.substring(3,7);
-            $scope.rear=res.phone.substring(7,11);
+    var findUser = function () {
+        $http.get('/findUser').success(function (res) {
+            console.log('findUser');
+            console.log(res);
+            // $scope.me = res;
+            $scope.splitEmail = res.email.split('@');
+            $scope.front = res.phone.substring(0,3);
+            $scope.middle = res.phone.substring(3,7);
+            $scope.rear = res.phone.substring(7,11);
+            $scope.bank = res.bank;
+            $scope.account = res.account;
+            $scope.major = res.major;
+
+            console.log($scope.splitEmail[0]);
         })
     };
-    findMe();
+    findUser();
+
+
+    $scope.modifyUserData = function () {
+        var person = {phone:"", email:"", bank:"", account:"", major:""};
+
+        // console.log(person);
+        // console.log('modify');
+        // console.log($scope.splitEmail[0]);
+
+        person.phone = $scope.front + $scope.middle + $scope.rear;
+        person.email = $scope.splitEmail[0] +"@"+ $scope.splitEmail[1];
+        person.bank = $scope.bank;
+        person.account = $scope.account;
+        person.major = $scope.major;
+
+        console.log(person);
+
+        $http.put('/profile', person).success(function (res) {
+            // console.log(res);
+            $http.get('/mypage_profile').success(function(res){
+            })
+            findUser();
+        })
+    };
+    
     var refresh = function () {
         $http.get('/document').success(function (res) {
             $scope.docs = res;
@@ -55,29 +86,6 @@ home.controller('mypageCtrl',['$scope','$http',function ($scope, $http,$location
 
     refresh();
 
-    $scope.modifyUserData = function () {
-        // console.log('===============================modify : ' + id);
-        // console.log($scope.person);
-        $scope.person.phone = $scope.person.front + $scope.person.middle + $scope.person.rear;
-        $scope.person.email = $scope.person.mail +"@"+ $scope.person.domain;
-
-        // var splitEmail = email.split('@');
-        // var phoneFront = phone.substring(0,3);
-        // var phoneMiddle = phone.substring(4,8);
-        // var phoneRear= phone.substring(9,12);
-
-        $http.put('/profile',$scope.person).success(function (res) {
-            console.log(res);
-            findMe();
-
-            // $scope.front=phoneFront;
-            // $scope.middle=phoneMiddle;
-            // $scope.rear=phoneRear;
-            // $scope.mail=splitEmail[0];
-            // $scope.domain=splitEmail[1];
-
-        })
-    };
 
     $scope.addWord = function(){
         $http.post('/addWord',$scope.newDoc).success(function (res) {

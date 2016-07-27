@@ -3,9 +3,6 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-    <title>Shop UI | Unify - Responsive Website Template</title>
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.min.js"></script>
@@ -15,7 +12,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="daeho">
+
+    <title>Panda Store</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico">
@@ -26,6 +25,7 @@
     <!-- CSS Global Compulsory -->
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/shop.style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- CSS Header and Footer -->
     <link rel="stylesheet" href="assets/css/headers/header-default.css">
@@ -35,9 +35,29 @@
     <link rel="stylesheet" href="assets/plugins/animate.css">
     <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="assets/plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css">
+    <link rel="stylesheet" href="assets/plugins/cube-portfolio/cubeportfolio/custom/custom-cubeportfolio.css">
+    <link rel="stylesheet" href="assets/plugins/ladda-buttons/css/custom-lada-btn.css">
+    <link rel="stylesheet" href="assets/plugins/hover-effects/css/custom-hover-effects.css">
+
     <link rel="stylesheet" href="assets/plugins/owl-carousel/owl-carousel/owl.carousel.css">
-    <link rel="stylesheet" href="assets/plugins/revolution-slider/rs-plugin/css/settings.css">
+    <link rel="stylesheet" href="assets/plugins/revolution-slider/rs-plugin/css/settings.css" type="text/css" media="screen">
+    <!--[if lt IE 9]><link rel="stylesheet" href="assets/plugins/revolution-slider/rs-plugin/css/settings-ie8.css" type="text/css" media="screen"><![endif]-->
+
+    <!-- CSS Page Style -->
+    <link rel="stylesheet" href="assets/css/pages/page_log_reg_v1.css">
+    <link rel="stylesheet" href="assets/css/pages/page_search.css">
+    <link rel="stylesheet" href="assets/plugins/animate.css">
+    <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/pages/page_search_inner_tables.css">
+
+
+
+    <link rel="stylesheet" href="assets/plugins/ladda-buttons/css/custom-lada-btn.css">
+    <link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
+    <link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
+    <!--[if lt IE 9]><link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/css/sky-forms-ie8.css"><![endif]-->
 
     <!-- CSS Theme -->
     <link rel="stylesheet" href="assets/css/theme-colors/teal.css" id="style_color">
@@ -48,7 +68,7 @@
     <link rel="stylesheet" href="assets/css/custom.css">
 </head>
 
-<body class="header-fixed">
+<body>
 
 <i class="style-switcher-btn icon-bell"></i>
 <div class="style-switcher animated fadeInRight">
@@ -115,8 +135,6 @@
                              data-captionhidden="off"
                              style="z-index: 6">
 
-                            <a href="/help#/app"><img class="pull-left" src="assets/static_img/and.png" width="200"></a>
-                            <a href="/help#/app"><img class="pull-left" src="assets/static_img/app.png" width="40"></a>
                         </div>
                     </li>
                     <!--</a>-->
@@ -522,11 +540,29 @@
 <!-- JS Customization -->
 <script src="assets/js/custom.js"></script>
 <!-- JS Page Level -->
-<script src="assets/js/shop.app.js"></script>
-<script src="assets/js/plugins/owl-carousel.js"></script>
-<script src="assets/js/plugins/revolution-slider.js"></script>
-<script src="assets/js/plugins/style-switcher.js"></script>
-<script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script type="text/javascript" src="assets/js/plugins/style-switcher.js"></script>
+<script type="text/javascript" src="assets/js/plugins/ladda-buttons.js"></script>
+<script src="assets/plugins/ladda-buttons/js/spin.min.js"></script>
+<script src="assets/plugins/ladda-buttons/js/ladda.min.js"></script>
+<script type="text/javascript" src="assets/js/plugins/cube-portfolio/cube-portfolio-4.js"></script>
+<script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js"></script>
+<script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.maskedinput.min.js"></script>
+<script src="assets/plugins/sky-forms-pro/skyforms/js/jquery-ui.min.js"></script>
+<script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.form.min.js"></script>
+
+<script type="text/javascript" src="assets/plugins/owl-carousel/owl-carousel/owl.carousel.js"></script>
+<script type="text/javascript" src="assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+<script type="text/javascript" src="assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script type="text/javascript" src="assets/js/plugins/fancy-box.js"></script>
+<script type="text/javascript" src="assets/js/plugins/owl-carousel.js"></script>
+<script type="text/javascript" src="assets/js/plugins/revolution-slider.js"></script>
+<script type="text/javascript" src="assets/js/plugins/style-switcher.js"></script>
+
+
+<script type="text/javascript">
     jQuery(document).ready(function() {
         App.init();
         App.initScrollBar();
